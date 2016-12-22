@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BarricadeCD">
+  <logicalClassDesignerModelMoniker Id="d7383dcd-a15b-42e5-8e29-321e5ee61271" />
+  <nestedChildShapes>
+    <classShape Id="1271c2f7-4402-454e-a4e0-6961bfa25c5e" absoluteBounds="4.5, 1.75, 1.5, 0.90234373509883881" hideQualifiedName="false" increaseHeight="0" customColor="181, 193, 223">
+      <classMoniker Id="a0609190-7688-43c7-a0bf-11c5f14994cc" LastKnownName="Field" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="bf6c2734-9704-466d-a518-7f529384777c" absoluteBounds="4.515, 2.14, 1.4700000000000002, 0.2011718675494194" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="33c4b139-9cbc-4037-a033-2e0c3ab906c2" absoluteBounds="4.515, 2.3511718675494193, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>

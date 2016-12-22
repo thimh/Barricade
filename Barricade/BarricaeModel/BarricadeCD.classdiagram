@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="d7383dcd-a15b-42e5-8e29-321e5ee61271" name="BarricadeCD" linkedPackageId="0bdcf60f-783f-492a-b65c-e8ccb87561a5" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="64da0387-b896-44a4-ab3d-484101392ca9">
+      <profileInstance Id="87a7fc76-1d6b-4cad-8a38-08befe6d74cf" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="43489943-9276-43e2-bee7-ad9cadfcac4d">
+      <profileInstance Id="a7f2ef9c-2ef7-472a-a36f-dae6591c5bb0" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="a0609190-7688-43c7-a0bf-11c5f14994cc" name="Field" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="93712518-dae9-4b00-b807-e276e2a30609" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="0bdcf60f-783f-492a-b65c-e8ccb87561a5" name="BarricaeModel">
+    <elementDefinition Id="14ab5f2c-6047-4450-a19f-8ad767cb2370" />
+  </package>
+</logicalClassDesignerModel>
