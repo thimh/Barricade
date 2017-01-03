@@ -23,6 +23,30 @@ namespace Model
 			throw new System.NotImplementedException();
 		}
 
-	}
+        public virtual Player currentPlayer
+        {
+            get;
+            set;
+        }
+
+        public virtual Board Board
+        {
+            get;
+            set;
+        }
+
+        public virtual IEnumerable<Player> Player
+        {
+            get;
+            set;
+        }
+
+        public virtual IEnumerable<Barricade> Barricade
+        {
+            get;
+            set;
+        }
+
+    }
 }
 

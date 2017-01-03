@@ -13,17 +13,23 @@ namespace Model
 
 	public class Dice
 	{
-		public virtual int ThrowValue
-		{
-			get;
-			set;
-		}
-
 		public virtual int Throw()
 		{
 			throw new System.NotImplementedException();
 		}
 
-	}
+        public virtual int eyes
+        {
+            get;
+            set;
+        }
+
+        public virtual Game Game
+        {
+            get;
+            set;
+        }
+
+    }
 }
 

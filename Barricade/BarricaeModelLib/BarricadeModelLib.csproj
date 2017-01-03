@@ -40,10 +40,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeneratedCode\Model\Barricade.cs" />
+    <Compile Include="GeneratedCode\Model\BarricadeField.cs" />
+    <Compile Include="GeneratedCode\Model\Board.cs" />
+    <Compile Include="GeneratedCode\Model\Color.cs" />
     <Compile Include="GeneratedCode\Controller\Controller.cs" />
+    <Compile Include="GeneratedCode\Model\Field.cs" />
+    <Compile Include="GeneratedCode\Model\FinishField.cs" />
+    <Compile Include="GeneratedCode\Model\ForestField.cs" />
     <Compile Include="GeneratedCode\Model\Dice.cs" />
     <Compile Include="GeneratedCode\Model\Game.cs" />
-    <Compile Include="GeneratedCode\Program.cs" />
+    <Compile Include="GeneratedCode\Model\Pawn.cs" />
+    <Compile Include="GeneratedCode\Model\Player.cs" />
+    <Compile Include="GeneratedCode\Model\Program.cs" />
+    <Compile Include="GeneratedCode\Model\RestField.cs" />
+    <Compile Include="GeneratedCode\Model\StartField.cs" />
     <Compile Include="GeneratedCode\View\InputView.cs" />
     <Compile Include="GeneratedCode\View\OutputView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
