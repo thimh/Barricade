@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="455c04d5-4587-4697-83c7-1c33e1ca0824"
+  name="Controller" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="29eb96ed-ba50-4ea3-96a7-0f69f09fc447"
+        name="Controller"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="0581e51a-6f1d-4cb8-a6ce-2fc7e6a3cefe"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0458aa6c-af83-4b9d-a70e-c104ae70cdd1">
+                <propertyInstance
+                  Id="6dccbbf8-d497-44ef-ba37-e8756f3e36be"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c9503746-b7c2-4434-9e14-5018a5f40add">
+                <propertyInstance
+                  Id="5f8618dc-c457-4488-aa3f-132a188620e3"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b80719be-6c3b-4851-8a2d-d0cbce3e4c7d">
+                <propertyInstance
+                  Id="e0c46e42-d069-4abb-821c-2967d1f27c84"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="07a282f8-2c0d-41d7-a81e-56acebdeaf0c">
+                <propertyInstance
+                  Id="f1d4f299-9b9c-4e44-af86-dfc1dd735dca"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b834b947-c653-4db1-ae33-12e9eb3f37c8">
+                <propertyInstance
+                  Id="4dd2f9e1-2b76-4f98-962d-d437024cfd83"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <targetEnds>
+          <association
+            Id="f09839e4-4583-40fa-8632-2b02783a271b"
+            isDerived="false"
+            sourceEndRoleName="Controller"
+            targetEndRoleName="Dice"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b498483e-abf8-48fd-ad56-2462fcfaebaa"
+              LastKnownName="Dice"
+              LastKnownLocation="Package2_1305.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="94e47688-7f97-4315-80c7-ae5ec01a8627"
+                  name="Controller"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4b217559-185c-4465-a992-15f18c13def7"
+                  name="Dice"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="b1ca97ed-d152-4742-a225-578284a059d2"
+            isDerived="false"
+            sourceEndRoleName="Controller"
+            targetEndRoleName="InputView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="9a2d7d9a-3df1-4103-835c-aa706896444f"
+              LastKnownName="InputView"
+              LastKnownLocation="Package1_1305.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7705a365-9480-4734-9651-6c97059797bb"
+                  name="Controller"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8ed1f9d0-9111-4560-9143-d2829ef52c01"
+                  name="InputView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="87d7dab4-1577-4f98-983b-12725099688d"
+            isDerived="false"
+            sourceEndRoleName="Controller"
+            targetEndRoleName="OutputView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="4dcd25fa-99e6-4ae8-a91c-7a007668874b"
+              LastKnownName="OutputView"
+              LastKnownLocation="Package1_1305.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="08645633-c06e-4a11-86b1-6a4b11ee9f58"
+                  name="Controller"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a72bf1a3-ba88-4510-bae1-23f7f3c5b135"
+                  name="OutputView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="7d064d12-f5f8-48ac-a841-f1f4229d2bfd"
+            isDerived="false"
+            sourceEndRoleName="Controller"
+            targetEndRoleName="Game"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="8a56b085-4cd6-4d21-9c44-d97e3654aa3b"
+              LastKnownName="Game"
+              LastKnownLocation="Package2_1305.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="49be9f45-5c36-4203-afc3-4efec72b48dd"
+                  name="Controller"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="64818125-3609-4161-a0d3-e7a295ef56be"
+                  name="Game"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="9dd93661-59d1-4361-8a58-3b5feb728aa1"
+            name="Go"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3f8744a3-f48a-40a0-a28b-abd12fb5f2b5"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0d68ae72-b233-4beb-b351-bcbc7601710c">
+                    <propertyInstance
+                      Id="8c431f5d-44d9-46e0-b45f-c1f43c550428"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6f50b8a5-c7d4-4ff4-96ef-2922d5ab70b1">
+                    <propertyInstance
+                      Id="7063292c-664d-4cab-827a-d2d4b803f8e4"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a88e624f-6819-4b3c-aabd-105e296fa5d7">
+                    <propertyInstance
+                      Id="669d6f6f-f781-4845-b426-3c9b31018a13"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ee5a8143-4195-4559-a8c3-512bec2ed007">
+                    <propertyInstance
+                      Id="56efd145-66fd-4759-b33f-a1888aa03e1b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aefac01d-3202-4295-a649-b38645bc75ed">
+                    <propertyInstance
+                      Id="57842a1b-ce76-42b2-bf32-59c1eee03349"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d602920c-7026-47cb-ac15-e21ed6735e62">
+                    <propertyInstance
+                      Id="7d494fdb-6001-4514-b7e2-84b31355b358"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="37ad4ff7-9150-44c0-a362-5dfcbe4e29cb"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="68a6eafd-4297-4ca1-8c02-fb2c6dda5cb2"
+                      LastKnownName="void"
+                      LastKnownLocation="BarricaeModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
