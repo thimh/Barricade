@@ -118,6 +118,32 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="9c8b6964-4c8a-4f35-8f1f-73bb55d5538a" />
           </association>
+          <association Id="77d6c27d-6fe0-4717-95d7-493039ec94a7" isDerived="false" sourceEndRoleName="Player" targetEndRoleName="StartField" isLeaf="false" isAbstract="false">
+            <classMoniker Id="72b1fd1e-11ac-420f-9403-6b771030b856" LastKnownName="StartField" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="7752701b-7a43-430a-8850-869c1dc7398e" name="Player" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d13882c5-7cef-4cd3-bee1-e5b4f975f739" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="036d90dd-51bf-4caf-83a1-8d12a6a5f6bb" name="StartField" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="1062289a-7e5a-4002-8296-0f1329803cbd" name="Lower" value="4">
+                      <elementDefinition Id="da8a7b1a-da5a-401f-a6f4-afc1dd748a47" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="3f1de1d9-a8f0-4f77-94cc-b5246eba79ba" name="Upper" value="4">
+                      <elementDefinition Id="ffff6b47-1724-4b52-a47f-cd403712adce" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="28d5851f-e66c-4f12-808a-32196ab79543" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="b3327f98-3993-4ae4-a050-2ed4349c7f45" />
+          </association>
         </targetEnds>
       </class>
     </logicalClassDesignerModelHasTypes>
@@ -146,6 +172,24 @@
             <elementDefinition Id="5eeae554-787e-46f8-aba9-d9dcc8ee497a" />
           </generalization>
         </generalsInternal>
+        <targetEnds>
+          <association Id="9315f5a9-0cf5-471e-8b7e-0bd9721d3e20" isDerived="false" sourceEndRoleName="StartField" targetEndRoleName="Color" isLeaf="false" isAbstract="false">
+            <enumerationMoniker Id="e9ef6498-186e-4ef4-9a28-17c965e4476e" LastKnownName="Color" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="81a63006-ae8e-44f2-a56c-d06120e5a05e" name="StartField" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="cd68ee12-031b-4109-9c5f-d04c06f715f3" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a51bef78-5f20-4a61-8ba0-764b7deea52f" name="Color" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="11f58876-c14d-4faa-8429-8f6bc5bcfe44" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="f00d3faa-c336-4b3e-8acd-de6d7b6a1e28" />
+          </association>
+        </targetEnds>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
