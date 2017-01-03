@@ -52,7 +52,6 @@
     <Compile Include="GeneratedCode\Model\Game.cs" />
     <Compile Include="GeneratedCode\Model\Pawn.cs" />
     <Compile Include="GeneratedCode\Model\Player.cs" />
-    <Compile Include="GeneratedCode\Model\Program.cs" />
     <Compile Include="GeneratedCode\Model\RestField.cs" />
     <Compile Include="GeneratedCode\Model\StartField.cs" />
     <Compile Include="GeneratedCode\View\InputView.cs" />

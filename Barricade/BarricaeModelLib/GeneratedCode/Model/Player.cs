@@ -11,23 +11,21 @@ using System.Text;
 
 public class Player
 {
-	public virtual IEnumerable<Pawn> Pawn
-	{
-		get;
-		set;
-	}
+    public virtual IEnumerable<Pawn> Pawn { get; set; }
 
-	public virtual Color Color
-	{
-		get;
-		set;
-	}
+    public virtual Color Color { get; set; }
 
-	public virtual IEnumerable<StartField> StartField
-	{
-		get;
-		set;
-	}
+    public virtual IEnumerable<StartField> StartField { get; set; }
+
+    public Player()
+    {
+        
+    }
+
+    public void Move()
+    {
+        throw new NotImplementedException();
+    }
 
 }
 

@@ -13,6 +13,45 @@ namespace View
 
 	public class InputView
 	{
+	    public InputView()
+	    {
+	        
+	    }
+
+	    public int AskPlayerAmmount()
+	    {
+	        Console.WriteLine("How many players?");
+	        return Console.Read();
+	    }
+
+	    public Color AskPlayerColor()
+	    {
+            Console.WriteLine("You can choose between:");
+            Console.WriteLine("Press b for " + Color.Blue);
+            Console.WriteLine("Press y for " + Color.Yellow);
+            Console.WriteLine("Press r for " + Color.Red);
+            Console.WriteLine("Press g for " + Color.Green);
+
+            while (true)
+	        {
+                Console.WriteLine("What color do you want to be?");
+
+	            var input = Console.ReadLine();
+                switch (input)
+	            {
+                    case "b":
+	                    return Color.Blue;
+                    case "y":
+                        return Color.Yellow;
+                    case "r":
+                        return Color.Red;
+                    case "g":
+                        return Color.Green;
+                }
+
+                Console.WriteLine("Wrong input!");
+	        }
+	    }
 	}
 }
 

@@ -11,11 +11,12 @@ using System.Text;
 
 public class Board
 {
-	public virtual IEnumerable<Field> Field
-	{
-		get;
-		set;
-	}
+    public virtual IEnumerable<Field> Field { get; set; }
+
+    public Board()
+    {
+        
+    }
 
 }
 
