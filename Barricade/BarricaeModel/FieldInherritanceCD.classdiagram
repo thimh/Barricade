@@ -16,35 +16,294 @@
   </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
-      <class Id="dcf86f46-95ba-4ec9-813f-f31c1fb2fd73" name="Field" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="dcf86f46-95ba-4ec9-813f-f31c1fb2fd73" name="Field" isAbstract="true" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="f7474d07-9987-4049-855e-9aa96e318958" />
+        <targetEnds>
+          <association Id="8bf9d88b-e7b0-44ca-a632-28693ec8222e" isDerived="false" sourceEndRoleName="Field" targetEndRoleName="Pawn" isLeaf="false" isAbstract="false">
+            <classMoniker Id="4d131804-aad5-4117-bcc0-ed71db42007a" LastKnownName="Pawn" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="83e03b93-2a62-4f61-9cf1-3062f33fc0b4" name="Field" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="08c6cb17-777a-4330-a578-b23c76fe3e6e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="586959c3-62cd-418f-aa27-52dead21ba47" name="Pawn" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="11dd21a9-619a-4f45-8daf-0b932cbf5f55" name="Lower" value="0">
+                      <elementDefinition Id="debd3678-e13c-4d31-8bf6-09ba61760656" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="2a4b72ce-45b7-4f28-95d7-11122ffda696" name="Upper" value="1">
+                      <elementDefinition Id="d734fbdb-2647-461f-9ffb-2de0dfe8b7fc" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="6519701e-7364-456c-9f81-fe8f53649bf1" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="38b2c54c-0881-4ee5-9211-ec63c7a52319" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="72cda004-ff95-4dfb-9a58-114068123496" name="PawnColor" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="455f8b45-f408-471a-ae62-99de9a26c085" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="fa1e3525-bfc8-478a-9a50-f991b2f62e3b" LastKnownName="Color" />
+            </type_NamedElement>
+          </property>
+          <property Id="dec70b4a-4a21-4738-8974-b70b62334e37" name="Type" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6a6f051d-18fe-4879-a0de-2be14e4a6d8a" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8b7cf164-ebc9-490e-88be-c4c2b352a94e" LastKnownName="FieldType" />
+            </type_NamedElement>
+          </property>
+          <property Id="d3cb571b-c38b-42a3-b7b5-769196d87b14" name="Next" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c8c57710-caa8-47de-a4c7-4efc7db5a73f" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="fec9622a-0d70-45ba-9e19-c1ee43a47186" LastKnownName="Field" />
+            </type_NamedElement>
+          </property>
+          <property Id="35b74b73-1863-419c-895c-021286754d1e" name="NextOptional" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="88b6962b-3b9d-4dd5-9c1c-98f39d46ff81" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="44dea4d3-31b4-4e81-a07d-c26340bfb3b7" LastKnownName="Field" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="eac144d1-7ba8-467e-a007-bdb747906f27" name="SetPawn" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="a9afa0d7-a5ed-4a37-844c-0a0234025ded" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c2d0559f-39bb-4073-a109-6ec46c5f81dd" name="Pawn currentPawn" direction="In" isUnique="false">
+                  <elementDefinition Id="1722001b-893e-4ff5-a7ca-07d2e7803eb3" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="df89efe8-21fe-411b-84b1-555282742aba" direction="Return" isUnique="false">
+                  <elementDefinition Id="9310d2d2-3e44-48cb-afb5-e38837cf8f2e" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="064f7248-ba32-4e6e-b47b-c339805ed92b" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="d2eb6b7c-911d-42b6-a516-a30286ec7ffe" name="RemovePawn" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="74046a0e-3bf6-4c20-8b92-7bec2ff30ddf" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="1578f0ff-e833-4469-9b5d-7de73132541d" name="int currentPawnID" direction="In" isUnique="false">
+                  <elementDefinition Id="3923c326-1f23-42cf-a608-f30ab4289b78" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="257e488c-cdaf-4443-a314-c672f2654105" direction="Return" isUnique="false">
+                  <elementDefinition Id="7d822cea-d1d4-4d5d-965d-5bb6fb0d46df" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="064f7248-ba32-4e6e-b47b-c339805ed92b" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="fb2251a7-c9ed-422c-bac7-5f6b3f9407a2" name="Class2" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="fb2251a7-c9ed-422c-bac7-5f6b3f9407a2" name="ForestField" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="6c92597b-5745-4b11-b72b-f97a57ddc764" />
+        <generalsInternal>
+          <generalization Id="33495851-4789-4348-bc07-d496eb4f42dd" isSubstitutable="false">
+            <classMoniker Id="dcf86f46-95ba-4ec9-813f-f31c1fb2fd73" LastKnownName="Field" />
+            <elementDefinition Id="e18143b6-7445-4256-99c7-07ba746e738b" />
+          </generalization>
+        </generalsInternal>
+        <targetEnds>
+          <association Id="f785b0b3-fafb-45eb-88ed-6964fc44d630" isDerived="false" sourceEndRoleName="ForestField" targetEndRoleName="Pawn" isLeaf="false" isAbstract="false">
+            <classMoniker Id="4d131804-aad5-4117-bcc0-ed71db42007a" LastKnownName="Pawn" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="5135f225-905e-4253-b359-26488b9c1473" name="ForestField" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3c9c54bf-bbe6-4fa8-ac60-aa1c7c7c3eb0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="de6976c0-a3f4-4b2f-b62b-17c2a2e8e473" name="Pawn" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="cea4f90f-574a-4420-a0c6-362dffb6190a" name="Lower" value="0">
+                      <elementDefinition Id="a55a1cd2-ffd5-4770-96f3-f56143fd264b" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="4645600d-159c-41a7-b973-e6fda1aa3009" name="Upper" value="*">
+                      <elementDefinition Id="5cd6a413-cd29-4807-a7c4-0c7288f93b1e" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="3e6b5532-8a46-4e6a-88c1-54a74203850e" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="aad45931-ca0e-4e5f-8270-6f302f48331a" />
+          </association>
+        </targetEnds>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="70aa0a6a-2ec1-4214-bf3d-7c9dd81778a7" name="Class3" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="70aa0a6a-2ec1-4214-bf3d-7c9dd81778a7" name="RestField" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="4bfd6532-b91f-4538-9c5f-8c39de64b15e" />
+        <generalsInternal>
+          <generalization Id="51c9d1d4-ff23-4b4a-a6b2-8bc876a58df6" isSubstitutable="false">
+            <classMoniker Id="dcf86f46-95ba-4ec9-813f-f31c1fb2fd73" LastKnownName="Field" />
+            <elementDefinition Id="9b84f259-b66e-421b-ae7c-4fd5a349a31a" />
+          </generalization>
+        </generalsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="03efd9a8-2192-4520-a1ba-492ba9f2abbb" name="Class4" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="03efd9a8-2192-4520-a1ba-492ba9f2abbb" name="StartField" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="4116855e-4d9d-4ca4-a638-36b320f1f4be" />
+        <generalsInternal>
+          <generalization Id="fc4fb577-0cbf-43b5-9b01-3675f527db7d" isSubstitutable="false">
+            <classMoniker Id="dcf86f46-95ba-4ec9-813f-f31c1fb2fd73" LastKnownName="Field" />
+            <elementDefinition Id="82084a7a-e768-4058-a04f-1dd81d2fb60d" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="8f236c0a-9ab0-4bf9-9bd0-21636490baf3" name="Type" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="43fbc315-4ece-4878-88b8-39ff4cd78048" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8b7cf164-ebc9-490e-88be-c4c2b352a94e" LastKnownName="FieldType" />
+            </type_NamedElement>
+          </property>
+          <property Id="10a4e7ab-beef-453d-8776-26b43e79654e" name="Color" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="95a3db1a-d25d-428e-a428-6f6a3fa6500c" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="fa1e3525-bfc8-478a-9a50-f991b2f62e3b" LastKnownName="Color" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="212c6473-2590-4713-9f3c-7a7240e90e38" name="Class5" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="212c6473-2590-4713-9f3c-7a7240e90e38" name="FinishField" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="aa875e10-c73b-4d56-b841-e92a1b7b44d5" />
+        <generalsInternal>
+          <generalization Id="dde65570-4c9a-4ed1-939f-a6044d953ac7" isSubstitutable="false">
+            <classMoniker Id="dcf86f46-95ba-4ec9-813f-f31c1fb2fd73" LastKnownName="Field" />
+            <elementDefinition Id="0b101002-24eb-40bf-8f92-828108935b02" />
+          </generalization>
+        </generalsInternal>
+        <ownedAttributesInternal>
+          <property Id="20e31528-49f0-43c5-bfae-881ea74cf4fe" name="Type" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7007e378-840e-4679-9212-71e51698de00" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="8b7cf164-ebc9-490e-88be-c4c2b352a94e" LastKnownName="FieldType" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="170462bf-3e47-403c-8682-2792db3319e8" name="Class6" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="170462bf-3e47-403c-8682-2792db3319e8" name="BarricadeField" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="65d15970-31b4-44b7-8feb-266e19e264dd" />
+        <generalsInternal>
+          <generalization Id="bbf13cbe-59ce-40df-97e7-1a0662dac7f3" isSubstitutable="false">
+            <classMoniker Id="dcf86f46-95ba-4ec9-813f-f31c1fb2fd73" LastKnownName="Field" />
+            <elementDefinition Id="12ee3e8e-3415-441e-ac9f-d3d3d79bbde5" />
+          </generalization>
+        </generalsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4d131804-aad5-4117-bcc0-ed71db42007a" name="Pawn" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8a51be29-7c77-44d9-9774-5c5e1fa67ded" />
+        <ownedAttributesInternal>
+          <property Id="b0ff7971-7497-4136-94e1-85a23be255b9" name="Color" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="96fea203-f141-412e-9a91-928a93c3ce14" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="a35181e5-0e7f-4807-925f-43e82cbece7c" LastKnownName="Color" />
+            </type_NamedElement>
+          </property>
+          <property Id="c0147973-e7a9-4021-9871-997e129b8abc" name="ID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="c30158d4-9515-4e23-8df5-75aea6b7a9dc" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9b993d2d-b62c-467f-b2f4-52de25bbded2" LastKnownName="int" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="bc7829ff-d661-49b4-bd13-3928dd86dfa8" name="Hit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="404855d6-7546-4eb4-8ee3-7503eb82a300" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0bd81ef3-60e1-4a6a-8bcd-2b5936c0d104" direction="Return" isUnique="false">
+                  <elementDefinition Id="a42d60c6-4adc-4ee9-8471-356e47c7530d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="064f7248-ba32-4e6e-b47b-c339805ed92b" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="130eb96b-781b-4731-90ed-d5cb120af351" name="Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ff6431b2-f55a-4c8c-9c55-5989a2b97476" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ff19ebd7-5996-4667-adde-0ec88a28c348" name="int steps" direction="In" isUnique="false">
+                  <elementDefinition Id="72485702-c65a-4a6c-854e-1bcc09f49a9a" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fafa5f02-6d8e-4d9d-96a2-50bc1556a7d5" direction="Return" isUnique="false">
+                  <elementDefinition Id="acaea956-aa9e-4c5f-9c43-a472e03fc642" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="064f7248-ba32-4e6e-b47b-c339805ed92b" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="064f7248-ba32-4e6e-b47b-c339805ed92b" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
+        <elementDefinition Id="68a6eafd-4297-4ca1-8c02-fb2c6dda5cb2" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fec9622a-0d70-45ba-9e19-c1ee43a47186" name="Field" isAbstract="false" isLeaf="false" cachedFullName="BarricaeModel::Field">
+        <elementDefinition Id="93712518-dae9-4b00-b807-e276e2a30609" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="8b7cf164-ebc9-490e-88be-c4c2b352a94e" name="FieldType" isAbstract="false" isLeaf="false" cachedFullName="FieldType">
+        <elementDefinition Id="3bfa4678-5c64-4fc2-9583-8f24c1d333b5" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9b993d2d-b62c-467f-b2f4-52de25bbded2" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="cb584912-d9f8-4f9f-a2ff-e732141dc613" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="fa1e3525-bfc8-478a-9a50-f991b2f62e3b" name="Color" isAbstract="false" isLeaf="false" cachedFullName="BarricaeModel::Color">
+        <elementDefinition Id="d6c7f032-7d00-4a12-9f27-b340e89d1b0a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a35181e5-0e7f-4807-925f-43e82cbece7c" name="Color" isAbstract="false" isLeaf="false" cachedFullName="BarricaeModel::Color">
+        <elementDefinition Id="d6c7f032-7d00-4a12-9f27-b340e89d1b0a" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="44dea4d3-31b4-4e81-a07d-c26340bfb3b7" name="Field" isAbstract="false" isLeaf="false" cachedFullName="BarricaeModel::Field">
+        <elementDefinition Id="93712518-dae9-4b00-b807-e276e2a30609" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="95e7491b-e219-40fe-85da-3b1ec47f203c" name="BarricaeModel">
     <elementDefinition Id="14ab5f2c-6047-4450-a19f-8ad767cb2370" />
