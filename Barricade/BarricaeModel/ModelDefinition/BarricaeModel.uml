@@ -1081,6 +1081,58 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="849ad2e7-a895-480c-b263-b93295de0ef0"
+            isDerived="false"
+            sourceEndRoleName="Field"
+            targetEndRoleName="Class1"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="93171d20-2ee9-4559-a51b-de819bb7fecf"
+              LastKnownName="Barricade"
+              LastKnownLocation="BarricaeModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="e60e792c-10f0-4dc2-8e4a-95fad0b32684"
+                  name="Field"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="2a4977d6-89df-488a-8963-bb89e8f0ff33"
+                  name="Class1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="28c64092-c126-4f7e-8b72-eaa06fa779ff"
+                      name="Lower"
+                      value="0" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="9f2e8dc9-8048-4dda-99a7-60586f0d7a89"
+                      name="Upper"
+                      value="1" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property
@@ -1155,6 +1207,42 @@
                 LastKnownLocation="BarricaeModel.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="b44361b0-9050-482e-8bcc-f864a118bf96"
+            name="Barricade"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="561fa969-7865-4b0f-bae5-a3466eadfe55"
+                LastKnownName="Barricade"
+                LastKnownLocation="BarricaeModel.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="b9b80266-3527-4579-bf96-f4f97c5835e4"
+            name="IsOccupied"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="db097873-feea-46ca-83f4-e525d10dc1a1"
+                LastKnownName="bool"
+                LastKnownLocation="BarricaeModel.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -1207,6 +1295,68 @@
               <operationHasOwnedParameters>
                 <parameter
                   Id="7d822cea-d1d4-4d5d-965d-5bb6fb0d46df"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="68a6eafd-4297-4ca1-8c02-fb2c6dda5cb2"
+                      LastKnownName="void"
+                      LastKnownLocation="BarricaeModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="71dc7bba-fa1c-4567-a49c-5b51033a2686"
+            name="SetBarricade"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="df5eebb4-3dcd-49d5-ac4e-3ec805a88d78"
+                  name="Barricade barricade"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a2120292-4cb3-413e-935e-0ec6c13cd23c"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="68a6eafd-4297-4ca1-8c02-fb2c6dda5cb2"
+                      LastKnownName="void"
+                      LastKnownLocation="BarricaeModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="9efcfee5-d8bb-4d19-b579-a2187632a475"
+            name="RemoveBarricade"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f70bb2c5-5a54-4697-a8de-3834233c4090"
+                  name="Barricade barricade"
+                  direction="In"
+                  isUnique="false" />
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5deb3dad-12ec-4122-b6f3-eaf59b448c6b"
                   direction="Return"
                   isUnique="false">
                   <type_NamedElement>
@@ -1355,44 +1505,6 @@
               LastKnownLocation="BarricaeModel.uml" />
           </generalization>
         </generalsInternal>
-        <ownedAttributesInternal>
-          <property
-            Id="43fbc315-4ece-4878-88b8-39ff4cd78048"
-            name="Type"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="3bfa4678-5c64-4fc2-9583-8f24c1d333b5"
-                LastKnownName="FieldType"
-                LastKnownLocation="BarricaeModel.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="95a3db1a-d25d-428e-a428-6f6a3fa6500c"
-            name="Color"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <enumerationMoniker
-                Id="d6c7f032-7d00-4a12-9f27-b340e89d1b0a"
-                LastKnownName="Color"
-                LastKnownLocation="BarricaeModel.uml" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1420,26 +1532,6 @@
               LastKnownLocation="BarricaeModel.uml" />
           </generalization>
         </generalsInternal>
-        <ownedAttributesInternal>
-          <property
-            Id="7007e378-840e-4679-9212-71e51698de00"
-            name="Type"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="3bfa4678-5c64-4fc2-9583-8f24c1d333b5"
-                LastKnownName="FieldType"
-                LastKnownLocation="BarricaeModel.uml" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1912,6 +2004,19 @@
           </operation>
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="561fa969-7865-4b0f-bae5-a3466eadfe55"
+        name="Barricade" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="93171d20-2ee9-4559-a51b-de819bb7fecf"
+        name="Barricade"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

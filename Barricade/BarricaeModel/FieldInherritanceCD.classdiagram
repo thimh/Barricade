@@ -45,6 +45,32 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="38b2c54c-0881-4ee5-9211-ec63c7a52319" />
           </association>
+          <association Id="f1997d64-5d4a-4e06-ac11-7653ac2cd722" isDerived="false" sourceEndRoleName="Field" targetEndRoleName="Class1" isLeaf="false" isAbstract="false">
+            <classMoniker Id="60891526-5937-4da1-a4f9-b0075d414406" LastKnownName="Barricade" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="f30359eb-5697-4eef-a51b-53d869610ce5" name="Field" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="e60e792c-10f0-4dc2-8e4a-95fad0b32684" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a59918d9-63cb-4eff-8449-84aef867d5a9" name="Class1" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="977fd4d9-caab-4bbb-b511-ff27fa678bd0" name="Lower" value="0">
+                      <elementDefinition Id="28c64092-c126-4f7e-8b72-eaa06fa779ff" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="6ac4b2b9-323a-4ac1-8310-b84c0b41f394" name="Upper" value="1">
+                      <elementDefinition Id="9f2e8dc9-8048-4dda-99a7-60586f0d7a89" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="2a4977d6-89df-488a-8963-bb89e8f0ff33" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="849ad2e7-a895-480c-b263-b93295de0ef0" />
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property Id="72cda004-ff95-4dfb-9a58-114068123496" name="PawnColor" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -69,6 +95,18 @@
             <elementDefinition Id="88b6962b-3b9d-4dd5-9c1c-98f39d46ff81" />
             <type_NamedElement>
               <referencedTypeMoniker Id="44dea4d3-31b4-4e81-a07d-c26340bfb3b7" LastKnownName="Field" />
+            </type_NamedElement>
+          </property>
+          <property Id="aac7275b-e042-4503-8577-d2ad42359ba8" name="Barricade" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b44361b0-9050-482e-8bcc-f864a118bf96" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="76f6ca94-4e09-4f9f-8ee0-f3f9858883e3" LastKnownName="Barricade" />
+            </type_NamedElement>
+          </property>
+          <property Id="3c99f532-2bbc-42d8-a600-7fa743bb157e" name="IsOccupied" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="b9b80266-3527-4579-bf96-f4f97c5835e4" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="073ac8e9-ee48-450b-b7ff-f57e66e1cef3" LastKnownName="bool" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -102,6 +140,42 @@
               <operationHasOwnedParameters>
                 <parameter Id="257e488c-cdaf-4443-a314-c672f2654105" direction="Return" isUnique="false">
                   <elementDefinition Id="7d822cea-d1d4-4d5d-965d-5bb6fb0d46df" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="064f7248-ba32-4e6e-b47b-c339805ed92b" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="b9a9e2a5-0940-4720-8b6b-47edca0b7c86" name="SetBarricade" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="71dc7bba-fa1c-4567-a49c-5b51033a2686" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="99ca8605-f3e5-4f6e-8df0-a83b8c7eb3e6" name="Barricade barricade" direction="In" isUnique="false">
+                  <elementDefinition Id="df5eebb4-3dcd-49d5-ac4e-3ec805a88d78" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bcad2dbe-f40d-409c-81ae-63672205eef8" direction="Return" isUnique="false">
+                  <elementDefinition Id="a2120292-4cb3-413e-935e-0ec6c13cd23c" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="064f7248-ba32-4e6e-b47b-c339805ed92b" LastKnownName="void" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="1c47414f-b1a4-46e8-a345-2ff27045f7af" name="RemoveBarricade" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9efcfee5-d8bb-4d19-b579-a2187632a475" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ffe47643-eb67-4433-89da-016fb22dca18" name="Barricade barricade" direction="In" isUnique="false">
+                  <elementDefinition Id="f70bb2c5-5a54-4697-a8de-3834233c4090" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="dacadc4f-f2f0-4d44-b000-1c66e26bfb4c" direction="Return" isUnique="false">
+                  <elementDefinition Id="5deb3dad-12ec-4122-b6f3-eaf59b448c6b" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="064f7248-ba32-4e6e-b47b-c339805ed92b" LastKnownName="void" />
                   </type_NamedElement>
@@ -171,20 +245,6 @@
             <elementDefinition Id="82084a7a-e768-4058-a04f-1dd81d2fb60d" />
           </generalization>
         </generalsInternal>
-        <ownedAttributesInternal>
-          <property Id="8f236c0a-9ab0-4bf9-9bd0-21636490baf3" name="Type" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="43fbc315-4ece-4878-88b8-39ff4cd78048" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="8b7cf164-ebc9-490e-88be-c4c2b352a94e" LastKnownName="FieldType" />
-            </type_NamedElement>
-          </property>
-          <property Id="10a4e7ab-beef-453d-8776-26b43e79654e" name="Color" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="95a3db1a-d25d-428e-a428-6f6a3fa6500c" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="fa1e3525-bfc8-478a-9a50-f991b2f62e3b" LastKnownName="Color" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -196,14 +256,6 @@
             <elementDefinition Id="0b101002-24eb-40bf-8f92-828108935b02" />
           </generalization>
         </generalsInternal>
-        <ownedAttributesInternal>
-          <property Id="20e31528-49f0-43c5-bfae-881ea74cf4fe" name="Type" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="7007e378-840e-4679-9212-71e51698de00" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="8b7cf164-ebc9-490e-88be-c4c2b352a94e" LastKnownName="FieldType" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -304,6 +356,21 @@
         <elementDefinition Id="93712518-dae9-4b00-b807-e276e2a30609" />
       </referencedType>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="073ac8e9-ee48-450b-b7ff-f57e66e1cef3" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+        <elementDefinition Id="db097873-feea-46ca-83f4-e525d10dc1a1" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="76f6ca94-4e09-4f9f-8ee0-f3f9858883e3" name="Barricade" isAbstract="false" isLeaf="false" cachedFullName="Barricade">
+        <elementDefinition Id="561fa969-7865-4b0f-bae5-a3466eadfe55" />
+      </referencedType>
+    </packageHasNamedElement>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="60891526-5937-4da1-a4f9-b0075d414406" name="Barricade" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="93171d20-2ee9-4559-a51b-de819bb7fecf" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
   </packagedElements>
   <package Id="95e7491b-e219-40fe-85da-3b1ec47f203c" name="BarricaeModel">
     <elementDefinition Id="14ab5f2c-6047-4450-a19f-8ad767cb2370" />
