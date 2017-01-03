@@ -22,6 +22,32 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
   <ItemGroup>
+    <Content Include="BarricadeAKD.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="BarricadeAKD.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>BarricadeAKD.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="FieldInherritanceCD.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="FieldInherritanceCD.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>FieldInherritanceCD.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="ModelDefinition\Package1_1109.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package2_1109.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1109.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ModelDefinition\Package_1141.uml">
+      <SubType>Content</SubType>
+    </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="BarricadeCD.classdiagram">
       <SubType>Content</SubType>

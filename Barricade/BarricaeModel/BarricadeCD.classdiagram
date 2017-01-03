@@ -33,8 +33,11 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property Id="48a5fcbe-d7fe-4e90-ae25-df43f0f997fd" name="bool isOccupied" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="48a5fcbe-d7fe-4e90-ae25-df43f0f997fd" name="isOccupied" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="0bb65245-fe25-406f-bba9-5ffd94ecc9f2" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="7b463c9c-8a91-4680-828f-4c18d2e4c499" LastKnownName="bool" />
+            </type_NamedElement>
           </property>
         </ownedAttributesInternal>
       </class>
@@ -172,24 +175,6 @@
             <elementDefinition Id="5eeae554-787e-46f8-aba9-d9dcc8ee497a" />
           </generalization>
         </generalsInternal>
-        <targetEnds>
-          <association Id="9315f5a9-0cf5-471e-8b7e-0bd9721d3e20" isDerived="false" sourceEndRoleName="StartField" targetEndRoleName="Color" isLeaf="false" isAbstract="false">
-            <enumerationMoniker Id="e9ef6498-186e-4ef4-9a28-17c965e4476e" LastKnownName="Color" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="81a63006-ae8e-44f2-a56c-d06120e5a05e" name="StartField" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="cd68ee12-031b-4109-9c5f-d04c06f715f3" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="a51bef78-5f20-4a61-8ba0-764b7deea52f" name="Color" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="11f58876-c14d-4faa-8429-8f6bc5bcfe44" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="f00d3faa-c336-4b3e-8acd-de6d7b6a1e28" />
-          </association>
-        </targetEnds>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -291,6 +276,14 @@
             <elementDefinition Id="1fd5a2d9-21f8-4b86-aee3-03ea8650e6f7" />
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="3d1a9baf-9bf2-4eb8-bea2-b71aa9838c01" name="currentPlayer" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="dcbd3d37-2830-4e22-b6b7-2a5ccbd96f43" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="efd72294-b159-4bbe-a22e-d7433b7d891e" LastKnownName="Player" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -315,12 +308,30 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property Id="f03d90ad-a58f-40af-aa93-b9dcc8a2529f" name="int eyes" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="f03d90ad-a58f-40af-aa93-b9dcc8a2529f" name="eyes" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="1dc9f2da-dcaa-4928-9fd2-629852b86c01" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="44b88612-36e2-405a-a8db-953858932993" LastKnownName="int" />
+            </type_NamedElement>
           </property>
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="efd72294-b159-4bbe-a22e-d7433b7d891e" name="Player" isAbstract="false" isLeaf="false" cachedFullName="BarricaeModel::Player">
+        <elementDefinition Id="715e7802-03ac-4592-b247-76587bc9b31f" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="7b463c9c-8a91-4680-828f-4c18d2e4c499" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
+        <elementDefinition Id="db097873-feea-46ca-83f4-e525d10dc1a1" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="44b88612-36e2-405a-a8db-953858932993" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="cb584912-d9f8-4f9f-a2ff-e732141dc613" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="0bdcf60f-783f-492a-b65c-e8ccb87561a5" name="BarricaeModel">
     <elementDefinition Id="14ab5f2c-6047-4450-a19f-8ad767cb2370" />

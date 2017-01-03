@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="6473bab1-d6ac-4698-9354-bb3b8232a486" name="FieldInherritanceCD" linkedPackageId="95e7491b-e219-40fe-85da-3b1ec47f203c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="6eefdbf3-7bfa-4a78-921e-70aa98e32aa5">
+      <profileInstance Id="beede197-e83e-4b07-a259-ccf326abd51b" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="2afae1fe-5e27-41a8-bafd-fd9355969cbb">
+      <profileInstance Id="a7a029e6-3a7a-4e59-816e-7177eca8b88b" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="dcf86f46-95ba-4ec9-813f-f31c1fb2fd73" name="Field" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f7474d07-9987-4049-855e-9aa96e318958" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="fb2251a7-c9ed-422c-bac7-5f6b3f9407a2" name="Class2" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6c92597b-5745-4b11-b72b-f97a57ddc764" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="70aa0a6a-2ec1-4214-bf3d-7c9dd81778a7" name="Class3" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4bfd6532-b91f-4538-9c5f-8c39de64b15e" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="03efd9a8-2192-4520-a1ba-492ba9f2abbb" name="Class4" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4116855e-4d9d-4ca4-a638-36b320f1f4be" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="212c6473-2590-4713-9f3c-7a7240e90e38" name="Class5" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="aa875e10-c73b-4d56-b841-e92a1b7b44d5" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="170462bf-3e47-403c-8682-2792db3319e8" name="Class6" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="65d15970-31b4-44b7-8feb-266e19e264dd" />
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="95e7491b-e219-40fe-85da-3b1ec47f203c" name="BarricaeModel">
+    <elementDefinition Id="14ab5f2c-6047-4450-a19f-8ad767cb2370" />
+  </package>
+</logicalClassDesignerModel>

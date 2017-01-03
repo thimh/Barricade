@@ -82,7 +82,7 @@
         <ownedAttributesInternal>
           <property
             Id="0bb65245-fe25-406f-bba9-5ffd94ecc9f2"
-            name="bool isOccupied"
+            name="isOccupied"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -90,7 +90,14 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="db097873-feea-46ca-83f4-e525d10dc1a1"
+                LastKnownName="bool"
+                LastKnownLocation="BarricaeModel.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
@@ -355,47 +362,6 @@
               LastKnownLocation="BarricaeModel.uml" />
           </generalization>
         </generalsInternal>
-        <targetEnds>
-          <association
-            Id="f00d3faa-c336-4b3e-8acd-de6d7b6a1e28"
-            isDerived="false"
-            sourceEndRoleName="StartField"
-            targetEndRoleName="Color"
-            isLeaf="false"
-            isAbstract="false">
-            <enumerationMoniker
-              Id="d6c7f032-7d00-4a12-9f27-b340e89d1b0a"
-              LastKnownName="Color"
-              LastKnownLocation="BarricaeModel.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="cd68ee12-031b-4109-9c5f-d04c06f715f3"
-                  name="StartField"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="11f58876-c14d-4faa-8429-8f6bc5bcfe44"
-                  name="Color"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -577,6 +543,26 @@
             </relationshipOwnedElementsInternal>
           </association>
         </targetEnds>
+        <ownedAttributesInternal>
+          <property
+            Id="dcbd3d37-2830-4e22-b6b7-2a5ccbd96f43"
+            name="currentPlayer"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="715e7802-03ac-4592-b247-76587bc9b31f"
+                LastKnownName="Player"
+                LastKnownLocation="BarricaeModel.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -630,7 +616,7 @@
         <ownedAttributesInternal>
           <property
             Id="1dc9f2da-dcaa-4928-9fd2-629852b86c01"
-            name="int eyes"
+            name="eyes"
             isLeaf="false"
             isStatic="false"
             isReadOnly="false"
@@ -638,7 +624,14 @@
             isDerived="false"
             isDerivedUnion="false"
             aggregation="None"
-            isComposite="false" />
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="cb584912-d9f8-4f9f-a2ff-e732141dc613"
+                LastKnownName="int"
+                LastKnownLocation="BarricaeModel.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
@@ -648,6 +641,433 @@
         name="Eyes"
         isAbstract="false"
         isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="db097873-feea-46ca-83f4-e525d10dc1a1"
+        name="bool" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="cb584912-d9f8-4f9f-a2ff-e732141dc613"
+        name="int" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="5d13350c-601c-4c6e-91a4-f7eccb47c906"
+        LastKnownName="Package1"
+        LastKnownLocation="Package_1141.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="98d264a4-84cb-40e0-8a77-98a1268777ad"
+        name="Program"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="b03583f5-f3fe-47aa-90a5-ed1a40c9699e"
+            name="Main"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="60dba704-d3d7-44c8-bf90-bdfd41a2483e"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="68a6eafd-4297-4ca1-8c02-fb2c6dda5cb2"
+                      LastKnownName="void"
+                      LastKnownLocation="BarricaeModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b498483e-abf8-48fd-ad56-2462fcfaebaa"
+        name="Dice"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedAttributesInternal>
+          <property
+            Id="9e3791e2-f4f2-4240-b96e-89163cf7d48e"
+            name="ThrowValue"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="cb584912-d9f8-4f9f-a2ff-e732141dc613"
+                LastKnownName="int"
+                LastKnownLocation="BarricaeModel.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="3ee82609-8324-474e-8b95-dc3364776086"
+            name="Throw"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c97f6c56-ea33-47c7-8c75-0fb7947ad9ec"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="cb584912-d9f8-4f9f-a2ff-e732141dc613"
+                      LastKnownName="int"
+                      LastKnownLocation="BarricaeModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="8a56b085-4cd6-4d21-9c44-d97e3654aa3b"
+        name="Game"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="3d9c3d6b-e28f-4011-b9d6-21b1cbe8c29b"
+            name="ChangeTurn"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="589e7a15-20f2-4630-8d86-8a56a5b684b4"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="68a6eafd-4297-4ca1-8c02-fb2c6dda5cb2"
+                      LastKnownName="void"
+                      LastKnownLocation="BarricaeModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="d72c8db2-55f0-42ea-8d97-105ad319969a"
+            name="CurrentPlayerMoveStone"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3b4a9cdb-e125-4ee2-9a29-e044bc2d13b8"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="68a6eafd-4297-4ca1-8c02-fb2c6dda5cb2"
+                      LastKnownName="void"
+                      LastKnownLocation="BarricaeModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="29eb96ed-ba50-4ea3-96a7-0f69f09fc447"
+        name="Controller"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="f09839e4-4583-40fa-8632-2b02783a271b"
+            isDerived="false"
+            sourceEndRoleName="Controller"
+            targetEndRoleName="Dice"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="b498483e-abf8-48fd-ad56-2462fcfaebaa"
+              LastKnownName="Dice"
+              LastKnownLocation="BarricaeModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="94e47688-7f97-4315-80c7-ae5ec01a8627"
+                  name="Controller"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4b217559-185c-4465-a992-15f18c13def7"
+                  name="Dice"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="b1ca97ed-d152-4742-a225-578284a059d2"
+            isDerived="false"
+            sourceEndRoleName="Controller"
+            targetEndRoleName="InputView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="9a2d7d9a-3df1-4103-835c-aa706896444f"
+              LastKnownName="InputView"
+              LastKnownLocation="BarricaeModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7705a365-9480-4734-9651-6c97059797bb"
+                  name="Controller"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8ed1f9d0-9111-4560-9143-d2829ef52c01"
+                  name="InputView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="87d7dab4-1577-4f98-983b-12725099688d"
+            isDerived="false"
+            sourceEndRoleName="Controller"
+            targetEndRoleName="OutputView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="4dcd25fa-99e6-4ae8-a91c-7a007668874b"
+              LastKnownName="OutputView"
+              LastKnownLocation="BarricaeModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="08645633-c06e-4a11-86b1-6a4b11ee9f58"
+                  name="Controller"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a72bf1a3-ba88-4510-bae1-23f7f3c5b135"
+                  name="OutputView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="7d064d12-f5f8-48ac-a841-f1f4229d2bfd"
+            isDerived="false"
+            sourceEndRoleName="Controller"
+            targetEndRoleName="Game"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="8a56b085-4cd6-4d21-9c44-d97e3654aa3b"
+              LastKnownName="Game"
+              LastKnownLocation="BarricaeModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="49be9f45-5c36-4203-afc3-4efec72b48dd"
+                  name="Controller"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="64818125-3609-4161-a0d3-e7a295ef56be"
+                  name="Game"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="9dd93661-59d1-4361-8a58-3b5feb728aa1"
+            name="Go"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="37ad4ff7-9150-44c0-a362-5dfcbe4e29cb"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="68a6eafd-4297-4ca1-8c02-fb2c6dda5cb2"
+                      LastKnownName="void"
+                      LastKnownLocation="BarricaeModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="9a2d7d9a-3df1-4103-835c-aa706896444f"
+        name="InputView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4dcd25fa-99e6-4ae8-a91c-7a007668874b"
+        name="OutputView"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="68a6eafd-4297-4ca1-8c02-fb2c6dda5cb2"
+        name="void" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="f7474d07-9987-4049-855e-9aa96e318958"
+        name="Field"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="6c92597b-5745-4b11-b72b-f97a57ddc764"
+        name="Class2"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4bfd6532-b91f-4538-9c5f-8c39de64b15e"
+        name="Class3"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4116855e-4d9d-4ca4-a638-36b320f1f4be"
+        name="Class4"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="aa875e10-c73b-4d56-b841-e92a1b7b44d5"
+        name="Class5"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="65d15970-31b4-44b7-8feb-266e19e264dd"
+        name="Class6"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
