@@ -15,6 +15,8 @@ public class Player
 
     public virtual Color Color { get; set; }
 
+    public string Name { get; set; }
+
     public virtual IEnumerable<StartField> StartField { get; set; }
 
     public Player()
