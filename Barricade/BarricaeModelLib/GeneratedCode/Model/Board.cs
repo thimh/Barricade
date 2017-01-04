@@ -11,12 +11,14 @@ using System.Text;
 
 public class Board
 {
-    public virtual IEnumerable<Field> Field { get; set; }
+    public virtual List<Field> Field { get; set; }
 
     public Board()
     {
-        
+        for (int i = 0; i < 61; i++)
+        {
+            Field.Add(new Field());
+        }
     }
-
 }
 

@@ -28,9 +28,7 @@ namespace Model
 
         public Game()
 	    {
-	        Board = new Board();
 	        input = new InputView();
-            Player = new List<Player>();
 
             SetupGame();
 	        Console.ReadLine();
@@ -53,14 +51,16 @@ namespace Model
 
 	    public void SetupGame()
 	    {
-	        int playerAmmount = input.AskPlayerAmmount();
+            Player = new List<Player>();
+            int playerAmmount = input.AskPlayerAmmount();
             for (int i = 0; i <= playerAmmount; i++)
 	        {
 	            SetPlayers(new Player {Color = input.AskPlayerColor()});
                 Console.WriteLine("You have chosen the color " + input.AskPlayerColor().ToString());
 	        }
-	    }
 
+            Board = new Board();
+        }
 	}
 }
 

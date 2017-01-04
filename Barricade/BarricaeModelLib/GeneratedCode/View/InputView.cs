@@ -21,7 +21,7 @@ namespace View
 	    public int AskPlayerAmmount()
 	    {
 	        Console.WriteLine("How many players?");
-	        return Console.Read();
+	        return Convert.ToInt32(Console.ReadLine());
 	    }
 
 	    public Color AskPlayerColor()
