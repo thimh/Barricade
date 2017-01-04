@@ -17,9 +17,8 @@ namespace Model
 	public class Game
 	{
 	    public Player currentPlayer { get; set; }
-
-	    public Board Board { get; set; }
-
+        public virtual List<Field> Field { get; set; }
+        
 	    public List<Player> Player { get; set; }
 
 	    public IEnumerable<Barricade> Barricade { get; set; }
@@ -58,8 +57,6 @@ namespace Model
 	            SetPlayers(new Player {Name = input.AskPlayerName()});
                 Console.WriteLine("Your player name is " + Player.ToArray()[i].Name); //TODO This is for testing, remove when done!
 	        }
-
-            Board = new Board();
         }
 	}
 }

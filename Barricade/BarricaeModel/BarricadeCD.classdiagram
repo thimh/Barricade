@@ -282,76 +282,6 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
-      <class Id="39de456d-622e-4910-b837-eca79170c410" name="Board" isAbstract="false" isLeaf="false" isActiveClass="false">
-        <appliedStereotypesInternal>
-          <stereotypeInstance Id="79e73417-8aeb-40fd-b135-2af57395121a" name="class" profile="CSharpProfile">
-            <elementDefinition Id="246187a1-0a23-428a-a7ed-b647bde5e87b" />
-            <propertyInstances>
-              <stereotypeInstanceHasPropertyInstances Id="3d529c92-a5bf-43fa-a0ba-5ee200732ebc">
-                <propertyInstance Id="122219cf-6b74-4409-9660-80fca4a282f9" name="ClrAttributes">
-                  <elementDefinition Id="1633c5fb-cc27-4d3a-add9-862448d0d6d6" />
-                </propertyInstance>
-                <elementDefinition Id="5f82084e-4d0e-433f-9cf3-4ea49eb37cc3" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances Id="94c7221a-8799-42db-b5e9-2138dbbd356c">
-                <propertyInstance Id="c1771333-ebc5-42a1-8f71-92892e4c9702" name="IsPartial" value="false">
-                  <elementDefinition Id="23fd2363-c65c-43d4-97b3-b7716224b594" />
-                </propertyInstance>
-                <elementDefinition Id="da609a80-16d7-4fd2-aa79-560e95b26a32" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances Id="77a44de0-6a68-48b6-8a1a-d7cdb5b31aa9">
-                <propertyInstance Id="5dad5845-64d7-41a1-b98c-9c19e914888d" name="IsStatic" value="false">
-                  <elementDefinition Id="04694da9-3102-4b50-a42e-f0ce07327a66" />
-                </propertyInstance>
-                <elementDefinition Id="70dedc7a-1c3d-46f0-886a-cf3669c246a2" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances Id="c60710d4-e8a6-4770-8a2c-770b1ba0ecc6">
-                <propertyInstance Id="00b983ad-edeb-4fe1-9835-7b539f0f0e4a" name="IsUnsafe" value="false">
-                  <elementDefinition Id="94ab6cda-4a77-4a17-a29a-a219a6086a64" />
-                </propertyInstance>
-                <elementDefinition Id="fe6836ac-f576-4ed5-8a1f-215192192925" />
-              </stereotypeInstanceHasPropertyInstances>
-              <stereotypeInstanceHasPropertyInstances Id="95b0eeaa-e6b3-4684-8a1c-84aec275338f">
-                <propertyInstance Id="c8292a0f-7c44-44cd-9de0-ab5ae29801f9" name="PackageVisibility" value="internal">
-                  <elementDefinition Id="29db56ae-57df-4b4e-8eb4-6d9ef40cddee" />
-                </propertyInstance>
-                <elementDefinition Id="79f92466-f373-4c62-a475-43bcac144c81" />
-              </stereotypeInstanceHasPropertyInstances>
-            </propertyInstances>
-          </stereotypeInstance>
-        </appliedStereotypesInternal>
-        <elementDefinition Id="4333b96b-2a66-4406-9acf-1586d6ea9318" />
-        <targetEnds>
-          <association Id="e980ad32-c099-4aae-8aa8-338c4f1be460" isDerived="false" sourceEndRoleName="Board" targetEndRoleName="Field" isLeaf="false" isAbstract="false">
-            <classMoniker Id="a0609190-7688-43c7-a0bf-11c5f14994cc" LastKnownName="Field" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="6938dd42-62f3-425f-8537-a4aa6bf2934a" name="Board" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="875de93c-f52a-4d92-8e98-203a4d0406a1" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="f7e0e52c-597b-4b54-b24b-357c59ec8153" name="Field" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <lowerValueInternal>
-                    <literalString Id="3a3701ee-12ff-429f-a8e1-38de749fded9" name="Lower" value="61">
-                      <elementDefinition Id="109d7739-5bf2-4c80-b20f-35ee2d1ecb67" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="19d85fd9-225f-4aaa-aed1-793ff8187d5b" name="Upper" value="61">
-                      <elementDefinition Id="ce72473c-20f3-4877-8a25-a95715ab6009" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="d53b028f-a764-4697-85fc-166af90b5a25" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="096195bf-d5c5-4cc1-bd46-495af7700bec" />
-          </association>
-        </targetEnds>
-      </class>
-    </logicalClassDesignerModelHasTypes>
-    <logicalClassDesignerModelHasTypes>
       <class Id="49bd1445-1ead-46f4-83de-ca8a4639dd2d" name="Player" isAbstract="false" isLeaf="false" isActiveClass="false">
         <appliedStereotypesInternal>
           <stereotypeInstance Id="490a3eb6-ec2f-4ec9-be08-b3e7686fab1d" name="class" profile="CSharpProfile">
@@ -835,22 +765,6 @@
         </appliedStereotypesInternal>
         <elementDefinition Id="77f397e8-03bb-4f26-aca1-54ed22fd503d" />
         <targetEnds>
-          <association Id="0d1b087f-69df-46e5-ab8c-b41ff14e1ce2" isDerived="false" sourceEndRoleName="Game" targetEndRoleName="Board" isLeaf="false" isAbstract="false">
-            <classMoniker Id="39de456d-622e-4910-b837-eca79170c410" LastKnownName="Board" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="d9c03a54-dcb5-4aa9-8f63-b2c41cee6c18" name="Game" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="c08edbf8-f3c0-491c-8693-23178a435b38" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="aafb7d28-fe7e-4706-9133-6163afa244fd" name="Board" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <elementDefinition Id="c347ffae-9227-4772-9827-b6e3989ec80c" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="cc160811-86c3-44b3-ab54-1318ab5aca6f" />
-          </association>
           <association Id="3b8f956a-5f3d-4d13-aaf8-4cbb29c59762" isDerived="false" sourceEndRoleName="Game" targetEndRoleName="Player" isLeaf="false" isAbstract="false">
             <classMoniker Id="49bd1445-1ead-46f4-83de-ca8a4639dd2d" LastKnownName="Player" />
             <relationshipOwnedElementsInternal>
@@ -902,6 +816,32 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="cb3a5611-6782-41f0-929d-0986344bd6d8" />
+          </association>
+          <association Id="c3463d9e-bfdc-4bb1-87cf-5d4811adefbe" isDerived="false" sourceEndRoleName="Game" targetEndRoleName="Field" isLeaf="false" isAbstract="false">
+            <classMoniker Id="a0609190-7688-43c7-a0bf-11c5f14994cc" LastKnownName="Field" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="08b37bf3-ca8b-4f5e-8184-14a1d9f65b8f" name="Game" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="8051ece8-6d75-4c91-9d73-5b2809da80b7" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="92b15228-6621-48a3-9c75-0bfb42b7900e" name="Field" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <lowerValueInternal>
+                    <literalString Id="e6f3796c-59b0-4fa9-966a-fc28bef50a07" name="Lower" value="61">
+                      <elementDefinition Id="0d61872d-29e5-4b8a-b0f5-e67b16651d01" />
+                    </literalString>
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString Id="ee4603e1-7eae-4b13-8405-cfed3b0191fb" name="Upper" value="61">
+                      <elementDefinition Id="7daafaeb-0503-4735-a164-292e9bc59dd5" />
+                    </literalString>
+                  </upperValueInternal>
+                  <elementDefinition Id="08fb9cb3-888f-4cb7-ad2a-e4bd6abacb7f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="7e91522b-84d4-480a-aa5b-8112cb6cb111" />
           </association>
         </targetEnds>
         <ownedAttributesInternal>
