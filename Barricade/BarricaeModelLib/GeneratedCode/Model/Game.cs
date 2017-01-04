@@ -26,6 +26,8 @@ namespace Model
 
 	    private InputView input;
 
+	    private Color[] color;
+
         public Game()
 	    {
 	        input = new InputView();
@@ -52,11 +54,11 @@ namespace Model
 	    public void SetupGame()
 	    {
             Player = new List<Player>();
+            color = new Color[4] { Color.Blue, Color.Green, Color.Red, Color.Yellow };
             int playerAmmount = input.AskPlayerAmmount();
-            for (int i = 0; i <= playerAmmount; i++)
+            for (int i = 0; i < playerAmmount; i++)
 	        {
-	            SetPlayers(new Player {Name = input.AskPlayerName()});
-                Console.WriteLine("Your player name is " + Player.ToArray()[i].Name); //TODO This is for testing, remove when done!
+	            SetPlayers(new Player {Name = input.AskPlayerName(), Color = color[i]});
 	        }
 
             Board = new Board();
