@@ -44,15 +44,6 @@ namespace Controller
 			throw new System.NotImplementedException();
 		}
 
-	    public Controller()
-	    {
-
-        }
-
-        private void buildFields()
-        {
-        }
-
-    }
+	}
 }
 
