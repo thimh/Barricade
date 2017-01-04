@@ -6,6 +6,8 @@
 //------------------------------------------------------------------------------
 
 using System.Dynamic;
+using System.IO;
+using BarricaeModelLib.GeneratedCode.Model;
 using View;
 
 namespace Model
@@ -20,7 +22,7 @@ namespace Model
 	    public Player currentPlayer { get; set; }
         public virtual List<Field> Field { get; set; }
         
-	    public List<Player> Player { get; set; }
+	    public List<Player> Players { get; set; }
 
 	    public IEnumerable<Barricade> Barricade { get; set; }
 
@@ -28,23 +30,73 @@ namespace Model
 
 	    private Color[] color;
 
+	    public Field[,] Fields;
+
         public Game()
         {
+            Players = new List<Player>();
+            Fields = new Field[14,21];
             BuildFields();
         }
 
+        /// <summary>
+        /// Build a field array
+        /// </summary>
 	    private void BuildFields()
 	    {
-            
-	        for (int i = 0; i < 61; i++)
-	        {
-	            
-	        }
-	    }
 
-	    public void SetPlayers(Player player)
-	    {
-	        Player.Add(player);
+	        var file = System.IO.File.ReadAllText(@"..\..\Board\Baricade.txt");
+	        string[] lines = System.IO.File.ReadAllLines(@"..\..\Board\Baricade.txt");
+
+            var linecount = 0;
+	        foreach (var line in lines)
+	        {
+	            for (int i = 0; i < line.Length; i++)
+	            {
+	                Field field = null;
+	                switch (line[i])
+	                {
+                        case 'w':
+                            field = new FinishField();
+	                        break;
+                        case 'x':
+                            field = new Field();
+	                        break;
+                        case 'o':
+                            field = new Field() {Barricade = new Barricade()};
+	                        break;
+                        case 's':
+                            field = new RestField();
+	                        break;
+                        case 'f':
+                            field = new ForestField();
+	                        break;
+                        case 'r':
+                            field = new StartField {Color = Color.Red};
+	                        break;
+                        case 'y':
+                            field = new StartField { Color = Color.Yellow };
+                            break;
+                        case 'g':
+                            field = new StartField { Color = Color.Green };
+                            break;
+                        case 'b':
+                            field = new StartField { Color = Color.Blue };
+                            break;
+                        case '-':
+                            field = new PathField();
+	                        break;
+                        case ' ':
+	                        field = null;
+	                        break;
+                        default:
+	                        break;
+	                }
+
+	                Fields[linecount, i] = field;
+	            }
+	            linecount++;
+	        }
 	    }
         
 		public void ChangeTurn()

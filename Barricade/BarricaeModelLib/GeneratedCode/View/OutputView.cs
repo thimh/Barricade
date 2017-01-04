@@ -13,6 +13,25 @@ namespace View
 
 	public class OutputView
 	{
+
+	    public void showBoard(Field[,] fields)
+	    {
+            Console.Clear();
+            Console.WriteLine("");
+            for (int y = 0; y < 14; y++) 
+	        {
+                for (int x = 0; x < 21; x++)
+                {
+                    if (fields[y, x] == null)
+                    {
+                        Console.Write("  ");
+                        continue;
+                    }
+	                Console.Write(fields[y,x].Icon);
+	            }
+                Console.WriteLine();
+            }
+	    }
 	}
 }
 
