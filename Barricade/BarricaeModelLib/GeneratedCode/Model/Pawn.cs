@@ -11,7 +11,6 @@ using System.Text;
 
 public class Pawn
 {
-    private Player owner;
     private Field location;
 }
 
