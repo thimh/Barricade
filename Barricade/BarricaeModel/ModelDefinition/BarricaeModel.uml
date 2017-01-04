@@ -1342,6 +1342,58 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="7e91522b-84d4-480a-aa5b-8112cb6cb111"
+            isDerived="false"
+            sourceEndRoleName="Game"
+            targetEndRoleName="Field"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="93712518-dae9-4b00-b807-e276e2a30609"
+              LastKnownName="Field"
+              LastKnownLocation="BarricaeModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="8051ece8-6d75-4c91-9d73-5b2809da80b7"
+                  name="Game"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="08fb9cb3-888f-4cb7-ad2a-e4bd6abacb7f"
+                  name="Field"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="0d61872d-29e5-4b8a-b0f5-e67b16651d01"
+                      name="Lower"
+                      value="61" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="7daafaeb-0503-4735-a164-292e9bc59dd5"
+                      name="Upper"
+                      value="61" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property
