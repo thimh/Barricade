@@ -364,32 +364,6 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="9c8b6964-4c8a-4f35-8f1f-73bb55d5538a" />
           </association>
-          <association Id="77d6c27d-6fe0-4717-95d7-493039ec94a7" isDerived="false" sourceEndRoleName="Player" targetEndRoleName="StartField" isLeaf="false" isAbstract="false">
-            <classMoniker Id="72b1fd1e-11ac-420f-9403-6b771030b856" LastKnownName="StartField" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd Id="7752701b-7a43-430a-8850-869c1dc7398e" name="Player" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
-                  <elementDefinition Id="d13882c5-7cef-4cd3-bee1-e5b4f975f739" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd Id="036d90dd-51bf-4caf-83a1-8d12a6a5f6bb" name="StartField" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-                  <lowerValueInternal>
-                    <literalString Id="1062289a-7e5a-4002-8296-0f1329803cbd" name="Lower" value="4">
-                      <elementDefinition Id="da8a7b1a-da5a-401f-a6f4-afc1dd748a47" />
-                    </literalString>
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString Id="3f1de1d9-a8f0-4f77-94cc-b5246eba79ba" name="Upper" value="4">
-                      <elementDefinition Id="ffff6b47-1724-4b52-a47f-cd403712adce" />
-                    </literalString>
-                  </upperValueInternal>
-                  <elementDefinition Id="28d5851f-e66c-4f12-808a-32196ab79543" />
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-            <elementDefinition Id="b3327f98-3993-4ae4-a050-2ed4349c7f45" />
-          </association>
         </targetEnds>
         <ownedOperationsInternal>
           <operation Id="31d13bb6-6590-47b9-8f3c-87eb9bf64b59" name="Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">

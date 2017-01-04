@@ -670,58 +670,6 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
-          <association
-            Id="b3327f98-3993-4ae4-a050-2ed4349c7f45"
-            isDerived="false"
-            sourceEndRoleName="Player"
-            targetEndRoleName="StartField"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="e33974df-7399-498d-b213-9f171ece77da"
-              LastKnownName="StartField"
-              LastKnownLocation="BarricaeModel.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="d13882c5-7cef-4cd3-bee1-e5b4f975f739"
-                  name="Player"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="28d5851f-e66c-4f12-808a-32196ab79543"
-                  name="StartField"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false">
-                  <lowerValueInternal>
-                    <literalString
-                      Id="da8a7b1a-da5a-401f-a6f4-afc1dd748a47"
-                      name="Lower"
-                      value="4" />
-                  </lowerValueInternal>
-                  <upperValueInternal>
-                    <literalString
-                      Id="ffff6b47-1724-4b52-a47f-cd403712adce"
-                      name="Upper"
-                      value="4" />
-                  </upperValueInternal>
-                </memberEnd>
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
         </targetEnds>
         <ownedOperationsInternal>
           <operation
