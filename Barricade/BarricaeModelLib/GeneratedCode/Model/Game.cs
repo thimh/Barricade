@@ -29,10 +29,7 @@ namespace Model
 
         public Game()
 	    {
-	        input = new InputView();
-
-            SetupGame();
-	        Console.ReadLine();
+	       
 	    }
 
 	    public void SetPlayers(Player player)
@@ -50,26 +47,7 @@ namespace Model
 	        throw new NotImplementedException();
 	    }
 
-	    public void SetupGame()
-	    {
-            Player = new List<Player>();
-            color = new Color[4] { Color.Blue, Color.Green, Color.Red, Color.Yellow };
-            int playerAmmount = input.AskPlayerAmmount();
-            for (int i = 0; i < playerAmmount; i++)
-	        {
-	            SetPlayers(new Player {Name = input.AskPlayerName(), Color = color[i]});
-	        }
-
-	        buildFields();
-        }
-
-	    private void buildFields()
-	    {
-	        for (int i = 0; i < 61; i++)
-	        {
-	            
-	        }
-	    }
+	   
 	}
 }
 
