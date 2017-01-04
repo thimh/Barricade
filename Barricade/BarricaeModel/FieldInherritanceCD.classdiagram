@@ -72,35 +72,9 @@
       </propertyInstances>
     </stereotypeInstance>
   </appliedStereotypesInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="6eefdbf3-7bfa-4a78-921e-70aa98e32aa5">
-      <profileInstance Id="beede197-e83e-4b07-a259-ccf326abd51b" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="2afae1fe-5e27-41a8-bafd-fd9355969cbb">
-      <profileInstance Id="a7a029e6-3a7a-4e59-816e-7177eca8b88b" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="0fc57a7b-2e73-4750-adc0-f8a629933d2d">
-      <profileInstance Id="64efc260-0b15-47a8-af06-38a378263bb8" name="CSharpProfile">
-        <elementDefinition Id="0371a971-1680-4d0c-ad02-f1715f4d4c0f" />
-      </profileInstance>
-      <elementDefinition Id="7e0a6812-5123-4a4d-9b1a-e2a568571414" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="6836baca-e2fd-4957-8196-3c9b42c0a741">
-      <profileInstance Id="fe5bfb4d-6975-43ea-ab7b-99290406bdc4" name="TextTemplateBindings">
-        <elementDefinition Id="b284c1ab-2361-49c7-b104-53d0385dfc58" />
-      </profileInstance>
-      <elementDefinition Id="d38cc554-d37b-472c-b7be-b85e568c5e61" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
-      <class Id="dcf86f46-95ba-4ec9-813f-f31c1fb2fd73" name="Field" isAbstract="true" isLeaf="false" isActiveClass="false">
+      <class Id="dcf86f46-95ba-4ec9-813f-f31c1fb2fd73" name="Field" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="f7474d07-9987-4049-855e-9aa96e318958" />
         <targetEnds>
           <association Id="8bf9d88b-e7b0-44ca-a632-28693ec8222e" isDerived="false" sourceEndRoleName="Field" targetEndRoleName="Pawn" isLeaf="false" isAbstract="false">
@@ -155,6 +129,22 @@
             </relationshipOwnedElementsInternal>
             <elementDefinition Id="849ad2e7-a895-480c-b263-b93295de0ef0" />
           </association>
+          <association Id="a8ef3c2b-848a-405e-b747-7474ec61b01b" isDerived="false" sourceEndRoleName="Field" targetEndRoleName="Field" isLeaf="false" isAbstract="false">
+            <classMoniker Id="dcf86f46-95ba-4ec9-813f-f31c1fb2fd73" LastKnownName="Field" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="a4183e26-0e4b-416e-970d-078c1de30c13" name="Field" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="15071a2d-82b4-4173-bf40-ce8a2cbfce1b" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="89e3e56a-8ae3-4d67-b01e-8b5b51ddfbe3" name="Field" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="a8a2c489-f5b9-44d1-a9d9-1bbbb77edf5f" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="1f7a757a-c3f9-4e70-b04b-7c86876d19f6" />
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property Id="72cda004-ff95-4dfb-9a58-114068123496" name="PawnColor" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -167,18 +157,6 @@
             <elementDefinition Id="6a6f051d-18fe-4879-a0de-2be14e4a6d8a" />
             <type_NamedElement>
               <referencedTypeMoniker Id="8b7cf164-ebc9-490e-88be-c4c2b352a94e" LastKnownName="FieldType" />
-            </type_NamedElement>
-          </property>
-          <property Id="d3cb571b-c38b-42a3-b7b5-769196d87b14" name="Next" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="c8c57710-caa8-47de-a4c7-4efc7db5a73f" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="fec9622a-0d70-45ba-9e19-c1ee43a47186" LastKnownName="Field" />
-            </type_NamedElement>
-          </property>
-          <property Id="35b74b73-1863-419c-895c-021286754d1e" name="NextOptional" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="88b6962b-3b9d-4dd5-9c1c-98f39d46ff81" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="44dea4d3-31b4-4e81-a07d-c26340bfb3b7" LastKnownName="Field" />
             </type_NamedElement>
           </property>
           <property Id="aac7275b-e042-4503-8577-d2ad42359ba8" name="Barricade" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -197,6 +175,30 @@
             <elementDefinition Id="093fecc7-e616-4519-b2ce-5804cce1cdeb" />
             <type_NamedElement>
               <referencedTypeMoniker Id="073ac8e9-ee48-450b-b7ff-f57e66e1cef3" LastKnownName="bool" />
+            </type_NamedElement>
+          </property>
+          <property Id="f8e2e3f3-a6d5-4750-b479-5334311699c2" name="fieldNorth" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cb3a6c4b-6689-49f1-8512-a549b593fb37" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="2f162eca-ef77-4690-902d-bfcdaee75d87" LastKnownName="Field" />
+            </type_NamedElement>
+          </property>
+          <property Id="45532bde-977e-4532-b414-15f912569e8a" name="fieldSouth" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="8737f331-520a-4d1d-bf7f-63f26855dfbf" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="372daea8-7b9a-40ed-a047-921d00f78543" LastKnownName="Field" />
+            </type_NamedElement>
+          </property>
+          <property Id="8e4d9aab-8ccb-4095-a4aa-0217d4247031" name="fieldEast" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="db4c6fcd-3d5f-4d97-84f0-197849ccd374" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="2f162eca-ef77-4690-902d-bfcdaee75d87" LastKnownName="Field" />
+            </type_NamedElement>
+          </property>
+          <property Id="6814f6af-91dc-4ac5-a27b-32dc2039f820" name="fieldWest" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="f52d2367-76bc-4ece-94f6-b33204e46cdd" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="2f162eca-ef77-4690-902d-bfcdaee75d87" LastKnownName="Field" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -417,11 +419,6 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="fec9622a-0d70-45ba-9e19-c1ee43a47186" name="Field" isAbstract="false" isLeaf="false" cachedFullName="BarricaeModel::Field">
-        <elementDefinition Id="93712518-dae9-4b00-b807-e276e2a30609" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="8b7cf164-ebc9-490e-88be-c4c2b352a94e" name="FieldType" isAbstract="false" isLeaf="false" cachedFullName="FieldType">
         <elementDefinition Id="3bfa4678-5c64-4fc2-9583-8f24c1d333b5" />
       </referencedType>
@@ -442,11 +439,6 @@
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
-      <referencedType Id="44dea4d3-31b4-4e81-a07d-c26340bfb3b7" name="Field" isAbstract="false" isLeaf="false" cachedFullName="BarricaeModel::Field">
-        <elementDefinition Id="93712518-dae9-4b00-b807-e276e2a30609" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
       <referencedType Id="073ac8e9-ee48-450b-b7ff-f57e66e1cef3" name="bool" isAbstract="false" isLeaf="false" cachedFullName="bool">
         <elementDefinition Id="db097873-feea-46ca-83f4-e525d10dc1a1" />
       </referencedType>
@@ -461,8 +453,44 @@
         <elementDefinition Id="93171d20-2ee9-4559-a51b-de819bb7fecf" />
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="2f162eca-ef77-4690-902d-bfcdaee75d87" name="Field" isAbstract="false" isLeaf="false" cachedFullName="BarricaeModel::Field">
+        <elementDefinition Id="93712518-dae9-4b00-b807-e276e2a30609" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="372daea8-7b9a-40ed-a047-921d00f78543" name="Field" isAbstract="false" isLeaf="false" cachedFullName="BarricaeModel::Field">
+        <elementDefinition Id="93712518-dae9-4b00-b807-e276e2a30609" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="95e7491b-e219-40fe-85da-3b1ec47f203c" name="BarricaeModel">
     <elementDefinition Id="14ab5f2c-6047-4450-a19f-8ad767cb2370" />
+    <profileInstances>
+      <packageHasProfileInstances Id="6eefdbf3-7bfa-4a78-921e-70aa98e32aa5">
+        <profileInstance Id="beede197-e83e-4b07-a259-ccf326abd51b" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="2afae1fe-5e27-41a8-bafd-fd9355969cbb">
+        <profileInstance Id="a7a029e6-3a7a-4e59-816e-7177eca8b88b" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="0fc57a7b-2e73-4750-adc0-f8a629933d2d">
+        <profileInstance Id="64efc260-0b15-47a8-af06-38a378263bb8" name="CSharpProfile">
+          <elementDefinition Id="0371a971-1680-4d0c-ad02-f1715f4d4c0f" />
+        </profileInstance>
+        <elementDefinition Id="7e0a6812-5123-4a4d-9b1a-e2a568571414" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="6836baca-e2fd-4957-8196-3c9b42c0a741">
+        <profileInstance Id="fe5bfb4d-6975-43ea-ab7b-99290406bdc4" name="TextTemplateBindings">
+          <elementDefinition Id="b284c1ab-2361-49c7-b104-53d0385dfc58" />
+        </profileInstance>
+        <elementDefinition Id="d38cc554-d37b-472c-b7be-b85e568c5e61" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

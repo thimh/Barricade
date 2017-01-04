@@ -1838,7 +1838,7 @@
       <class
         Id="f7474d07-9987-4049-855e-9aa96e318958"
         name="Field"
-        isAbstract="true"
+        isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
         <targetEnds>
@@ -1946,6 +1946,45 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
+          <association
+            Id="1f7a757a-c3f9-4e70-b04b-7c86876d19f6"
+            isDerived="false"
+            sourceEndRoleName="Field"
+            targetEndRoleName="Field"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="f7474d07-9987-4049-855e-9aa96e318958"
+              LastKnownName="Field"
+              LastKnownLocation="BarricaeModel.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="15071a2d-82b4-4173-bf40-ce8a2cbfce1b"
+                  name="Field"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a8a2c489-f5b9-44d1-a9d9-1bbbb77edf5f"
+                  name="Field"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
         </targetEnds>
         <ownedAttributesInternal>
           <property
@@ -1981,42 +2020,6 @@
               <undefinedTypeMoniker
                 Id="3bfa4678-5c64-4fc2-9583-8f24c1d333b5"
                 LastKnownName="FieldType"
-                LastKnownLocation="BarricaeModel.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="c8c57710-caa8-47de-a4c7-4efc7db5a73f"
-            name="Next"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="93712518-dae9-4b00-b807-e276e2a30609"
-                LastKnownName="Field"
-                LastKnownLocation="BarricaeModel.uml" />
-            </type_NamedElement>
-          </property>
-          <property
-            Id="88b6962b-3b9d-4dd5-9c1c-98f39d46ff81"
-            name="NextOptional"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <classMoniker
-                Id="93712518-dae9-4b00-b807-e276e2a30609"
-                LastKnownName="Field"
                 LastKnownLocation="BarricaeModel.uml" />
             </type_NamedElement>
           </property>
@@ -2071,6 +2074,78 @@
               <undefinedTypeMoniker
                 Id="db097873-feea-46ca-83f4-e525d10dc1a1"
                 LastKnownName="bool"
+                LastKnownLocation="BarricaeModel.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="cb3a6c4b-6689-49f1-8512-a549b593fb37"
+            name="fieldNorth"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="93712518-dae9-4b00-b807-e276e2a30609"
+                LastKnownName="Field"
+                LastKnownLocation="BarricaeModel.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="8737f331-520a-4d1d-bf7f-63f26855dfbf"
+            name="fieldSouth"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="93712518-dae9-4b00-b807-e276e2a30609"
+                LastKnownName="Field"
+                LastKnownLocation="BarricaeModel.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="db4c6fcd-3d5f-4d97-84f0-197849ccd374"
+            name="fieldEast"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="93712518-dae9-4b00-b807-e276e2a30609"
+                LastKnownName="Field"
+                LastKnownLocation="BarricaeModel.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="f52d2367-76bc-4ece-94f6-b33204e46cdd"
+            name="fieldWest"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="93712518-dae9-4b00-b807-e276e2a30609"
+                LastKnownName="Field"
                 LastKnownLocation="BarricaeModel.uml" />
             </type_NamedElement>
           </property>

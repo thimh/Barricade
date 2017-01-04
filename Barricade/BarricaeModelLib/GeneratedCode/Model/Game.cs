@@ -59,7 +59,17 @@ namespace Model
 	        {
 	            SetPlayers(new Player {Name = input.AskPlayerName(), Color = color[i]});
 	        }
+
+	        buildFields();
         }
+
+	    private void buildFields()
+	    {
+	        for (int i = 0; i < 61; i++)
+	        {
+	            
+	        }
+	    }
 	}
 }
 
