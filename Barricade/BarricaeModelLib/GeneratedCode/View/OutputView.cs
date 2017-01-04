@@ -13,6 +13,14 @@ namespace View
 
 	public class OutputView
 	{
+
+	    public void showBoard(Field[,] fields)
+	    {
+	        foreach (var field in fields)
+	        {
+	            Console.Write("1");
+	        }
+	    }
 	}
 }
 

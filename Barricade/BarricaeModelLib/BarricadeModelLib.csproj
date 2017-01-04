@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="GeneratedCode\Model\Barricade.cs" />
     <Compile Include="GeneratedCode\Model\BarricadeField.cs" />
-    <Compile Include="GeneratedCode\Model\Board.cs" />
     <Compile Include="GeneratedCode\Model\Color.cs" />
     <Compile Include="GeneratedCode\Controller\Controller.cs" />
     <Compile Include="GeneratedCode\Model\Field.cs" />
@@ -50,6 +49,7 @@
     <Compile Include="GeneratedCode\Model\ForestField.cs" />
     <Compile Include="GeneratedCode\Model\Dice.cs" />
     <Compile Include="GeneratedCode\Model\Game.cs" />
+    <Compile Include="GeneratedCode\Model\PathField.cs" />
     <Compile Include="GeneratedCode\Model\Pawn.cs" />
     <Compile Include="GeneratedCode\Model\Player.cs" />
     <Compile Include="GeneratedCode\Model\RestField.cs" />
@@ -57,6 +57,9 @@
     <Compile Include="GeneratedCode\View\InputView.cs" />
     <Compile Include="GeneratedCode\View\OutputView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GeneratedCode\Board\Baricade.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -7,11 +7,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 
 public class Pawn
 {
-    private Field location;
+    private string location;
 
     public int id;
 }

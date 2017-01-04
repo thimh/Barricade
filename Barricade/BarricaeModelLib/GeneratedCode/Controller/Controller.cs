@@ -17,40 +17,34 @@ namespace Controller
 	{
 	    public virtual Dice Dice { get; set; }
 
-	    public virtual InputView InputView { get; set; }
-
-	    public virtual OutputView OutputView { get; set; }
+	    private InputView inputView;
+	    private OutputView outputView;
 
 	    public virtual Game Game { get; set; }
 
 	    public Controller()
 	    {
             Game = new Game();
-	        SetupGame();   
+            inputView = new InputView();
+            outputView = new OutputView();
+	        SetupGame();
 	    }
 
         public void SetupGame()
         {
-            var Player = new List<Player>();
             var color = new Color[4] { Color.Blue, Color.Green, Color.Red, Color.Yellow };
-            int playerAmmount = InputView.AskPlayerAmmount();
+            int playerAmmount = inputView.AskPlayerAmmount();
             for (int i = 0; i < playerAmmount; i++)
             {
-                Game.SetPlayers(new Player { Name = InputView.AskPlayerName(), Color = color[i] });
+                Game.Players.Add(new Player { Name = inputView.AskPlayerName(), Color = color[i]});
             }
 
-            buildFields();
+            outputView.showBoard(Game.Fields);
         }
 
         public virtual void GameRunning()
         {
             throw new System.NotImplementedException();
-        }
-
-
-        private void buildFields()
-        {
-            
         }
     }
 }
