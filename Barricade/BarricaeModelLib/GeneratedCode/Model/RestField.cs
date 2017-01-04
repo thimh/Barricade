@@ -11,6 +11,6 @@ using System.Text;
 
 public class RestField : Field
 {
-    public override string Icon { get { return "RS"; } }
+    public override string Icon { get { return "R "; } }
 }
 

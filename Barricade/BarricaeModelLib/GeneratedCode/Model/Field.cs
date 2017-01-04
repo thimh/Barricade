@@ -12,7 +12,7 @@ using System.Text;
 public class Field
 {
     public virtual bool isOccupied { get; set; }
-    public virtual string Icon { get { return "XX"; }}
+    public virtual string Icon { get { return "X "; }}
     public virtual bool canHaveBarricade { get; set; }
     public virtual Pawn Pawn { get; set; }
     public virtual Barricade Barricade { get; set; }
