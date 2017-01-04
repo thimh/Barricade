@@ -21,11 +21,38 @@ public class Player
 
     public Player()
     {
-        Pawn = new List<Pawn> { 
-            new Pawn{id = 1},
-            new Pawn{id = 2},
-            new Pawn{id = 3},
-            new Pawn{id = 4}};
+        if (Color == Color.Blue)
+        {
+            Pawn = new List<Pawn> {
+            new Pawn{Id = 1, Icon = "B1"},
+            new Pawn{Id = 2, Icon = "B2"},
+            new Pawn{Id = 3, Icon = "B3"},
+            new Pawn{Id = 4, Icon = "B4"}};
+        }
+        if (Color == Color.Yellow)
+        {
+            Pawn = new List<Pawn> {
+            new Pawn{Id = 1, Icon = "Y1"},
+            new Pawn{Id = 2, Icon = "Y2"},
+            new Pawn{Id = 3, Icon = "Y3"},
+            new Pawn{Id = 4, Icon = "Y4"}};
+        }
+        if (Color == Color.Red)
+        {
+            Pawn = new List<Pawn> {
+            new Pawn{Id = 1, Icon = "R1"},
+            new Pawn{Id = 2, Icon = "R2"},
+            new Pawn{Id = 3, Icon = "R3"},
+            new Pawn{Id = 4, Icon = "R4"}};
+        }
+        if (Color == Color.Green)
+        {
+            Pawn = new List<Pawn> {
+            new Pawn{Id = 1, Icon = "G1"},
+            new Pawn{Id = 2, Icon = "G2"},
+            new Pawn{Id = 3, Icon = "G3"},
+            new Pawn{Id = 4, Icon = "G4"}};
+        }
     }
 
     public void Move()

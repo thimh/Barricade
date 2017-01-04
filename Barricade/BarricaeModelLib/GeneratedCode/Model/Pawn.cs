@@ -12,8 +12,10 @@ using System.Text;
 
 public class Pawn
 {
-    private string location;
+    private string location { get; set; }
 
-    public int id;
+    public int Id { get; set; }
+
+    public string Icon { get; set; }
 }
 
