@@ -24,42 +24,10 @@ namespace View
 	        return Console.Read();
 	    }
 
-	    public Color AskPlayerColor()
+	    public string AskPlayerName()
         {
-            Console.WriteLine();
-            Console.WriteLine("You can choose between:");
-            Console.WriteLine("Press 'b' for " + Color.Blue);
-            Console.WriteLine("Press 'y' for " + Color.Yellow);
-            Console.WriteLine("Press 'r' for " + Color.Red);
-            Console.WriteLine("Press 'g' for " + Color.Green);
-
-            while (true)
-            {
-                Console.WriteLine();
-                Console.WriteLine("What color do you want to be?");
-                
-	            var input = Console.ReadKey().KeyChar;
-	            Console.Read();
-                switch (input)
-	            {
-                    case 'b':
-                        Console.WriteLine();
-	                    return Color.Blue;
-                    case 'y':
-                        Console.WriteLine();
-                        return Color.Yellow;
-                    case 'r':
-                        Console.WriteLine();
-                        return Color.Red;
-                    case 'g':
-                        Console.WriteLine();
-                        return Color.Green;
-                    default:
-                        Console.WriteLine();
-                        Console.WriteLine("Wrong input!");
-                        break;
-                }
-	        }
-	    }
+            Console.WriteLine("What will be your player name?");
+            return Console.ReadLine();
+        }
 	}
 }

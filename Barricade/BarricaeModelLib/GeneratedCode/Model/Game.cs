@@ -56,8 +56,8 @@ namespace Model
 	        int playerAmmount = input.AskPlayerAmmount();
             for (int i = 0; i <= playerAmmount; i++)
 	        {
-	            SetPlayers(new Player {Color = input.AskPlayerColor()});
-                Console.WriteLine("You have chosen the color " + input.AskPlayerColor().ToString());
+	            SetPlayers(new Player {Name = input.AskPlayerName()});
+                Console.WriteLine("Your player name is " + Player.ToArray()[i].Name); //TODO This is for testing, remove when done!
 	        }
 	    }
 
