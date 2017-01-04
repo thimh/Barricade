@@ -5,6 +5,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System.Dynamic;
 using View;
 
 namespace Model
@@ -28,8 +29,17 @@ namespace Model
 	    private Color[] color;
 
         public Game()
-	    {
+        {
+            BuildFields();
+        }
 
+	    private void BuildFields()
+	    {
+            
+	        for (int i = 0; i < 61; i++)
+	        {
+	            
+	        }
 	    }
 
 	    public void SetPlayers(Player player)
@@ -46,6 +56,7 @@ namespace Model
 	    {
 	        throw new NotImplementedException();
 	    }
+        
 	}
 }
 

@@ -11,5 +11,6 @@ using System.Text;
 
 public class StartField : Field
 {
+    public Color Color { get; set; }
 }
 

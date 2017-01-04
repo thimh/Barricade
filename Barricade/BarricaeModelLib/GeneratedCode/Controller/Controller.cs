@@ -15,38 +15,18 @@ namespace Controller
 
 	public class Controller
 	{
-		public virtual Dice Dice
-		{
-			get;
-			set;
-		}
+	    public virtual Dice Dice { get; set; }
 
-		public virtual InputView InputView
-		{
-			get;
-			set;
-		}
+	    public virtual InputView InputView { get; set; }
 
-		public virtual OutputView OutputView
-		{
-			get;
-			set;
-		}
+	    public virtual OutputView OutputView { get; set; }
 
-		public virtual Game Game
-		{
-			get;
-			set;
-		}
-
-		public virtual void Go()
-		{
-			throw new System.NotImplementedException();
-		}
+	    public virtual Game Game { get; set; }
 
 	    public Controller()
 	    {
-	        
+            Game = new Game();
+	        SetupGame();   
 	    }
 
         public void SetupGame()
@@ -62,12 +42,15 @@ namespace Controller
             buildFields();
         }
 
+        public virtual void GameRunning()
+        {
+            throw new System.NotImplementedException();
+        }
+
+
         private void buildFields()
         {
-            for (int i = 0; i < 61; i++)
-            {
-
-            }
+            
         }
     }
 }

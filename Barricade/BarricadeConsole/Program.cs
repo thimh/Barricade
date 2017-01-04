@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Model;
-
-namespace BarricadeConsole
+﻿namespace BarricadeConsole
 {
     class Program
     {
         static void Main(string[] args)
         {
-            new Game();
+            new Controller.Controller();
         }
     }
 }
