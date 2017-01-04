@@ -11,5 +11,6 @@ using System.Text;
 
 public class FinishField : Field
 {
+    public override string Icon { get { return "FF"; } }
 }
 

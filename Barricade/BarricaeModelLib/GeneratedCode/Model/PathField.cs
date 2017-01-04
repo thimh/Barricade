@@ -8,6 +8,6 @@ namespace BarricaeModelLib.GeneratedCode.Model
 {
     public class PathField:Field
     {
-
+        public override string Icon => "||";
     }
 }

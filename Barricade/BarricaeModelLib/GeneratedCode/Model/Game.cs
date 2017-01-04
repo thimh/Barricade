@@ -39,6 +39,9 @@ namespace Model
             BuildFields();
         }
 
+        /// <summary>
+        /// Build a field array
+        /// </summary>
 	    private void BuildFields()
 	    {
 
@@ -95,7 +98,6 @@ namespace Model
 	            linecount++;
 	        }
 	    }
-        
         
 		public void ChangeTurn()
 		{

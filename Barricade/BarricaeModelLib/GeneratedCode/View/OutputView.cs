@@ -16,10 +16,21 @@ namespace View
 
 	    public void showBoard(Field[,] fields)
 	    {
-	        foreach (var field in fields)
+            Console.Clear();
+            Console.WriteLine("");
+            for (int y = 0; y < 14; y++) 
 	        {
-	            Console.Write("1");
-	        }
+                for (int x = 0; x < 21; x++)
+                {
+                    if (fields[y, x] == null)
+                    {
+                        Console.Write("  ");
+                        continue;
+                    }
+	                Console.Write(fields[y,x].Icon);
+	            }
+                Console.WriteLine();
+            }
 	    }
 	}
 }

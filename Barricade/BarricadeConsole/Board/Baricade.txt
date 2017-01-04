@@ -1,14 +1,14 @@
-          w
-  x-x-x-x-o-x-x-x-x
-  -               -
-  x-x-x-s-o-s-x-x-x
-          -
-    x-x-o-x-o-x-x
-    -           -
-    s-o-x-x-x-o-s
-          -
-      x-x-s-x-x
-      -   f   -
+          w          
+  x-x-x-x-o-x-x-x-x  
+  -               -  
+  x-x-x-s-o-s-x-x-x  
+          -          
+    x-x-o-x-o-x-x    
+    -           -    
+    s-o-x-x-x-o-s    
+          -          
+      x-x-s-x-x      
+      -   f   -      
 s-x-s-x-x-s-x-x-s-x-s
 -   -     -     -   -
 x-r-x-g-x-x-x-y-x-b-x
