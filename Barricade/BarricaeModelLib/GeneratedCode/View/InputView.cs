@@ -37,6 +37,7 @@ namespace View
                 Console.WriteLine("What color do you want to be?");
 
 	            var input = Console.ReadLine();
+
                 switch (input)
 	            {
                     case "b":
@@ -54,4 +55,3 @@ namespace View
 	    }
 	}
 }
-

@@ -11,7 +11,7 @@ using System.Text;
 
 public class Player
 {
-    public virtual IEnumerable<Pawn> Pawn { get; set; }
+    public virtual List<Pawn> Pawn { get; set; }
 
     public virtual Color Color { get; set; }
 
@@ -19,7 +19,11 @@ public class Player
 
     public Player()
     {
-        
+        Pawn = new List<Pawn> { 
+            new Pawn(),
+            new Pawn(),
+            new Pawn(),
+            new Pawn()};
     }
 
     public void Move()

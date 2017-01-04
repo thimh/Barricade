@@ -461,6 +461,11 @@
             <elementDefinition Id="b3327f98-3993-4ae4-a050-2ed4349c7f45" />
           </association>
         </targetEnds>
+        <ownedOperationsInternal>
+          <operation Id="31d13bb6-6590-47b9-8f3c-87eb9bf64b59" name="Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7a801c07-55d2-4983-93cb-7a1a9a076438" />
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -956,6 +961,24 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="b72771f2-b028-48e8-893f-219c282424ad" name="StartGame" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bfc15e22-7526-47a6-9903-a0e2d9f451f3" />
+          </operation>
+          <operation Id="19711e48-d81a-4e34-9291-deb26046be79" name="SetPlayers" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="fe97ae6b-8b73-4887-8ea6-38c5fff1cffe" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d8570503-e0dc-4a78-a9c2-7a1efee07eb8" name="Amount" direction="In">
+                  <elementDefinition Id="0924fbe8-80e1-4317-a347-5c310e84d436" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="4e20b86e-27c3-4ad5-9f79-25f0550874d2" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -1132,6 +1155,11 @@
         <elementDefinition Id="d6b542cd-a196-4125-86ed-1096abb45261" />
       </class>
     </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="4e20b86e-27c3-4ad5-9f79-25f0550874d2" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
+        <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="0bdcf60f-783f-492a-b65c-e8ccb87561a5" name="BarricaeModel">
     <elementDefinition Id="14ab5f2c-6047-4450-a19f-8ad767cb2370" />

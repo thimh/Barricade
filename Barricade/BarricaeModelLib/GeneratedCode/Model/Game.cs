@@ -39,7 +39,7 @@ namespace Model
 	    {
 	        Player.Add(player);
 	    }
-
+        
 		public void ChangeTurn()
 		{
 			throw new System.NotImplementedException();
