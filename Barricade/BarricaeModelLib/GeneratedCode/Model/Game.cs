@@ -52,9 +52,10 @@ namespace Model
 
 	    public void SetupGame()
 	    {
-	        for (int i = 0; i < input.AskPlayerAmmount(); i++)
+            for (int i = 0; i < input.AskPlayerAmmount(); i++)
 	        {
-	            SetPlayers(new Player {Color = input.AskPlayerColor()});
+	            //SetPlayers(new Player {Color = input.AskPlayerColor()});
+                Console.WriteLine("You have chosen the color " + input.AskPlayerColor().ToString());
 	        }
 	    }
 
