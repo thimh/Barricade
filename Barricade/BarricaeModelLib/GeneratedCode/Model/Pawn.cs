@@ -12,7 +12,5 @@ using System.Text;
 public class Pawn
 {
     private Field location;
-
-    public int id;
 }
 

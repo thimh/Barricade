@@ -22,10 +22,10 @@ public class Player
     public Player()
     {
         Pawn = new List<Pawn> { 
-            new Pawn{id = 1},
-            new Pawn{id = 2},
-            new Pawn{id = 3},
-            new Pawn{id = 4}};
+            new Pawn(),
+            new Pawn(),
+            new Pawn(),
+            new Pawn()};
     }
 
     public void Move()
