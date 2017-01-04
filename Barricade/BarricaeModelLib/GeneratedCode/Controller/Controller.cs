@@ -44,6 +44,31 @@ namespace Controller
 			throw new System.NotImplementedException();
 		}
 
-	}
+	    public Controller()
+	    {
+	        
+	    }
+
+        public void SetupGame()
+        {
+            var Player = new List<Player>();
+            var color = new Color[4] { Color.Blue, Color.Green, Color.Red, Color.Yellow };
+            int playerAmmount = InputView.AskPlayerAmmount();
+            for (int i = 0; i < playerAmmount; i++)
+            {
+                Game.SetPlayers(new Player { Name = InputView.AskPlayerName(), Color = color[i] });
+            }
+
+            buildFields();
+        }
+
+        private void buildFields()
+        {
+            for (int i = 0; i < 61; i++)
+            {
+
+            }
+        }
+    }
 }
 
