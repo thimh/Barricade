@@ -22,12 +22,21 @@ namespace View
 	        {
                 for (int x = 0; x < 21; x++)
                 {
-                    if (fields[y, x] == null)
+                    Field field = fields[y, x];
+                    if (field == null)
                     {
                         Console.Write("  ");
-                        continue;
                     }
-	                Console.Write(fields[y,x].Icon);
+                    else if (field.Barricade != null)
+                    {
+                        Console.Write("()");
+                    }
+                    else if (field.Pawn != null)
+                    {
+                        Console.Write(field.Pawn.Icon);
+                    }
+                    else
+	                    Console.Write(fields[y,x].Icon);
 	            }
                 Console.WriteLine();
             }
