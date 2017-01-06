@@ -40,7 +40,10 @@
 
         public virtual void GameRunning()
         {
-            throw new System.NotImplementedException();
+            while (true)
+            {
+                
+            }
         }
     }
 }

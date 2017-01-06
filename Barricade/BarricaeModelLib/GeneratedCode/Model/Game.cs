@@ -9,14 +9,12 @@ using System.Dynamic;
 using System.IO;
 using BarricaeModelLib.GeneratedCode.Model;
 using View;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace Model
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
-
 	public class Game
 	{
 	    public Player currentPlayer { get; set; }
@@ -101,14 +99,10 @@ namespace Model
         
 		public void ChangeTurn()
 		{
-			throw new System.NotImplementedException();
+		    int nextPlayer = currentPlayer.id++;
+		    if (nextPlayer >= Players.Count) nextPlayer = 0;
+		    currentPlayer = Players.FirstOrDefault(x => x.Id == nextPlayer);
 		}
-
-	    public void StartGame()
-	    {
-	        throw new NotImplementedException();
-	    }
-        
 	}
 }
 
