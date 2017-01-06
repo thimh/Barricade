@@ -12,7 +12,7 @@ using System.Text;
 
 public class Pawn
 {
-    private string location { get; set; }
+    public string location { get; set; }
 
     public int Id { get; set; }
 

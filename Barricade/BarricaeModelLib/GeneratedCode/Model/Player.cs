@@ -11,7 +11,7 @@ using System.Text;
 
 public class Player
 {
-    public virtual List<Pawn> Pawn { get; set; }
+    public virtual Pawn[] Pawns { get; set; }
 
     public virtual Color Color { get; set; }
 
@@ -23,44 +23,40 @@ public class Player
 
     public Player()
     {
+        Pawns = new Pawn[4];
         if (Color == Color.Blue)
         {
-            Pawn = new List<Pawn> {
-            new Pawn{Id = 1, Icon = "B1"},
-            new Pawn{Id = 2, Icon = "B2"},
-            new Pawn{Id = 3, Icon = "B3"},
-            new Pawn{Id = 4, Icon = "B4"}};
+            Pawns[0] = new Pawn { Icon = "B1", Id = 0};
+            Pawns[1] = new Pawn { Icon = "B2", Id = 1};
+            Pawns[2] = new Pawn { Icon = "B3", Id = 2};
+            Pawns[3] = new Pawn { Icon = "B4", Id = 3};
         }
         if (Color == Color.Yellow)
         {
-            Pawn = new List<Pawn> {
-            new Pawn{Id = 1, Icon = "Y1"},
-            new Pawn{Id = 2, Icon = "Y2"},
-            new Pawn{Id = 3, Icon = "Y3"},
-            new Pawn{Id = 4, Icon = "Y4"}};
+            Pawns[0] = new Pawn { Icon = "Y1", Id = 0};
+            Pawns[1] = new Pawn { Icon = "Y2", Id = 1};
+            Pawns[2] = new Pawn { Icon = "Y3", Id = 2};
+            Pawns[3] = new Pawn { Icon = "Y4", Id = 3};
         }
         if (Color == Color.Red)
         {
-            Pawn = new List<Pawn> {
-            new Pawn{Id = 1, Icon = "R1"},
-            new Pawn{Id = 2, Icon = "R2"},
-            new Pawn{Id = 3, Icon = "R3"},
-            new Pawn{Id = 4, Icon = "R4"}};
+            Pawns[0] = new Pawn { Icon = "R1", Id = 0};
+            Pawns[1] = new Pawn { Icon = "R2", Id = 1};
+            Pawns[2] = new Pawn { Icon = "R3", Id = 2};
+            Pawns[3] = new Pawn { Icon = "R4", Id = 3};
         }
         if (Color == Color.Green)
         {
-            Pawn = new List<Pawn> {
-            new Pawn{Id = 1, Icon = "G1"},
-            new Pawn{Id = 2, Icon = "G2"},
-            new Pawn{Id = 3, Icon = "G3"},
-            new Pawn{Id = 4, Icon = "G4"}};
+            Pawns[0] = new Pawn { Icon = "G1", Id = 0};
+            Pawns[1] = new Pawn { Icon = "G2", Id = 1};
+            Pawns[2] = new Pawn { Icon = "G3", Id = 2};
+            Pawns[3] = new Pawn { Icon = "G4", Id = 3};
         }
     }
 
-    public void Move()
+    public void Move(Pawn pawn)
     {
-        throw new NotImplementedException();
+        Pawns[pawn.Id] = pawn;
     }
-
 }
 

@@ -21,13 +21,19 @@ namespace View
 	    public int AskPlayerAmmount()
 	    {
 	        Console.WriteLine("How many players?");
-	        return Convert.ToInt32(Console.ReadLine());
+	        return Convert.ToInt16(Console.ReadLine());
 	    }
 
 	    public string AskPlayerName()
         {
             Console.WriteLine("What will be your player name?");
             return Console.ReadLine();
+        }
+
+	    public int AskPawn()
+	    {
+            Console.WriteLine("What pawn do you whish to move?");
+            return Convert.ToInt16(Console.ReadLine());
         }
 	}
 }

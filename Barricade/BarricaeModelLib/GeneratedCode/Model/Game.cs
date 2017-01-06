@@ -97,11 +97,14 @@ namespace Model
 	        }
 	    }
         
+        /// <summary>
+        /// change player to next in list
+        /// </summary>
 		public void ChangeTurn()
 		{
-		    int nextPlayer = currentPlayer.id++;
+		    int nextPlayer = currentPlayer.ID++;
 		    if (nextPlayer >= Players.Count) nextPlayer = 0;
-		    currentPlayer = Players.FirstOrDefault(x => x.Id == nextPlayer);
+		    currentPlayer = Players.FirstOrDefault(x => x.ID == nextPlayer);
 		}
 	}
 }
