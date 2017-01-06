@@ -55,34 +55,34 @@ namespace Model
 	                switch (line[i])
 	                {
                         case 'w':
-                            field = new FinishField();
+                            field = new FinishField {LocationX = i, LocationY = linecount};
 	                        break;
                         case 'x':
-                            field = new Field();
+                            field = new Field { LocationX = i, LocationY = linecount };
 	                        break;
                         case 'o':
-                            field = new Field() {Barricade = new Barricade()};
+                            field = new Field {Barricade = new Barricade(), LocationX = i, LocationY = linecount };
 	                        break;
                         case 's':
-                            field = new RestField();
+                            field = new RestField { LocationX = i, LocationY = linecount };
 	                        break;
                         case 'f':
-                            field = new ForestField();
+                            field = new ForestField { LocationX = i, LocationY = linecount };
 	                        break;
                         case 'r':
-                            field = new StartField {Color = Color.Red};
+                            field = new StartField {Color = Color.Red, LocationX = i, LocationY = linecount };
 	                        break;
                         case 'y':
-                            field = new StartField { Color = Color.Yellow };
+                            field = new StartField { Color = Color.Yellow, LocationX = i, LocationY = linecount };
                             break;
                         case 'g':
-                            field = new StartField { Color = Color.Green };
+                            field = new StartField { Color = Color.Green, LocationX = i, LocationY = linecount };
                             break;
                         case 'b':
-                            field = new StartField { Color = Color.Blue };
+                            field = new StartField { Color = Color.Blue, LocationX = i, LocationY = linecount };
                             break;
                         case '-':
-                            field = new PathField();
+                            field = new PathField { LocationX = i, LocationY = linecount };
 	                        break;
                         case ' ':
 	                        field = null;

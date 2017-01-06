@@ -1,4 +1,5 @@
 ﻿using System.Security.Cryptography.X509Certificates;
+using BarricaeModelLib.GeneratedCode.Model;
 
 namespace Controller
 {
@@ -78,6 +79,27 @@ namespace Controller
 	    {
 
 	        return null;
+	    }
+
+	    public void ChooseDirection(Pawn selectedPawn, int eyes)
+	    {
+	        if (selectedPawn.LocationX == 0 && selectedPawn.LocationY == 0)
+	        {
+	            selectedPawn.LocationX = Game.currentPlayer.StartField.LocationX;
+	            selectedPawn.LocationY = Game.currentPlayer.StartField.LocationY;
+	        }
+	        else
+	        {
+	            for (int i = 0; i < eyes; i++)
+	            {
+	                var field = Game.Fields[selectedPawn.LocationX, selectedPawn.LocationY];
+	                if (Game.Fields[field.LocationX+1, field.LocationY].GetType() == typeof(PathField) && Game.Fields[field.LocationX+2, field.LocationY].Barricade == null)
+	                {
+	                    //selectedPawn.LocationX = selectedPawn.LocationX+2;
+                        //TODO: ASK QUESTION FOR DIRECTION!!!
+	                }
+	            }
+	        }
 	    }
     }
 }
