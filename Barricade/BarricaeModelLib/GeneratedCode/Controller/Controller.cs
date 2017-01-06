@@ -18,14 +18,16 @@
 
 	    public Controller()
 	    {
-            Game = new Game();
             inputView = new InputView();
             outputView = new OutputView();
 	        SetupGame();
+            GameRunning();
 	    }
 
         public void SetupGame()
         {
+
+            Game = new Game();
             var color = new Color[4] { Color.Blue, Color.Green, Color.Red, Color.Yellow };
             var playerAmmount = inputView.AskPlayerAmmount();
             for (var i = 0; i < playerAmmount; i++)
