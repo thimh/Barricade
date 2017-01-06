@@ -7,14 +7,7 @@
 
 	public class Dice
 	{
-	    public int eyes
-	    {
-	        get
-	        {
-	            return new Random().Next(1,6);
-	        }
-	    }
-
+	    public int Eyes => new Random().Next(1,6);
 	}
 }
 
