@@ -41,7 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GeneratedCode\Model\Barricade.cs" />
-    <Compile Include="GeneratedCode\Model\BarricadeField.cs" />
     <Compile Include="GeneratedCode\Model\Color.cs" />
     <Compile Include="GeneratedCode\Controller\Controller.cs" />
     <Compile Include="GeneratedCode\Model\Field.cs" />

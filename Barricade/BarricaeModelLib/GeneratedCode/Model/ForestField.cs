@@ -11,6 +11,6 @@ using System.Text;
 
 public class ForestField : Field
 {
-    public override string Icon { get { return "FR"; } }
+    public override string Icon { get { return "W "; } }
 }
 

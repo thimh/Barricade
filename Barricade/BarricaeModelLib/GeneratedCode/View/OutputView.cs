@@ -29,7 +29,7 @@ namespace View
                     }
                     else if (field.Barricade != null)
                     {
-                        Console.Write("()");
+                        Console.Write(field.Barricade.Icon);
                     }
                     else if (field.Pawn != null)
                     {
