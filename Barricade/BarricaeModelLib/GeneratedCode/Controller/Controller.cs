@@ -81,25 +81,49 @@ namespace Controller
 	        return null;
 	    }
 
-	    public void ChooseDirection(Pawn selectedPawn, int eyes)
+	    public List<Field> EndingFields(Pawn selectedPawn, int eyes)
 	    {
+            var endFields = new List<Field>();
 	        if (selectedPawn.LocationX == 0 && selectedPawn.LocationY == 0)
 	        {
 	            selectedPawn.LocationX = Game.currentPlayer.StartField.LocationX;
 	            selectedPawn.LocationY = Game.currentPlayer.StartField.LocationY;
+	            eyes--;
 	        }
-	        else
+
+	        if (eyes == 0) endFields.Add(Game.currentPlayer.StartField);
+	        bool walkedAllPaths = false;
+            while(!walkedAllPaths)
 	        {
-	            for (int i = 0; i < eyes; i++)
+	            for (var i = 0; i < eyes; i++)
 	            {
-	                var field = Game.Fields[selectedPawn.LocationX, selectedPawn.LocationY];
-	                if (Game.Fields[field.LocationX+1, field.LocationY].GetType() == typeof(PathField) && Game.Fields[field.LocationX+2, field.LocationY].Barricade == null)
+	                //West
+	                if (Game.Fields[selectedPawn.LocationX - 1, selectedPawn.LocationY].GetType() == typeof(PathField))
 	                {
-	                    //selectedPawn.LocationX = selectedPawn.LocationX+2;
-                        //TODO: ASK QUESTION FOR DIRECTION!!!
+
 	                }
+	                //East
+	                else if (Game.Fields[selectedPawn.LocationX + 1, selectedPawn.LocationY].GetType() == typeof(PathField))
+	                {
+
+	                }
+	                //North
+	                else if (Game.Fields[selectedPawn.LocationX, selectedPawn.LocationY - 1].GetType() == typeof(PathField))
+	                {
+
+	                }
+	                //South
+	                else if (Game.Fields[selectedPawn.LocationX, selectedPawn.LocationY + 1].GetType() == typeof(PathField))
+	                {
+
+	                }
+
+
+
 	            }
 	        }
+
+	        return endFields;
 	    }
     }
 }
