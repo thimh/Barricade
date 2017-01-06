@@ -1,0 +1,16 @@
+C:\Users\Heider\Google Drive\Avans\Jaar 2 v2\MODL3\Barricade\Barricade\BarricadeConsole\bin\Debug\BarricadeConsole.exe.config
+C:\Users\Heider\Google Drive\Avans\Jaar 2 v2\MODL3\Barricade\Barricade\BarricadeConsole\bin\Debug\BarricadeConsole.exe
+C:\Users\Heider\Google Drive\Avans\Jaar 2 v2\MODL3\Barricade\Barricade\BarricadeConsole\bin\Debug\BarricadeConsole.pdb
+C:\Users\Heider\Google Drive\Avans\Jaar 2 v2\MODL3\Barricade\Barricade\BarricadeConsole\bin\Debug\BarricaeModelLib.dll
+C:\Users\Heider\Google Drive\Avans\Jaar 2 v2\MODL3\Barricade\Barricade\BarricadeConsole\bin\Debug\BarricaeModelLib.pdb
+C:\Users\Heider\Google Drive\Avans\Jaar 2 v2\MODL3\Barricade\Barricade\BarricadeConsole\obj\Debug\BarricadeConsole.csprojResolveAssemblyReference.cache
+C:\Users\Heider\Google Drive\Avans\Jaar 2 v2\MODL3\Barricade\Barricade\BarricadeConsole\obj\Debug\BarricadeConsole.exe
+C:\Users\Heider\Google Drive\Avans\Jaar 2 v2\MODL3\Barricade\Barricade\BarricadeConsole\obj\Debug\BarricadeConsole.pdb
+C:\Users\Marijn\Documents\Barricade\Barricade\BarricadeConsole\bin\Debug\BarricadeConsole.exe.config
+C:\Users\Marijn\Documents\Barricade\Barricade\BarricadeConsole\bin\Debug\BarricadeConsole.exe
+C:\Users\Marijn\Documents\Barricade\Barricade\BarricadeConsole\bin\Debug\BarricadeConsole.pdb
+C:\Users\Marijn\Documents\Barricade\Barricade\BarricadeConsole\bin\Debug\BarricaeModelLib.dll
+C:\Users\Marijn\Documents\Barricade\Barricade\BarricadeConsole\bin\Debug\BarricaeModelLib.pdb
+C:\Users\Marijn\Documents\Barricade\Barricade\BarricadeConsole\obj\Debug\BarricadeConsole.csprojResolveAssemblyReference.cache
+C:\Users\Marijn\Documents\Barricade\Barricade\BarricadeConsole\obj\Debug\BarricadeConsole.exe
+C:\Users\Marijn\Documents\Barricade\Barricade\BarricadeConsole\obj\Debug\BarricadeConsole.pdb
