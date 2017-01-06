@@ -17,6 +17,8 @@ public class Player
 
     public string Name { get; set; }
 
+    public int ID { get; set; }
+
     public virtual IEnumerable<StartField> StartField { get; set; }
 
     public Player()

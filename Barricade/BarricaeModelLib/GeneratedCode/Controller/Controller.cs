@@ -32,7 +32,7 @@
             var playerAmmount = inputView.AskPlayerAmmount();
             for (var i = 0; i < playerAmmount; i++)
             {
-                Game.Players.Add(new Player { Name = inputView.AskPlayerName(), Color = color[i]});
+                Game.Players.Add(new Player { Name = inputView.AskPlayerName(), Color = color[i], ID = i});
             }
 
             outputView.showBoard(Game.Fields);
