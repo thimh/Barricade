@@ -119,12 +119,13 @@ namespace Controller
 
                 Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX].Pawn = null;
 
+                Field nextField;
+                
                 switch (_inputView.AskDirection())
                 {
                     case "w":
-                        if (Game.Fields[selectedPawn.LocationY - 1, selectedPawn.LocationX] == null ||
-                            Game.Fields[selectedPawn.LocationY - 1, selectedPawn.LocationX].GetType() !=
-                            typeof(PathField))
+                        nextField = Game.Fields[selectedPawn.LocationY - 1, selectedPawn.LocationX];
+                        if (nextField == null || nextField.GetType() != typeof(PathField))
                         {
                             i--;
                             break;
@@ -132,9 +133,8 @@ namespace Controller
                         selectedPawn.LocationY -= 2;
                         break;
                     case "a":
-                        if (Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX - 1] == null ||
-                            Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX - 1].GetType() !=
-                            typeof(PathField))
+                        nextField = Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX - 1];
+                        if (nextField == null || nextField.GetType() != typeof(PathField))
                         {
                             i--;
                             break;
@@ -142,9 +142,8 @@ namespace Controller
                         selectedPawn.LocationX -= 2;
                         break;
                     case "s":
-                        if (Game.Fields[selectedPawn.LocationY + 1, selectedPawn.LocationX] == null ||
-                            Game.Fields[selectedPawn.LocationY + 1, selectedPawn.LocationX].GetType() !=
-                            typeof(PathField))
+                        nextField = Game.Fields[selectedPawn.LocationY + 1, selectedPawn.LocationX];
+                        if (nextField == null || nextField.GetType() != typeof(PathField))
                         {
                             i--;
                             break;
@@ -152,9 +151,8 @@ namespace Controller
                         selectedPawn.LocationY += 2;
                         break;
                     case "d":
-                        if (Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX + 1] == null ||
-                            Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX + 1].GetType() !=
-                            typeof(PathField))
+                        nextField = Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX + 1];
+                        if (nextField == null || nextField.GetType() != typeof(PathField))
                         {
                             i--;
                             break;
@@ -168,7 +166,7 @@ namespace Controller
                     default:
                         i--;
                         _outputView.WrongDirection();
-                        continue;
+                        break;
                 }
 
                 Game.currentPlayer.Move(selectedPawn);
