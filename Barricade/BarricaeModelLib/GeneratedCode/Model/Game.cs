@@ -33,14 +33,13 @@ namespace Model
         public Game()
         {
             Players = new List<Player>();
-            Fields = new Field[14,21];
-            BuildFields();
+            Fields = new Field[16,23];
         }
 
         /// <summary>
         /// Build a field array
         /// </summary>
-	    private void BuildFields()
+	    public void BuildFields()
 	    {
 
 	        var file = System.IO.File.ReadAllText(@"..\..\Board\Baricade.txt");
@@ -55,34 +54,42 @@ namespace Model
 	                switch (line[i])
 	                {
                         case 'w':
-                            field = new FinishField();
+                            field = new FinishField {LocationX = i, LocationY = linecount};
 	                        break;
                         case 'x':
-                            field = new Field();
+                            field = new Field { LocationX = i, LocationY = linecount };
 	                        break;
                         case 'o':
-                            field = new Field() {Barricade = new Barricade()};
+                            field = new Field {Barricade = new Barricade(), LocationX = i, LocationY = linecount };
 	                        break;
                         case 's':
-                            field = new RestField();
+                            field = new RestField { LocationX = i, LocationY = linecount };
 	                        break;
                         case 'f':
-                            field = new ForestField();
+                            field = new ForestField { LocationX = i, LocationY = linecount };
 	                        break;
                         case 'r':
-                            field = new StartField {Color = Color.Red};
+                            field = new StartField {Color = Color.Red, LocationX = i, LocationY = linecount };
+	                        if (Players.Any(x => x.Color == Color.Red))
+	                            Players.FirstOrDefault(x => x.Color == Color.Red).StartField = (StartField)field;
 	                        break;
                         case 'y':
-                            field = new StartField { Color = Color.Yellow };
+                            field = new StartField { Color = Color.Yellow, LocationX = i, LocationY = linecount };
+                            if (Players.Any(x => x.Color == Color.Yellow))
+                                Players.FirstOrDefault(x => x.Color == Color.Yellow).StartField = (StartField)field;
                             break;
                         case 'g':
-                            field = new StartField { Color = Color.Green };
+                            field = new StartField { Color = Color.Green, LocationX = i, LocationY = linecount };
+                            if (Players.Any(x => x.Color == Color.Green))
+                                Players.FirstOrDefault(x => x.Color == Color.Green).StartField = (StartField)field;
                             break;
                         case 'b':
-                            field = new StartField { Color = Color.Blue };
+                            field = new StartField { Color = Color.Blue, LocationX = i, LocationY = linecount };
+                            if (Players.Any(x => x.Color == Color.Blue))
+                                Players.FirstOrDefault(x => x.Color == Color.Blue).StartField = (StartField)field;
                             break;
                         case '-':
-                            field = new PathField();
+                            field = new PathField { LocationX = i, LocationY = linecount };
 	                        break;
                         case ' ':
 	                        field = null;
@@ -102,9 +109,9 @@ namespace Model
         /// </summary>
 		public void ChangeTurn()
 		{
-		    int nextPlayer = currentPlayer.ID++;
+		    int nextPlayer = currentPlayer.ID+1;
 		    if (nextPlayer >= Players.Count) nextPlayer = 0;
-		    currentPlayer = Players.FirstOrDefault(x => x.ID == nextPlayer);
+		    currentPlayer = Players.Find(x => x.ID == nextPlayer);
 		}
 	}
 }

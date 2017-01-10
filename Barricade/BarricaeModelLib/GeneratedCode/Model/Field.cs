@@ -16,5 +16,7 @@ public class Field
     public virtual bool canHaveBarricade { get; set; }
     public virtual Pawn Pawn { get; set; }
     public virtual Barricade Barricade { get; set; }
+    public virtual int LocationX { get; set; }
+    public virtual int LocationY { get; set; }
 }
 

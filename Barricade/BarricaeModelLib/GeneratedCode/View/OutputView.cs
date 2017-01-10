@@ -14,13 +14,12 @@ namespace View
 	public class OutputView
 	{
 
-	    public void showBoard(Field[,] fields)
+	    public void ShowBoard(Field[,] fields)
 	    {
-            Console.Clear();
             Console.WriteLine("");
-            for (int y = 0; y < 14; y++) 
+            for (int y = 0; y < 15; y++) 
 	        {
-                for (int x = 0; x < 21; x++)
+                for (int x = 0; x < 23; x++)
                 {
                     Field field = fields[y, x];
                     if (field == null)
@@ -40,6 +39,28 @@ namespace View
 	            }
                 Console.WriteLine();
             }
+            Console.WriteLine();
+        }
+
+        public void ShowThrow(int eyes)
+	    {
+	        Console.WriteLine("Moves Left: " + eyes);
+	    }
+
+	    public void WrongDirection()
+	    {
+	        Console.WriteLine("Wrong Direction");
+	    }
+
+	    public void ShowPlayer(Player gameCurrentPlayer)
+	    {
+	        Console.WriteLine("The Current Player = " + gameCurrentPlayer.Name);
+            Console.WriteLine("color = " + gameCurrentPlayer.Color.ToString());
+	    }
+
+	    public void ClearConsole()
+	    {
+	        Console.Clear();
 	    }
 	}
 }

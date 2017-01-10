@@ -19,7 +19,7 @@ public class Player
 
     public int ID { get; set; }
 
-    public virtual IEnumerable<StartField> StartField { get; set; }
+    public virtual StartField StartField { get; set; }
 
     public Player()
     {
