@@ -65,16 +65,15 @@ namespace Controller
         /// </summary>
 	    public void GameTurn()
         {
-            Console.Clear();
-            outputView.ShowBoard(Game.Fields);
             // roll the dice
             var roll = Dice.Eyes;
-            outputView.ShowThrow(roll);
 
             // move pawn
             while (true)
             {
-                if(PawnMovement(roll))
+                outputView.ShowBoard(Game.Fields);
+                outputView.ShowThrow(roll);
+                if (PawnMovement(roll))
                     break;
             }
 
@@ -82,6 +81,11 @@ namespace Controller
             Game.ChangeTurn();
         }
 
+        /// <summary>
+        /// Movement of the pawn logic
+        /// </summary>
+        /// returns true when done moving,
+        /// reutrn false to reset movement
 	    public bool PawnMovement(int roll)
 	    {
             var selectedPawn = Game.currentPlayer.Pawns.FirstOrDefault(x => x.Id == inputView.AskPawn());
@@ -91,77 +95,45 @@ namespace Controller
 
             for (var i = 0; i < roll; i++)
             {
+                if (selectedPawn.LocationY == 0 && selectedPawn.LocationX == 0)
+                {
+                    selectedPawn.LocationY = Game.currentPlayer.StartField.LocationY;
+                    selectedPawn.LocationX = Game.currentPlayer.StartField.LocationX;
+                    continue;
+                }
+
                 switch (inputView.AskDirection())
                 {
                     case "w":
+                        selectedPawn.LocationY -= 2;
                         break;
                     case "a":
+                        selectedPawn.LocationX -= 2;
                         break;
                     case "s":
+                        selectedPawn.LocationY += 2;
                         break;
                     case "d":
+                        selectedPawn.LocationX += 2;
                         break;
                     case "":
                         selectedPawn.LocationX = startLocationX;
                         selectedPawn.LocationY = startLocationY;
                         return false;
                     default:
-                        i--;
                         outputView.WrongDirection();
-                        break;
+                        continue;
                 }
-            }
 
-            Game.currentPlayer.Move(selectedPawn);
-            Game.Fields[5, 5].Pawn = selectedPawn;
+                Game.currentPlayer.Move(selectedPawn);
+                Game.Fields[5, 5].Pawn = selectedPawn;
+
+                outputView.ShowBoard(Game.Fields);
+                outputView.ShowThrow(roll);
+            }
 
             return false;
 	    }
-
-	    /*public List<Field> EndingFields(Pawn selectedPawn, int eyes)
-	    {
-            var endFields = new List<Field>();
-	        if (selectedPawn.LocationX == 0 && selectedPawn.LocationY == 0)
-	        {
-	            selectedPawn.LocationX = Game.currentPlayer.StartField.LocationX;
-	            selectedPawn.LocationY = Game.currentPlayer.StartField.LocationY;
-	            eyes--;
-	        }
-
-	        if (eyes == 0) endFields.Add(Game.currentPlayer.StartField);
-	        bool walkedAllPaths = false;
-            while(!walkedAllPaths)
-	        {
-	            for (var i = 0; i < eyes; i++)
-	            {
-	                //West
-	                if (Game.Fields[selectedPawn.LocationX - 1, selectedPawn.LocationY].GetType() == typeof(PathField))
-	                {
-
-	                }
-	                //East
-	                else if (Game.Fields[selectedPawn.LocationX + 1, selectedPawn.LocationY].GetType() == typeof(PathField))
-	                {
-
-	                }
-	                //North
-	                else if (Game.Fields[selectedPawn.LocationX, selectedPawn.LocationY - 1].GetType() == typeof(PathField))
-	                {
-
-	                }
-	                //South
-	                else if (Game.Fields[selectedPawn.LocationX, selectedPawn.LocationY + 1].GetType() == typeof(PathField))
-	                {
-
-	                }
-
-
-
-	            }
-	        }
-
-	        return endFields;
-	    }*/
     }
 }
 
