@@ -33,7 +33,7 @@ namespace Model
         public Game()
         {
             Players = new List<Player>();
-            Fields = new Field[15,21];
+            Fields = new Field[15,23];
         }
 
         /// <summary>
@@ -109,9 +109,9 @@ namespace Model
         /// </summary>
 		public void ChangeTurn()
 		{
-		    int nextPlayer = currentPlayer.ID++;
+		    int nextPlayer = currentPlayer.ID+1;
 		    if (nextPlayer >= Players.Count) nextPlayer = 0;
-		    currentPlayer = Players.FirstOrDefault(x => x.ID == nextPlayer);
+		    currentPlayer = Players.Find(x => x.ID == nextPlayer);
 		}
 	}
 }

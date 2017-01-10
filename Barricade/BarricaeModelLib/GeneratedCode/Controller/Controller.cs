@@ -48,8 +48,6 @@ namespace Controller
 
             Game.BuildFields();
 
-            _outputView.ShowBoard(Game.Fields);
-
             Game.currentPlayer = Game.Players.FirstOrDefault(x => x.ID == 0);
         }
 
@@ -69,12 +67,15 @@ namespace Controller
         /// </summary>
 	    public void GameTurn()
         {
+            _outputView.ClearConsole();
+            
             // roll the dice
             var roll = _dice.Throw();
 
             // move pawn
             while (true)
             {
+                _outputView.ShowPlayer(Game.currentPlayer);
                 _outputView.ShowBoard(Game.Fields);
                 _outputView.ShowThrow(roll);
                 if (PawnMovement(roll))
@@ -93,6 +94,7 @@ namespace Controller
 	    public bool PawnMovement(int roll)
         {
             var id = _inputView.AskPawn();
+            id--;
             var selectedPawn = Game.currentPlayer.Pawns.FirstOrDefault(x => x.Id == id);
 
             var startLocationX = selectedPawn.LocationX;
@@ -100,8 +102,10 @@ namespace Controller
 
             for (var i = 0; i < roll; i++)
             {
+                _outputView.ClearConsole();
+                _outputView.ShowPlayer(Game.currentPlayer);
                 _outputView.ShowBoard(Game.Fields);
-                _outputView.ShowThrow(roll);
+                _outputView.ShowThrow(roll-i);
 
                 if (selectedPawn.LocationY == 0 && selectedPawn.LocationX == 0)
                 {
@@ -112,19 +116,49 @@ namespace Controller
                     Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX].Pawn = selectedPawn;
                     continue;
                 }
-                
+
+                Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX].Pawn = null;
+
                 switch (_inputView.AskDirection())
                 {
                     case "w":
+                        if (Game.Fields[selectedPawn.LocationY - 1, selectedPawn.LocationX] == null ||
+                            Game.Fields[selectedPawn.LocationY - 1, selectedPawn.LocationX].GetType() !=
+                            typeof(PathField))
+                        {
+                            i--;
+                            break;
+                        }
                         selectedPawn.LocationY -= 2;
                         break;
                     case "a":
+                        if (Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX - 1] == null ||
+                            Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX - 1].GetType() !=
+                            typeof(PathField))
+                        {
+                            i--;
+                            break;
+                        }
                         selectedPawn.LocationX -= 2;
                         break;
                     case "s":
+                        if (Game.Fields[selectedPawn.LocationY + 1, selectedPawn.LocationX] == null ||
+                            Game.Fields[selectedPawn.LocationY + 1, selectedPawn.LocationX].GetType() !=
+                            typeof(PathField))
+                        {
+                            i--;
+                            break;
+                        }
                         selectedPawn.LocationY += 2;
                         break;
                     case "d":
+                        if (Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX + 1] == null ||
+                            Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX + 1].GetType() !=
+                            typeof(PathField))
+                        {
+                            i--;
+                            break;
+                        }
                         selectedPawn.LocationX += 2;
                         break;
                     case "":
@@ -132,6 +166,7 @@ namespace Controller
                         selectedPawn.LocationY = startLocationY;
                         return false;
                     default:
+                        i--;
                         _outputView.WrongDirection();
                         continue;
                 }
@@ -139,9 +174,7 @@ namespace Controller
                 Game.currentPlayer.Move(selectedPawn);
                 Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX].Pawn = selectedPawn;
             }
-
             return true;
 	    }
     }
 }
-

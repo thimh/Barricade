@@ -33,6 +33,7 @@ namespace View
 	    public int AskPawn()
 	    {
             Console.WriteLine("What pawn do you whish to move?");
+            Console.WriteLine("1,2,3,4");
             return Convert.ToInt16(Console.ReadLine());
         }
 
