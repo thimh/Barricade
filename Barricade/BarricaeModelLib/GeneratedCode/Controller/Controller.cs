@@ -189,6 +189,8 @@ namespace Controller
 	    {
             if (nextField == null || nextField.GetType() != typeof(PathField)) return false;
 
+	        if (nextLocation.GetType() == typeof(RestField) && nextLocation.Pawn == null) return true;
+
 	        if (nextLocation.Barricade == null) return true;
 
 	        if (movesleft != 1) return false;
