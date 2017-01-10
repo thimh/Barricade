@@ -213,29 +213,58 @@ namespace Controller
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.W:
-                        currentField = Game.Fields[currentField.LocationY - 2, currentField.LocationX];
-                        currentField.Barricade = barricade;
+                        if (CanMoveBarricade(Game.Fields[currentField.LocationY - 1, currentField.LocationX]))
+                        {
+                            currentField = Game.Fields[currentField.LocationY - 2, currentField.LocationX];
+                            currentField.Barricade = barricade;
+                        }
                         break;
 
                     case ConsoleKey.S:
-                        currentField = Game.Fields[currentField.LocationY + 2, currentField.LocationX];
-                        currentField.Barricade = barricade;
+                        if (CanMoveBarricade(Game.Fields[currentField.LocationY + 1, currentField.LocationX]))
+                        {
+                            currentField = Game.Fields[currentField.LocationY + 2, currentField.LocationX];
+                            currentField.Barricade = barricade;
+                        }
                         break;
 
                     case ConsoleKey.A:
-                        currentField = Game.Fields[currentField.LocationY, currentField.LocationX - 2];
-                        currentField.Barricade = barricade;
+                        if (CanMoveBarricade(Game.Fields[currentField.LocationY, currentField.LocationX - 1]))
+                        {
+                            currentField = Game.Fields[currentField.LocationY, currentField.LocationX - 2];
+                            currentField.Barricade = barricade;
+                        }
                         break;
 
                     case ConsoleKey.D:
-                        currentField = Game.Fields[currentField.LocationY, currentField.LocationX + 2];
-                        currentField.Barricade = barricade;
+                        if (CanMoveBarricade(Game.Fields[currentField.LocationY, currentField.LocationX + 1]))
+                        {
+                            currentField = Game.Fields[currentField.LocationY, currentField.LocationX + 2];
+                            currentField.Barricade = barricade;
+                        }
                         break;
 
                     case ConsoleKey.Enter:
-                        return;
+                        if (CanPlaceBarricade(currentField)) return;
+                        break;
                 }
             }
         }
+
+	    public bool CanMoveBarricade(Field nextField)
+	    {
+	        if (nextField == null || nextField.GetType() != typeof(PathField)) return false;
+
+	        return true;
+	    }
+
+	    public bool CanPlaceBarricade(Field currentField)
+	    {
+	        if (currentField.GetType() == typeof(RestField) || currentField.GetType() == typeof(ForestField) || currentField.GetType() == typeof(FinishField)) return false;
+	        if (currentField.Pawn != null || currentField.Barricade != null) return false;
+	        if (currentField.LocationX == 14) return false;
+
+	        return true;
+	    }
     }
 }
