@@ -7,14 +7,12 @@ namespace Controller
 {
 	public class Controller
 	{
-	    #region Declerations
 	    private readonly InputView _inputView;
 	    private readonly OutputView _outputView;
 	    private readonly Dice _dice;
 	    private Pawn _selectedPawn;
 
 	    public Game Game { get; set; }
-	    #endregion
 
 	    public Controller()
 	    {
@@ -110,6 +108,7 @@ namespace Controller
                 }
 
                 Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].TempIcon = false;
+                Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].Pawn = null;
 
                 Field nextField;
                 Field nexLocation;
@@ -119,22 +118,26 @@ namespace Controller
                     case "w":
                         nextField = Game.Fields[_selectedPawn.LocationY - 1, _selectedPawn.LocationX];
                         nexLocation = Game.Fields[_selectedPawn.LocationY - 2, _selectedPawn.LocationX];
+
                         if (!CanMakeMove(nextField, nexLocation, roll - i))
                         {
                             i--;
-                            break;
                         }
+
                         nexLocation.TempIcon = true;
                         _selectedPawn.LocationY -= 2;
                         break;
+
                     case "a":
                         nextField = Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX - 1];
                         nexLocation = Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX - 2];
+
                         if (!CanMakeMove(nextField, nexLocation, roll - i))
                         {
                             i--;
                             break;
                         }
+
                         nexLocation.TempIcon = true;
                         _selectedPawn.LocationX -= 2;
                         break;
@@ -142,11 +145,13 @@ namespace Controller
                     case "s":
                         nextField = Game.Fields[_selectedPawn.LocationY + 1, _selectedPawn.LocationX];
                         nexLocation = Game.Fields[_selectedPawn.LocationY + 2, _selectedPawn.LocationX];
+
                         if (!CanMakeMove(nextField, nexLocation, roll - i))
                         {
                             i--;
                             break;
                         }
+
                         nexLocation.TempIcon = true;
                         _selectedPawn.LocationY += 2;
                         break;
@@ -154,6 +159,8 @@ namespace Controller
                     case "d":
                         nextField = Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX + 1];
                         nexLocation = Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX + 2];
+
+
                         if (!CanMakeMove(nextField, nexLocation, roll - i))
                         {
                             i--;
