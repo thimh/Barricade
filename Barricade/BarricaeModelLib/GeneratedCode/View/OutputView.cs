@@ -18,7 +18,7 @@ namespace View
 	    {
             Console.Clear();
             Console.WriteLine("");
-            for (int y = 0; y < 14; y++) 
+            for (int y = 0; y < 15; y++) 
 	        {
                 for (int x = 0; x < 21; x++)
                 {

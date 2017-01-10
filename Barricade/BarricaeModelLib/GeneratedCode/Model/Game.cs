@@ -34,13 +34,12 @@ namespace Model
         {
             Players = new List<Player>();
             Fields = new Field[15,21];
-            BuildFields();
         }
 
         /// <summary>
         /// Build a field array
         /// </summary>
-	    private void BuildFields()
+	    public void BuildFields()
 	    {
 
 	        var file = System.IO.File.ReadAllText(@"..\..\Board\Baricade.txt");
@@ -71,15 +70,23 @@ namespace Model
 	                        break;
                         case 'r':
                             field = new StartField {Color = Color.Red, LocationX = i, LocationY = linecount };
+	                        if (Players.Any(x => x.Color == Color.Red))
+	                            Players.FirstOrDefault(x => x.Color == Color.Red).StartField = (StartField)field;
 	                        break;
                         case 'y':
                             field = new StartField { Color = Color.Yellow, LocationX = i, LocationY = linecount };
+                            if (Players.Any(x => x.Color == Color.Yellow))
+                                Players.FirstOrDefault(x => x.Color == Color.Yellow).StartField = (StartField)field;
                             break;
                         case 'g':
                             field = new StartField { Color = Color.Green, LocationX = i, LocationY = linecount };
+                            if (Players.Any(x => x.Color == Color.Green))
+                                Players.FirstOrDefault(x => x.Color == Color.Green).StartField = (StartField)field;
                             break;
                         case 'b':
                             field = new StartField { Color = Color.Blue, LocationX = i, LocationY = linecount };
+                            if (Players.Any(x => x.Color == Color.Blue))
+                                Players.FirstOrDefault(x => x.Color == Color.Blue).StartField = (StartField)field;
                             break;
                         case '-':
                             field = new PathField { LocationX = i, LocationY = linecount };
