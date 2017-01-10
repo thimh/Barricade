@@ -36,7 +36,7 @@ namespace Controller
             var playerAmmount = _inputView.AskPlayerAmmount();
 
             for (var i = 0; i < playerAmmount; i++)
-                Game.Players.Add(new Player { Name = _inputView.AskPlayerName(), Color = color[i], ID = i});
+                Game.Players.Add(new Player { Name = _inputView.AskPlayerName(), Color = color[i], ID = i, Winner = false});
 
             Game.BuildFields();
 
@@ -49,7 +49,18 @@ namespace Controller
         public void GameRunning()
         {
             while (true)
-                GameTurn();
+                foreach (var player in Game.Players)
+                {
+                    if (!player.Winner)
+                    {
+                        GameTurn();
+                    }
+                    else
+                    {
+                        _outputView.WinScreen(player);
+                        return;
+                    }
+                }
         }
 
         /// <summary>
@@ -216,6 +227,8 @@ namespace Controller
             Game.currentPlayer.Move(_selectedPawn);
             newField.Pawn = _selectedPawn;
             newField.TempIcon = false;
+            if (Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].GetType() == typeof(FinishField))
+                Game.currentPlayer.Winner = true;
             return true;
 	    }
 

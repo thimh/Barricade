@@ -80,6 +80,12 @@ namespace View
 	    {
 	        Console.WriteLine("Move barricade with w,a,s,d");
 	    }
+
+	    public void WinScreen(Player player)
+	    {
+            ClearConsole();
+	        Console.WriteLine(player.Name + " has won the game!");
+	    }
 	}
 }
 
