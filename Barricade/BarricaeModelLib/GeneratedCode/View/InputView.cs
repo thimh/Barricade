@@ -7,7 +7,13 @@ namespace View
 	    public int AskPlayerAmmount()
 	    {
 	        Console.WriteLine("How many players?");
-	        return Convert.ToInt16(Console.ReadLine());
+	        var players = Convert.ToInt16(Console.ReadLine());
+	        while (players > 4)
+	        {
+                Console.WriteLine("Max players = 4");
+                players = Convert.ToInt16(Console.ReadLine());
+            }
+	        return players;
 	    }
 
 	    public string AskPlayerName()

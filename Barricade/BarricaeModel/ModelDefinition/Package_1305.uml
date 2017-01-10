@@ -215,7 +215,7 @@
         <ownedOperationsInternal>
           <operation
             Id="9dd93661-59d1-4361-8a58-3b5feb728aa1"
-            name="Go"
+            name="setupGame"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -271,22 +271,31 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="37ad4ff7-9150-44c0-a362-5dfcbe4e29cb"
-                  direction="Return"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="68a6eafd-4297-4ca1-8c02-fb2c6dda5cb2"
-                      LastKnownName="void"
-                      LastKnownLocation="BarricaeModel.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
           </operation>
+          <operation
+            Id="f2852051-3eda-44ba-ae32-752a1298e179"
+            name="GameRunning"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="96c7050c-ca25-48a0-95a5-c738d0d016af"
+            name="GameTurn"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="ffbeb65e-4442-4ab2-8c0b-f92df9f91ff2"
+            name="PawnMovement"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
