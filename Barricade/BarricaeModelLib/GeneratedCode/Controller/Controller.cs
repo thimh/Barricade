@@ -229,6 +229,7 @@ namespace Controller
                 currentField.Barricade = null;
                 _outputView.ClearConsole();
                 _outputView.ShowBoard(Game.Fields);
+                currentField.TempIcon = false;
 
                 switch (Console.ReadKey().Key)
                 {
@@ -265,9 +266,14 @@ namespace Controller
                         break;
 
                     case ConsoleKey.Enter:
-                        if (CanPlaceBarricade(currentField)) currentField.Barricade = barricade; return;
+                        if (CanPlaceBarricade(currentField))
+                        {
+                            currentField.Barricade = barricade;
+                            return;
+                        }
                         break;
                 }
+                currentField.TempIcon = true;
             }
         }
 
