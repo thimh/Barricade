@@ -19,6 +19,8 @@ namespace Controller
 
 	    private Dice _dice;
 
+	    private Pawn selectedPawn;
+
 	    public virtual Game Game { get; set; }
 
 	    #endregion
@@ -93,9 +95,8 @@ namespace Controller
         /// reutrn false to reset movement
 	    public bool PawnMovement(int roll)
         {
-            var id = _inputView.AskPawn();
-            id--;
-            var selectedPawn = Game.currentPlayer.Pawns.FirstOrDefault(x => x.Id == id);
+            var id = _inputView.AskPawn() - 1;
+            selectedPawn = Game.currentPlayer.Pawns.FirstOrDefault(x => x.Id == id);
 
             var startLocationX = selectedPawn.LocationX;
             var startLocationY = selectedPawn.LocationY;
@@ -120,12 +121,14 @@ namespace Controller
                 Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX].Pawn = null;
 
                 Field nextField;
+                Field nexLocation;
                 
                 switch (_inputView.AskDirection())
                 {
                     case "w":
                         nextField = Game.Fields[selectedPawn.LocationY - 1, selectedPawn.LocationX];
-                        if ((nextField == null || nextField.GetType() != typeof(PathField)) && Game.Fields[selectedPawn.LocationY - 2, selectedPawn.LocationX].Barricade != null)
+                        nexLocation = Game.Fields[selectedPawn.LocationY - 2, selectedPawn.LocationX];
+                        if (!CanMakeMove(nextField, nexLocation, roll - i))
                         {
                             i--;
                             break;
@@ -134,35 +137,42 @@ namespace Controller
                         break;
                     case "a":
                         nextField = Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX - 1];
-                        if ((nextField == null || nextField.GetType() != typeof(PathField)) && Game.Fields[selectedPawn.LocationY - 2, selectedPawn.LocationX].Barricade != null)
+                        nexLocation = Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX - 2];
+                        if (!CanMakeMove(nextField, nexLocation, roll - i))
                         {
                             i--;
                             break;
                         }
                         selectedPawn.LocationX -= 2;
                         break;
+
                     case "s":
                         nextField = Game.Fields[selectedPawn.LocationY + 1, selectedPawn.LocationX];
-                        if ((nextField == null || nextField.GetType() != typeof(PathField)) && Game.Fields[selectedPawn.LocationY - 2, selectedPawn.LocationX].Barricade != null)
+                        nexLocation = Game.Fields[selectedPawn.LocationY + 2, selectedPawn.LocationX];
+                        if (!CanMakeMove(nextField, nexLocation, roll - i))
                         {
                             i--;
                             break;
                         }
                         selectedPawn.LocationY += 2;
                         break;
+
                     case "d":
                         nextField = Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX + 1];
-                        if ((nextField == null || nextField.GetType() != typeof(PathField)) && Game.Fields[selectedPawn.LocationY - 2, selectedPawn.LocationX].Barricade != null)
+                        nexLocation = Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX + 2];
+                        if (!CanMakeMove(nextField, nexLocation, roll - i))
                         {
                             i--;
                             break;
                         }
                         selectedPawn.LocationX += 2;
                         break;
+
                     case "":
                         selectedPawn.LocationX = startLocationX;
                         selectedPawn.LocationY = startLocationY;
                         return false;
+
                     default:
                         i--;
                         _outputView.WrongDirection();
@@ -173,6 +183,19 @@ namespace Controller
                 Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX].Pawn = selectedPawn;
             }
             return true;
+	    }
+
+	    private bool CanMakeMove(Field nextField, Field nextLocation, int movesleft)
+	    {
+            if (nextField == null || nextField.GetType() != typeof(PathField)) return false;
+
+	        if (nextLocation.Barricade == null) return true;
+
+	        if (movesleft != 1) return false;
+
+	        nextLocation.Barricade = null;
+	        Game.Fields[_inputView.AskBarricadeLocationY(), _inputView.AskBarricadeLocationX()].Barricade = new Barricade();
+	        return true;
 	    }
     }
 }

@@ -38,5 +38,18 @@ namespace View
             Console.WriteLine("W,A,S,D for direction, empty to reset.");
             return Console.ReadLine();
 	    }
-	}
+
+	    public int AskBarricadeLocationY()
+	    {
+            Console.WriteLine("Set new barricade Y location?");
+            return Convert.ToInt16(Console.ReadLine());
+        }
+
+        public int AskBarricadeLocationX()
+        {
+            Console.WriteLine("Set new barricade X location?");
+            return Convert.ToInt16(Console.ReadLine());
+
+        }
+    }
 }
