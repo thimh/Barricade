@@ -260,7 +260,7 @@ namespace Controller
                         break;
 
                     case ConsoleKey.Enter:
-                        if (CanPlaceBarricade(currentField)) return;
+                        if (CanPlaceBarricade(currentField)) currentField.Barricade = barricade; return;
                         break;
                 }
             }
