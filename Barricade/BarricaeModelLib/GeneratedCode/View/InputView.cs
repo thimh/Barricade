@@ -13,11 +13,6 @@ namespace View
 
 	public class InputView
 	{
-	    public InputView()
-	    {
-	        
-	    }
-
 	    public int AskPlayerAmmount()
 	    {
 	        Console.WriteLine("How many players?");

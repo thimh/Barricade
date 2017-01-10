@@ -39,9 +39,10 @@ namespace View
 	            }
                 Console.WriteLine();
             }
-	    }
+            Console.WriteLine();
+        }
 
-	    public void ShowThrow(int eyes)
+        public void ShowThrow(int eyes)
 	    {
 	        Console.WriteLine("Moves Left: " + eyes);
 	    }

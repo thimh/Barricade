@@ -33,7 +33,7 @@ namespace Model
         public Game()
         {
             Players = new List<Player>();
-            Fields = new Field[15,23];
+            Fields = new Field[16,23];
         }
 
         /// <summary>
