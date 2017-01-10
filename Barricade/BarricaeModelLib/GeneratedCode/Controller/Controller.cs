@@ -122,9 +122,9 @@ namespace Controller
                 switch (_inputView.AskDirection())
                 {
                     case "w":
-                        if (Game.Fields[selectedPawn.LocationY - 1, selectedPawn.LocationX] == null ||
+                        if ((Game.Fields[selectedPawn.LocationY - 1, selectedPawn.LocationX] == null ||
                             Game.Fields[selectedPawn.LocationY - 1, selectedPawn.LocationX].GetType() !=
-                            typeof(PathField))
+                            typeof(PathField)) && Game.Fields[selectedPawn.LocationY - 2, selectedPawn.LocationX].Barricade != null)
                         {
                             i--;
                             break;
@@ -132,9 +132,9 @@ namespace Controller
                         selectedPawn.LocationY -= 2;
                         break;
                     case "a":
-                        if (Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX - 1] == null ||
+                        if ((Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX - 1] == null ||
                             Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX - 1].GetType() !=
-                            typeof(PathField))
+                            typeof(PathField)) && Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX - 2].Barricade != null)
                         {
                             i--;
                             break;
@@ -142,9 +142,9 @@ namespace Controller
                         selectedPawn.LocationX -= 2;
                         break;
                     case "s":
-                        if (Game.Fields[selectedPawn.LocationY + 1, selectedPawn.LocationX] == null ||
+                        if ((Game.Fields[selectedPawn.LocationY + 1, selectedPawn.LocationX] == null ||
                             Game.Fields[selectedPawn.LocationY + 1, selectedPawn.LocationX].GetType() !=
-                            typeof(PathField))
+                            typeof(PathField)) && Game.Fields[selectedPawn.LocationY + 2, selectedPawn.LocationX].Barricade != null)
                         {
                             i--;
                             break;
@@ -152,9 +152,9 @@ namespace Controller
                         selectedPawn.LocationY += 2;
                         break;
                     case "d":
-                        if (Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX + 1] == null ||
+                        if ((Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX + 1] == null ||
                             Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX + 1].GetType() !=
-                            typeof(PathField))
+                            typeof(PathField)) && Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX + 2].Barricade != null)
                         {
                             i--;
                             break;
