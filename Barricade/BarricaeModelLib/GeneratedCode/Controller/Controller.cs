@@ -44,7 +44,7 @@ namespace Controller
                 Game.Players.Add(new Player { Name = inputView.AskPlayerName(), Color = color[i], ID = i});
             }
 
-            outputView.showBoard(Game.Fields);
+            outputView.ShowBoard(Game.Fields);
 
             Game.currentPlayer = Game.Players.FirstOrDefault(x => x.ID == 0);
         }
@@ -65,23 +65,60 @@ namespace Controller
         /// </summary>
 	    public void GameTurn()
         {
+            Console.Clear();
+            outputView.ShowBoard(Game.Fields);
+            // roll the dice
             var roll = Dice.Eyes;
+            outputView.ShowThrow(roll);
 
-            var selectedPawn = Game.currentPlayer.Pawns.FirstOrDefault(x => x.Id == inputView.AskPawn());
-            
-            Game.currentPlayer.Move(selectedPawn);
-            Game.Fields[5, 5].Pawn = selectedPawn;
+            // move pawn
+            while (true)
+            {
+                if(PawnMovement(roll))
+                    break;
+            }
 
+            //Set next player
             Game.ChangeTurn();
         }
 
-	    public string PawnMovement()
+	    public bool PawnMovement(int roll)
 	    {
+            var selectedPawn = Game.currentPlayer.Pawns.FirstOrDefault(x => x.Id == inputView.AskPawn());
 
-	        return null;
+            var startLocationX = selectedPawn.LocationX;
+            var startLocationY = selectedPawn.LocationY;
+
+            for (var i = 0; i < roll; i++)
+            {
+                switch (inputView.AskDirection())
+                {
+                    case "w":
+                        break;
+                    case "a":
+                        break;
+                    case "s":
+                        break;
+                    case "d":
+                        break;
+                    case "":
+                        selectedPawn.LocationX = startLocationX;
+                        selectedPawn.LocationY = startLocationY;
+                        return false;
+                    default:
+                        i--;
+                        outputView.WrongDirection();
+                        break;
+                }
+            }
+
+            Game.currentPlayer.Move(selectedPawn);
+            Game.Fields[5, 5].Pawn = selectedPawn;
+
+            return false;
 	    }
 
-	    public List<Field> EndingFields(Pawn selectedPawn, int eyes)
+	    /*public List<Field> EndingFields(Pawn selectedPawn, int eyes)
 	    {
             var endFields = new List<Field>();
 	        if (selectedPawn.LocationX == 0 && selectedPawn.LocationY == 0)
@@ -124,7 +161,7 @@ namespace Controller
 	        }
 
 	        return endFields;
-	    }
+	    }*/
     }
 }
 

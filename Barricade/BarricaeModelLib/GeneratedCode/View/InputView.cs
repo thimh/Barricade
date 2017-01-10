@@ -35,5 +35,12 @@ namespace View
             Console.WriteLine("What pawn do you whish to move?");
             return Convert.ToInt16(Console.ReadLine());
         }
+
+	    public string AskDirection()
+	    {
+	        Console.WriteLine("What direction do you want to move?");
+            Console.WriteLine("W,A,S,D for direction, empty to reset.");
+            return Console.ReadLine();
+	    }
 	}
 }

@@ -14,7 +14,7 @@ namespace View
 	public class OutputView
 	{
 
-	    public void showBoard(Field[,] fields)
+	    public void ShowBoard(Field[,] fields)
 	    {
             Console.Clear();
             Console.WriteLine("");
@@ -40,6 +40,16 @@ namespace View
 	            }
                 Console.WriteLine();
             }
+	    }
+
+	    public void ShowThrow(int eyes)
+	    {
+	        Console.WriteLine("You have thrown a " + eyes);
+	    }
+
+	    public void WrongDirection()
+	    {
+	        Console.WriteLine("Wrong Direction");
 	    }
 	}
 }
