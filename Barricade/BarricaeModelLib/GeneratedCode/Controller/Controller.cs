@@ -16,8 +16,8 @@ namespace Controller
 
 	    public virtual Dice Dice { get; set; }
 
-	    private InputView inputView;
-	    private OutputView outputView;
+	    private readonly InputView _inputView;
+	    private readonly OutputView _outputView;
 
 	    public virtual Game Game { get; set; }
 
@@ -25,8 +25,8 @@ namespace Controller
 
 	    public Controller()
 	    {
-            inputView = new InputView();
-            outputView = new OutputView();
+            _inputView = new InputView();
+            _outputView = new OutputView();
 	        SetupGame();
             GameRunning();
 	    }
@@ -38,13 +38,15 @@ namespace Controller
         {
             Game = new Game();
             var color = new Color[4] { Color.Blue, Color.Green, Color.Red, Color.Yellow };
-            var playerAmmount = inputView.AskPlayerAmmount();
+            var playerAmmount = _inputView.AskPlayerAmmount();
             for (var i = 0; i < playerAmmount; i++)
             {
-                Game.Players.Add(new Player { Name = inputView.AskPlayerName(), Color = color[i], ID = i});
+                Game.Players.Add(new Player { Name = _inputView.AskPlayerName(), Color = color[i], ID = i});
             }
 
-            outputView.ShowBoard(Game.Fields);
+            Game.BuildFields();
+
+            _outputView.ShowBoard(Game.Fields);
 
             Game.currentPlayer = Game.Players.FirstOrDefault(x => x.ID == 0);
         }
@@ -66,10 +68,10 @@ namespace Controller
 	    public void GameTurn()
         {
             Console.Clear();
-            outputView.ShowBoard(Game.Fields);
+            _outputView.ShowBoard(Game.Fields);
             // roll the dice
             var roll = Dice.Eyes;
-            outputView.ShowThrow(roll);
+            _outputView.ShowThrow(roll);
 
             // move pawn
             while (true)
@@ -84,14 +86,14 @@ namespace Controller
 
 	    public bool PawnMovement(int roll)
 	    {
-            var selectedPawn = Game.currentPlayer.Pawns.FirstOrDefault(x => x.Id == inputView.AskPawn());
+            var selectedPawn = Game.currentPlayer.Pawns.FirstOrDefault(x => x.Id == _inputView.AskPawn());
 
             var startLocationX = selectedPawn.LocationX;
             var startLocationY = selectedPawn.LocationY;
 
             for (var i = 0; i < roll; i++)
             {
-                switch (inputView.AskDirection())
+                switch (_inputView.AskDirection())
                 {
                     case "w":
                         break;
@@ -107,7 +109,7 @@ namespace Controller
                         return false;
                     default:
                         i--;
-                        outputView.WrongDirection();
+                        _outputView.WrongDirection();
                         break;
                 }
             }
