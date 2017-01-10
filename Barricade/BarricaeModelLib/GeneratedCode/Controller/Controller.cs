@@ -99,13 +99,18 @@ namespace Controller
                 {
                     _selectedPawn.LocationY = Game.currentPlayer.StartField.LocationY;
                     _selectedPawn.LocationX = Game.currentPlayer.StartField.LocationX;
-
-                    Game.currentPlayer.Move(_selectedPawn);
+                    
+                    Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].TempIcon = true;
+                    continue;
+                }
+                if (_selectedPawn.LocationY == 11 && _selectedPawn.LocationX == 11)
+                {
+                    _selectedPawn.LocationY = 10;
                     Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].TempIcon = true;
                     continue;
                 }
 
-                Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].TempIcon = false;
+                    Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].TempIcon = false;
 
                 Field nextField;
                 Field nexLocation;
@@ -194,7 +199,7 @@ namespace Controller
                 else
                 {
                     pawn.LocationY = 11;
-                    pawn.LocationX = 10;
+                    pawn.LocationX = 11;
                 }
                 
             }
