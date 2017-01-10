@@ -125,7 +125,7 @@ namespace Controller
                 {
                     case "w":
                         nextField = Game.Fields[selectedPawn.LocationY - 1, selectedPawn.LocationX];
-                        if (nextField == null || nextField.GetType() != typeof(PathField))
+                        if ((nextField == null || nextField.GetType() != typeof(PathField)) && Game.Fields[selectedPawn.LocationY - 2, selectedPawn.LocationX].Barricade != null)
                         {
                             i--;
                             break;
@@ -134,7 +134,7 @@ namespace Controller
                         break;
                     case "a":
                         nextField = Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX - 1];
-                        if (nextField == null || nextField.GetType() != typeof(PathField))
+                        if ((nextField == null || nextField.GetType() != typeof(PathField)) && Game.Fields[selectedPawn.LocationY - 2, selectedPawn.LocationX].Barricade != null)
                         {
                             i--;
                             break;
@@ -143,7 +143,7 @@ namespace Controller
                         break;
                     case "s":
                         nextField = Game.Fields[selectedPawn.LocationY + 1, selectedPawn.LocationX];
-                        if (nextField == null || nextField.GetType() != typeof(PathField))
+                        if ((nextField == null || nextField.GetType() != typeof(PathField)) && Game.Fields[selectedPawn.LocationY - 2, selectedPawn.LocationX].Barricade != null)
                         {
                             i--;
                             break;
@@ -152,7 +152,7 @@ namespace Controller
                         break;
                     case "d":
                         nextField = Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX + 1];
-                        if (nextField == null || nextField.GetType() != typeof(PathField))
+                        if ((nextField == null || nextField.GetType() != typeof(PathField)) && Game.Fields[selectedPawn.LocationY - 2, selectedPawn.LocationX].Barricade != null)
                         {
                             i--;
                             break;
