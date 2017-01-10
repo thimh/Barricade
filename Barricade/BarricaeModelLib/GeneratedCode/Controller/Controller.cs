@@ -198,7 +198,6 @@ namespace Controller
 	        if (movesleft != 1) return false;
             
             MoveBarricade(nextLocation.Barricade, nextLocation);
-	        nextLocation.Barricade = null;
 	        return true;
 	    }
 
@@ -207,34 +206,30 @@ namespace Controller
             _outputView.ShowDirection();
             while (true)
             {
+                currentField.Barricade = null;
+                _outputView.ClearConsole();
+                _outputView.ShowBoard(Game.Fields);
+
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.W:
                         currentField = Game.Fields[currentField.LocationY - 2, currentField.LocationX];
                         currentField.Barricade = barricade;
-                        _outputView.ClearConsole();
-                        _outputView.ShowBoard(Game.Fields);
                         break;
 
                     case ConsoleKey.S:
                         currentField = Game.Fields[currentField.LocationY + 2, currentField.LocationX];
                         currentField.Barricade = barricade;
-                        _outputView.ClearConsole();
-                        _outputView.ShowBoard(Game.Fields);
                         break;
 
                     case ConsoleKey.A:
                         currentField = Game.Fields[currentField.LocationY, currentField.LocationX - 2];
                         currentField.Barricade = barricade;
-                        _outputView.ClearConsole();
-                        _outputView.ShowBoard(Game.Fields);
                         break;
 
                     case ConsoleKey.D:
                         currentField = Game.Fields[currentField.LocationY, currentField.LocationX + 2];
                         currentField.Barricade = barricade;
-                        _outputView.ClearConsole();
-                        _outputView.ShowBoard(Game.Fields);
                         break;
 
                     case ConsoleKey.Enter:
