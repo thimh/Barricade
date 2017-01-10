@@ -36,7 +36,16 @@ namespace View
                     }
                     else if (field.Pawn != null)
                     {
+                        if(field.Pawn.Owner.Color == Color.Blue)
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                        if (field.Pawn.Owner.Color == Color.Red)
+                            Console.ForegroundColor = ConsoleColor.Red;
+                        if (field.Pawn.Owner.Color == Color.Green)
+                            Console.ForegroundColor = ConsoleColor.Green;
+                        if (field.Pawn.Owner.Color == Color.Yellow)
+                            Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.Write(field.Pawn.Icon);
+                        Console.ResetColor();
                     }
                     else
 	                    Console.Write(fields[y,x].Icon);
