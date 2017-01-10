@@ -26,6 +26,10 @@ namespace View
                     {
                         Console.Write("  ");
                     }
+                    else if (field.TempIcon)
+                    {
+                        Console.Write("  ");
+                    }
                     else if (field.Barricade != null)
                     {
                         Console.Write(field.Barricade.Icon);
