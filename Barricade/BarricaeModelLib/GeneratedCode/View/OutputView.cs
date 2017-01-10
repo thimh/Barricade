@@ -26,13 +26,26 @@ namespace View
                     {
                         Console.Write("  ");
                     }
+                    else if (field.TempIcon)
+                    {
+                        Console.Write("  ");
+                    }
                     else if (field.Barricade != null)
                     {
                         Console.Write(field.Barricade.Icon);
                     }
                     else if (field.Pawn != null)
                     {
+                        if(field.Pawn.Owner.Color == Color.Blue)
+                            Console.ForegroundColor = ConsoleColor.Blue;
+                        if (field.Pawn.Owner.Color == Color.Red)
+                            Console.ForegroundColor = ConsoleColor.Red;
+                        if (field.Pawn.Owner.Color == Color.Green)
+                            Console.ForegroundColor = ConsoleColor.Green;
+                        if (field.Pawn.Owner.Color == Color.Yellow)
+                            Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.Write(field.Pawn.Icon);
+                        Console.ResetColor();
                     }
                     else
 	                    Console.Write(fields[y,x].Icon);
@@ -61,6 +74,11 @@ namespace View
 	    public void ClearConsole()
 	    {
 	        Console.Clear();
+	    }
+
+	    public void ShowDirection()
+	    {
+	        Console.WriteLine("Move barricade with w,a,s,d");
 	    }
 	}
 }

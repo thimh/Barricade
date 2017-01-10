@@ -1,27 +1,19 @@
-﻿using System.Security.Cryptography.X509Certificates;
+﻿using System;
+using Model;
+using System.Linq;
 using BarricaeModelLib.GeneratedCode.Model;
+using View;
 
 namespace Controller
 {
-	using Model;
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using System.Text;
-	using View;
-
 	public class Controller
 	{
-	    #region Declerations
-        
 	    private readonly InputView _inputView;
 	    private readonly OutputView _outputView;
+	    private readonly Dice _dice;
+	    private Pawn _selectedPawn;
 
-	    private Dice _dice;
-
-	    public virtual Game Game { get; set; }
-
-	    #endregion
+	    public Game Game { get; set; }
 
 	    public Controller()
 	    {
@@ -38,13 +30,11 @@ namespace Controller
         public void SetupGame()
         {
             Game = new Game();
-            var color = new Color[4] { Color.Blue, Color.Green, Color.Red, Color.Yellow };
+            var color = new Color[4] { Color.Red, Color.Green, Color.Yellow, Color.Blue };
             var playerAmmount = _inputView.AskPlayerAmmount();
 
             for (var i = 0; i < playerAmmount; i++)
-            {
                 Game.Players.Add(new Player { Name = _inputView.AskPlayerName(), Color = color[i], ID = i});
-            }
 
             Game.BuildFields();
 
@@ -57,9 +47,7 @@ namespace Controller
         public void GameRunning()
         {
             while (true)
-            {
                 GameTurn();
-            }
         }
 
         /// <summary>
@@ -69,10 +57,8 @@ namespace Controller
         {
             _outputView.ClearConsole();
             
-            // roll the dice
             var roll = _dice.Throw();
-
-            // move pawn
+            
             while (true)
             {
                 _outputView.ShowPlayer(Game.currentPlayer);
@@ -93,12 +79,14 @@ namespace Controller
         /// reutrn false to reset movement
 	    public bool PawnMovement(int roll)
         {
-            var id = _inputView.AskPawn();
-            id--;
-            var selectedPawn = Game.currentPlayer.Pawns.FirstOrDefault(x => x.Id == id);
+            var id = _inputView.AskPawn() - 1;
+            _selectedPawn = Game.currentPlayer.Pawns.FirstOrDefault(x => x.Id == id);
 
-            var startLocationX = selectedPawn.LocationX;
-            var startLocationY = selectedPawn.LocationY;
+            var startLocationX = _selectedPawn.LocationX;
+            var startLocationY = _selectedPawn.LocationY;
+
+            if(Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX] !=null)
+                Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].Pawn = null;
 
             for (var i = 0; i < roll; i++)
             {
@@ -107,74 +95,202 @@ namespace Controller
                 _outputView.ShowBoard(Game.Fields);
                 _outputView.ShowThrow(roll-i);
 
-                if (selectedPawn.LocationY == 0 && selectedPawn.LocationX == 0)
+                if (_selectedPawn.LocationY == 0 && _selectedPawn.LocationX == 0)
                 {
-                    selectedPawn.LocationY = Game.currentPlayer.StartField.LocationY;
-                    selectedPawn.LocationX = Game.currentPlayer.StartField.LocationX;
-
-                    Game.currentPlayer.Move(selectedPawn);
-                    Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX].Pawn = selectedPawn;
+                    _selectedPawn.LocationY = Game.currentPlayer.StartField.LocationY;
+                    _selectedPawn.LocationX = Game.currentPlayer.StartField.LocationX;
+                    
+                    Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].TempIcon = true;
+                    continue;
+                }
+                if (_selectedPawn.LocationY == 11 && _selectedPawn.LocationX == 11)
+                {
+                    _selectedPawn.LocationY = 10;
+                    Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].TempIcon = true;
                     continue;
                 }
 
-                Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX].Pawn = null;
+                    Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].TempIcon = false;
 
+                Field nextField;
+                Field nexLocation;
+                
                 switch (_inputView.AskDirection())
                 {
                     case "w":
-                        if (Game.Fields[selectedPawn.LocationY - 1, selectedPawn.LocationX] == null ||
-                            Game.Fields[selectedPawn.LocationY - 1, selectedPawn.LocationX].GetType() !=
-                            typeof(PathField))
+                        nextField = Game.Fields[_selectedPawn.LocationY - 1, _selectedPawn.LocationX];
+                        nexLocation = Game.Fields[_selectedPawn.LocationY - 2, _selectedPawn.LocationX];
+
+                        if (!CanMakeMove(nextField, nexLocation, roll - i))
                         {
                             i--;
                             break;
                         }
-                        selectedPawn.LocationY -= 2;
+
+                        nexLocation.TempIcon = true;
+                        _selectedPawn.LocationY -= 2;
                         break;
+
                     case "a":
-                        if (Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX - 1] == null ||
-                            Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX - 1].GetType() !=
-                            typeof(PathField))
+                        nextField = Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX - 1];
+                        nexLocation = Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX - 2];
+
+                        if (!CanMakeMove(nextField, nexLocation, roll - i))
                         {
                             i--;
                             break;
                         }
-                        selectedPawn.LocationX -= 2;
+
+                        nexLocation.TempIcon = true;
+                        _selectedPawn.LocationX -= 2;
                         break;
+
                     case "s":
-                        if (Game.Fields[selectedPawn.LocationY + 1, selectedPawn.LocationX] == null ||
-                            Game.Fields[selectedPawn.LocationY + 1, selectedPawn.LocationX].GetType() !=
-                            typeof(PathField))
+                        nextField = Game.Fields[_selectedPawn.LocationY + 1, _selectedPawn.LocationX];
+                        nexLocation = Game.Fields[_selectedPawn.LocationY + 2, _selectedPawn.LocationX];
+
+                        if (!CanMakeMove(nextField, nexLocation, roll - i))
                         {
                             i--;
                             break;
                         }
-                        selectedPawn.LocationY += 2;
+
+                        nexLocation.TempIcon = true;
+                        _selectedPawn.LocationY += 2;
                         break;
+
                     case "d":
-                        if (Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX + 1] == null ||
-                            Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX + 1].GetType() !=
-                            typeof(PathField))
+                        nextField = Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX + 1];
+                        nexLocation = Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX + 2];
+
+
+                        if (!CanMakeMove(nextField, nexLocation, roll - i))
                         {
                             i--;
                             break;
                         }
-                        selectedPawn.LocationX += 2;
+
+                        nexLocation.TempIcon = true;
+                        _selectedPawn.LocationX += 2;
                         break;
+
                     case "":
-                        selectedPawn.LocationX = startLocationX;
-                        selectedPawn.LocationY = startLocationY;
+                        _selectedPawn.LocationX = startLocationX;
+                        _selectedPawn.LocationY = startLocationY;
                         return false;
+
                     default:
                         i--;
                         _outputView.WrongDirection();
-                        continue;
+                        break;
                 }
-
-                Game.currentPlayer.Move(selectedPawn);
-                Game.Fields[selectedPawn.LocationY, selectedPawn.LocationX].Pawn = selectedPawn;
             }
+            var newField = Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX];
+
+            if (newField.Pawn != null)
+            {
+                var pawn = Game.Players.First(x => x.Color == newField.Pawn.Owner.Color)
+                    .Pawns.First(x => x.Id == newField.Pawn.Id);
+                if (newField.LocationY > 7)
+                {
+                    pawn.LocationY = 0;
+                    pawn.LocationX = 0;
+                }
+                else
+                {
+                    pawn.LocationY = 11;
+                    pawn.LocationX = 11;
+                }
+                
+            }
+
+            Game.currentPlayer.Move(_selectedPawn);
+            newField.Pawn = _selectedPawn;
+            newField.TempIcon = false;
             return true;
+	    }
+
+	    private bool CanMakeMove(Field nextField, Field nextLocation, int movesleft)
+	    {
+            if (nextField == null || nextField.GetType() != typeof(PathField)) return false;
+	        if (nextLocation.GetType() == typeof(RestField) && nextLocation.Pawn == null && movesleft > 1) return true;
+	        if (nextLocation.Barricade == null) return true;
+	        if (movesleft != 1) return false;
+            
+            MoveBarricade(nextLocation.Barricade, nextLocation);
+	        return true;
+	    }
+
+        public void MoveBarricade(Barricade barricade, Field currentField)
+        {
+            _outputView.ShowDirection();
+            while (true)
+            {
+                currentField.Barricade = null;
+                _outputView.ClearConsole();
+                _outputView.ShowBoard(Game.Fields);
+                currentField.TempIcon = false;
+
+                switch (Console.ReadKey().Key)
+                {
+                    case ConsoleKey.W:
+                        if (CanMoveBarricade(Game.Fields[currentField.LocationY - 1, currentField.LocationX]))
+                        {
+                            currentField = Game.Fields[currentField.LocationY - 2, currentField.LocationX];
+                            currentField.Barricade = barricade;
+                        }
+                        break;
+
+                    case ConsoleKey.S:
+                        if (CanMoveBarricade(Game.Fields[currentField.LocationY + 1, currentField.LocationX]))
+                        {
+                            currentField = Game.Fields[currentField.LocationY + 2, currentField.LocationX];
+                            currentField.Barricade = barricade;
+                        }
+                        break;
+
+                    case ConsoleKey.A:
+                        if (CanMoveBarricade(Game.Fields[currentField.LocationY, currentField.LocationX - 1]))
+                        {
+                            currentField = Game.Fields[currentField.LocationY, currentField.LocationX - 2];
+                            currentField.Barricade = barricade;
+                        }
+                        break;
+
+                    case ConsoleKey.D:
+                        if (CanMoveBarricade(Game.Fields[currentField.LocationY, currentField.LocationX + 1]))
+                        {
+                            currentField = Game.Fields[currentField.LocationY, currentField.LocationX + 2];
+                            currentField.Barricade = barricade;
+                        }
+                        break;
+
+                    case ConsoleKey.Enter:
+                        if (CanPlaceBarricade(currentField))
+                        {
+                            currentField.Barricade = barricade;
+                            return;
+                        }
+                        break;
+                }
+                currentField.TempIcon = true;
+            }
+        }
+
+	    public bool CanMoveBarricade(Field nextField)
+	    {
+	        if (nextField == null || nextField.GetType() != typeof(PathField)) return false;
+
+	        return true;
+	    }
+
+	    public bool CanPlaceBarricade(Field currentField)
+	    {
+	        if (currentField.GetType() == typeof(RestField) || currentField.GetType() == typeof(ForestField) || currentField.GetType() == typeof(FinishField)) return false;
+	        if (currentField.Pawn != null || currentField.Barricade != null) return false;
+	        if (currentField.LocationX == 14) return false;
+
+	        return true;
 	    }
     }
 }

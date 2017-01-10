@@ -11,12 +11,17 @@ using System.Text;
 
 public class Field
 {
-    public virtual bool isOccupied { get; set; }
+    public bool TempIcon { get; set; }
     public virtual string Icon { get { return "X "; }}
     public virtual bool canHaveBarricade { get; set; }
     public virtual Pawn Pawn { get; set; }
     public virtual Barricade Barricade { get; set; }
     public virtual int LocationX { get; set; }
     public virtual int LocationY { get; set; }
+
+    public Field()
+    {
+        TempIcon = false;
+    }
 }
 

@@ -11,6 +11,7 @@ using BarricaeModelLib.GeneratedCode.Model;
 using View;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace Model
@@ -18,21 +19,17 @@ namespace Model
 	public class Game
 	{
 	    public Player currentPlayer { get; set; }
-        public virtual List<Field> Field { get; set; }
         
 	    public List<Player> Players { get; set; }
 
-	    public IEnumerable<Barricade> Barricade { get; set; }
+	    public List<Barricade> Barricades { get; set; }
 
-	    private InputView input;
-
-	    private Color[] color;
-
-	    public Field[,] Fields;
+        public Field[,] Fields;
 
         public Game()
         {
             Players = new List<Player>();
+            Barricades = new List<Barricade>();
             Fields = new Field[16,23];
         }
 
@@ -41,7 +38,6 @@ namespace Model
         /// </summary>
 	    public void BuildFields()
 	    {
-
 	        var file = System.IO.File.ReadAllText(@"..\..\Board\Baricade.txt");
 	        string[] lines = System.IO.File.ReadAllLines(@"..\..\Board\Baricade.txt");
 
@@ -60,7 +56,9 @@ namespace Model
                             field = new Field { LocationX = i, LocationY = linecount };
 	                        break;
                         case 'o':
-                            field = new Field {Barricade = new Barricade(), LocationX = i, LocationY = linecount };
+	                        var barricade = new Barricade();
+                            Barricades.Add(barricade);
+                            field = new Field {Barricade = barricade, LocationX = i, LocationY = linecount };
 	                        break;
                         case 's':
                             field = new RestField { LocationX = i, LocationY = linecount };
