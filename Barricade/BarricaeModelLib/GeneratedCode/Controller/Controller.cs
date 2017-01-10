@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using Model;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using BarricaeModelLib.GeneratedCode.Model;
 using View;
 
@@ -34,7 +36,7 @@ namespace Controller
             var playerAmmount = _inputView.AskPlayerAmmount();
 
             for (var i = 0; i < playerAmmount; i++)
-                Game.Players.Add(new Player { Name = _inputView.AskPlayerName(), Color = color[i], ID = i});
+                Game.Players.Add(new Player { Name = _inputView.AskPlayerName(), Color = color[i], ID = i, Winner = false});
 
             Game.BuildFields();
 
@@ -47,7 +49,18 @@ namespace Controller
         public void GameRunning()
         {
             while (true)
-                GameTurn();
+                foreach (var player in Game.Players)
+                {
+                    if (!player.Winner)
+                    {
+                        GameTurn();
+                    }
+                    else
+                    {
+                        _outputView.WinScreen(player);
+                        return;
+                    }
+                }
         }
 
         /// <summary>
@@ -81,11 +94,14 @@ namespace Controller
         {
             var id = _inputView.AskPawn() - 1;
             _selectedPawn = Game.currentPlayer.Pawns.FirstOrDefault(x => x.Id == id);
+            _selectedPawn.VisitFields = new List<Field>{Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX] };
 
             var startLocationX = _selectedPawn.LocationX;
             var startLocationY = _selectedPawn.LocationY;
 
-            if(Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX] !=null)
+            var currentField = Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX];
+
+            if (Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX] !=null)
                 Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].Pawn = null;
 
             for (var i = 0; i < roll; i++)
@@ -99,10 +115,12 @@ namespace Controller
                 {
                     _selectedPawn.LocationY = Game.currentPlayer.StartField.LocationY;
                     _selectedPawn.LocationX = Game.currentPlayer.StartField.LocationX;
-                    
+
                     Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].TempIcon = true;
+                    _selectedPawn.VisitFields.Add(Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX]);
                     continue;
                 }
+
                 if (_selectedPawn.LocationY == 11 && _selectedPawn.LocationX == 11)
                 {
                     _selectedPawn.LocationY = 10;
@@ -110,11 +128,11 @@ namespace Controller
                     continue;
                 }
 
-                    Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].TempIcon = false;
+                Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].TempIcon = false;
 
                 Field nextField;
                 Field nexLocation;
-                
+
                 switch (_inputView.AskDirection())
                 {
                     case "w":
@@ -184,7 +202,9 @@ namespace Controller
                         _outputView.WrongDirection();
                         break;
                 }
+                _selectedPawn.VisitFields.Add(Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX]);
             }
+
             var newField = Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX];
 
             if (newField.Pawn != null)
@@ -207,12 +227,16 @@ namespace Controller
             Game.currentPlayer.Move(_selectedPawn);
             newField.Pawn = _selectedPawn;
             newField.TempIcon = false;
+            if (Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].GetType() == typeof(FinishField))
+                Game.currentPlayer.Winner = true;
             return true;
 	    }
 
-	    private bool CanMakeMove(Field nextField, Field nextLocation, int movesleft)
+	    private bool CanMakeMove(Field nextPath, Field nextLocation, int movesleft)
 	    {
-            if (nextField == null || nextField.GetType() != typeof(PathField)) return false;
+	        if (_selectedPawn.VisitFields.Contains(nextLocation)) return false;
+
+            if (nextPath == null || nextPath.GetType() != typeof(PathField)) return false;
 	        if (nextLocation.GetType() == typeof(RestField) && nextLocation.Pawn == null && movesleft > 1) return true;
 	        if (nextLocation.Barricade == null) return true;
 	        if (movesleft != 1) return false;

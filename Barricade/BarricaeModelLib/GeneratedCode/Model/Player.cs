@@ -21,6 +21,8 @@ public class Player
 
     public virtual StartField StartField { get; set; }
 
+    public bool Winner { get; set; }
+
     public Player()
     {
         Pawns = new Pawn[4];

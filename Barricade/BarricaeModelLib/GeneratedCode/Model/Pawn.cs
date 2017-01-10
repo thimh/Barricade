@@ -21,5 +21,7 @@ public class Pawn
     public string Icon { get; set; }
 
     public Player Owner { get; set; }
+
+    public List<Field> VisitFields { get; set; }
 }
 
