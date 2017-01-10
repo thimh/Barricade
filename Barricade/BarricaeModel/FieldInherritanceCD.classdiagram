@@ -147,10 +147,10 @@
           </association>
         </targetEnds>
         <ownedAttributesInternal>
-          <property Id="72cda004-ff95-4dfb-9a58-114068123496" name="PawnColor" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+          <property Id="72cda004-ff95-4dfb-9a58-114068123496" name="Pawn" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="455f8b45-f408-471a-ae62-99de9a26c085" />
             <type_NamedElement>
-              <referencedTypeMoniker Id="fa1e3525-bfc8-478a-9a50-f991b2f62e3b" LastKnownName="Color" />
+              <referencedTypeMoniker Id="f9d606e8-88f1-4e02-91ae-40f27016d16c" LastKnownName="Pawn" />
             </type_NamedElement>
           </property>
           <property Id="dec70b4a-4a21-4738-8974-b70b62334e37" name="Type" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
@@ -165,117 +165,13 @@
               <referencedTypeMoniker Id="76f6ca94-4e09-4f9f-8ee0-f3f9858883e3" LastKnownName="Barricade" />
             </type_NamedElement>
           </property>
-          <property Id="3c99f532-2bbc-42d8-a600-7fa743bb157e" name="IsOccupied" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="b9b80266-3527-4579-bf96-f4f97c5835e4" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="073ac8e9-ee48-450b-b7ff-f57e66e1cef3" LastKnownName="bool" />
-            </type_NamedElement>
-          </property>
           <property Id="ed698634-02db-45dc-a173-511c25bae9a1" name="canHaveBarricade" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="093fecc7-e616-4519-b2ce-5804cce1cdeb" />
             <type_NamedElement>
               <referencedTypeMoniker Id="073ac8e9-ee48-450b-b7ff-f57e66e1cef3" LastKnownName="bool" />
             </type_NamedElement>
           </property>
-          <property Id="f8e2e3f3-a6d5-4750-b479-5334311699c2" name="fieldNorth" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="cb3a6c4b-6689-49f1-8512-a549b593fb37" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="2f162eca-ef77-4690-902d-bfcdaee75d87" LastKnownName="Field" />
-            </type_NamedElement>
-          </property>
-          <property Id="45532bde-977e-4532-b414-15f912569e8a" name="fieldSouth" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="8737f331-520a-4d1d-bf7f-63f26855dfbf" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="372daea8-7b9a-40ed-a047-921d00f78543" LastKnownName="Field" />
-            </type_NamedElement>
-          </property>
-          <property Id="8e4d9aab-8ccb-4095-a4aa-0217d4247031" name="fieldEast" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="db4c6fcd-3d5f-4d97-84f0-197849ccd374" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="2f162eca-ef77-4690-902d-bfcdaee75d87" LastKnownName="Field" />
-            </type_NamedElement>
-          </property>
-          <property Id="6814f6af-91dc-4ac5-a27b-32dc2039f820" name="fieldWest" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="f52d2367-76bc-4ece-94f6-b33204e46cdd" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="2f162eca-ef77-4690-902d-bfcdaee75d87" LastKnownName="Field" />
-            </type_NamedElement>
-          </property>
         </ownedAttributesInternal>
-        <ownedOperationsInternal>
-          <operation Id="eac144d1-7ba8-467e-a007-bdb747906f27" name="SetPawn" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="a9afa0d7-a5ed-4a37-844c-0a0234025ded" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="c2d0559f-39bb-4073-a109-6ec46c5f81dd" name="Pawn currentPawn" direction="In" isUnique="false">
-                  <elementDefinition Id="1722001b-893e-4ff5-a7ca-07d2e7803eb3" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="df89efe8-21fe-411b-84b1-555282742aba" direction="Return" isUnique="false">
-                  <elementDefinition Id="9310d2d2-3e44-48cb-afb5-e38837cf8f2e" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="064f7248-ba32-4e6e-b47b-c339805ed92b" LastKnownName="void" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation Id="d2eb6b7c-911d-42b6-a516-a30286ec7ffe" name="RemovePawn" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="74046a0e-3bf6-4c20-8b92-7bec2ff30ddf" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="1578f0ff-e833-4469-9b5d-7de73132541d" name="int currentPawnID" direction="In" isUnique="false">
-                  <elementDefinition Id="3923c326-1f23-42cf-a608-f30ab4289b78" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="257e488c-cdaf-4443-a314-c672f2654105" direction="Return" isUnique="false">
-                  <elementDefinition Id="7d822cea-d1d4-4d5d-965d-5bb6fb0d46df" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="064f7248-ba32-4e6e-b47b-c339805ed92b" LastKnownName="void" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation Id="b9a9e2a5-0940-4720-8b6b-47edca0b7c86" name="SetBarricade" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="71dc7bba-fa1c-4567-a49c-5b51033a2686" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="99ca8605-f3e5-4f6e-8df0-a83b8c7eb3e6" name="Barricade barricade" direction="In" isUnique="false">
-                  <elementDefinition Id="df5eebb4-3dcd-49d5-ac4e-3ec805a88d78" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="bcad2dbe-f40d-409c-81ae-63672205eef8" direction="Return" isUnique="false">
-                  <elementDefinition Id="a2120292-4cb3-413e-935e-0ec6c13cd23c" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="064f7248-ba32-4e6e-b47b-c339805ed92b" LastKnownName="void" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation Id="1c47414f-b1a4-46e8-a345-2ff27045f7af" name="RemoveBarricade" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="9efcfee5-d8bb-4d19-b579-a2187632a475" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="ffe47643-eb67-4433-89da-016fb22dca18" name="Barricade barricade" direction="In" isUnique="false">
-                  <elementDefinition Id="f70bb2c5-5a54-4697-a8de-3834233c4090" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="dacadc4f-f2f0-4d44-b000-1c66e26bfb4c" direction="Return" isUnique="false">
-                  <elementDefinition Id="5deb3dad-12ec-4122-b6f3-eaf59b448c6b" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="064f7248-ba32-4e6e-b47b-c339805ed92b" LastKnownName="void" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
     <logicalClassDesignerModelHasTypes>
@@ -378,46 +274,8 @@
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
-        <ownedOperationsInternal>
-          <operation Id="bc7829ff-d661-49b4-bd13-3928dd86dfa8" name="Hit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="404855d6-7546-4eb4-8ee3-7503eb82a300" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="0bd81ef3-60e1-4a6a-8bcd-2b5936c0d104" direction="Return" isUnique="false">
-                  <elementDefinition Id="a42d60c6-4adc-4ee9-8471-356e47c7530d" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="064f7248-ba32-4e6e-b47b-c339805ed92b" LastKnownName="void" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-          <operation Id="130eb96b-781b-4731-90ed-d5cb120af351" name="Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
-            <elementDefinition Id="ff6431b2-f55a-4c8c-9c55-5989a2b97476" />
-            <ownedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="ff19ebd7-5996-4667-adde-0ec88a28c348" name="int steps" direction="In" isUnique="false">
-                  <elementDefinition Id="72485702-c65a-4a6c-854e-1bcc09f49a9a" />
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter Id="fafa5f02-6d8e-4d9d-96a2-50bc1556a7d5" direction="Return" isUnique="false">
-                  <elementDefinition Id="acaea956-aa9e-4c5f-9c43-a472e03fc642" />
-                  <type_NamedElement>
-                    <referencedTypeMoniker Id="064f7248-ba32-4e6e-b47b-c339805ed92b" LastKnownName="void" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-            </ownedParameters>
-          </operation>
-        </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
-    <packageHasNamedElement>
-      <referencedType Id="064f7248-ba32-4e6e-b47b-c339805ed92b" name="void" isAbstract="false" isLeaf="false" cachedFullName="void">
-        <elementDefinition Id="68a6eafd-4297-4ca1-8c02-fb2c6dda5cb2" />
-      </referencedType>
-    </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="8b7cf164-ebc9-490e-88be-c4c2b352a94e" name="FieldType" isAbstract="false" isLeaf="false" cachedFullName="FieldType">
         <elementDefinition Id="3bfa4678-5c64-4fc2-9583-8f24c1d333b5" />
@@ -426,11 +284,6 @@
     <packageHasNamedElement>
       <referencedType Id="9b993d2d-b62c-467f-b2f4-52de25bbded2" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
         <elementDefinition Id="cb584912-d9f8-4f9f-a2ff-e732141dc613" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="fa1e3525-bfc8-478a-9a50-f991b2f62e3b" name="Color" isAbstract="false" isLeaf="false" cachedFullName="BarricaeModel::Color">
-        <elementDefinition Id="d6c7f032-7d00-4a12-9f27-b340e89d1b0a" />
       </referencedType>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -454,13 +307,8 @@
       </class>
     </logicalClassDesignerModelHasTypes>
     <packageHasNamedElement>
-      <referencedType Id="2f162eca-ef77-4690-902d-bfcdaee75d87" name="Field" isAbstract="false" isLeaf="false" cachedFullName="BarricaeModel::Field">
-        <elementDefinition Id="93712518-dae9-4b00-b807-e276e2a30609" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="372daea8-7b9a-40ed-a047-921d00f78543" name="Field" isAbstract="false" isLeaf="false" cachedFullName="BarricaeModel::Field">
-        <elementDefinition Id="93712518-dae9-4b00-b807-e276e2a30609" />
+      <referencedType Id="f9d606e8-88f1-4e02-91ae-40f27016d16c" name="Pawn" isAbstract="false" isLeaf="false" cachedFullName="BarricaeModel::Pawn">
+        <elementDefinition Id="64c45859-7154-47b3-bf94-55fc30adaf9b" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

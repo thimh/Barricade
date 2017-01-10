@@ -226,7 +226,6 @@ namespace Controller
                 
             }
 
-            Game.currentPlayer.Move(_selectedPawn);
             newField.Pawn = _selectedPawn;
             newField.TempIcon = false;
             if (Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].GetType() == typeof(FinishField))

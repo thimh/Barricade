@@ -294,7 +294,7 @@
                 </association>
               </targetEnds>
               <ownedOperationsInternal>
-                <operation Id="b98cccea-55bf-411f-9f82-b406ab5c6553" name="Go" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                <operation Id="b98cccea-55bf-411f-9f82-b406ab5c6553" name="setupGame" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
                   <appliedStereotypesInternal>
                     <stereotypeInstance Id="fdeef2d9-330d-47e6-b824-91f805f1c6de" name="method" profile="CSharpProfile">
                       <elementDefinition Id="3f8744a3-f48a-40a0-a28b-abd12fb5f2b5" />
@@ -339,16 +339,15 @@
                     </stereotypeInstance>
                   </appliedStereotypesInternal>
                   <elementDefinition Id="9dd93661-59d1-4361-8a58-3b5feb728aa1" />
-                  <ownedParameters>
-                    <operationHasOwnedParameters>
-                      <parameter Id="64751998-ee4e-4034-b344-4afde3c03dca" direction="Return" isUnique="false">
-                        <elementDefinition Id="37ad4ff7-9150-44c0-a362-5dfcbe4e29cb" />
-                        <type_NamedElement>
-                          <referencedTypeMoniker Id="557426ba-7038-463e-9af5-958802e1cba6" LastKnownName="void" />
-                        </type_NamedElement>
-                      </parameter>
-                    </operationHasOwnedParameters>
-                  </ownedParameters>
+                </operation>
+                <operation Id="a6c9cf6c-f542-4c94-9fc4-7bf0e45e5476" name="GameRunning" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="f2852051-3eda-44ba-ae32-752a1298e179" />
+                </operation>
+                <operation Id="79646a84-d8e7-4980-9404-367ce459ddfa" name="GameTurn" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="96c7050c-ca25-48a0-95a5-c738d0d016af" />
+                </operation>
+                <operation Id="58873595-fd1c-4540-9f4d-ae5c0f979d21" name="PawnMovement" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="ffbeb65e-4442-4ab2-8c0b-f92df9f91ff2" />
                 </operation>
               </ownedOperationsInternal>
             </class>
@@ -592,7 +591,7 @@
               </appliedStereotypesInternal>
               <elementDefinition Id="b498483e-abf8-48fd-ad56-2462fcfaebaa" />
               <ownedAttributesInternal>
-                <property Id="4852c7ef-3a32-400b-a60b-a15f8d0f8efd" name="ThrowValue" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <property Id="4852c7ef-3a32-400b-a60b-a15f8d0f8efd" name="Eyes" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <appliedStereotypesInternal>
                     <stereotypeInstance Id="935aba61-abfe-4ead-a12f-db99a29b91f2" name="property" profile="CSharpProfile">
                       <elementDefinition Id="d2ae7565-5703-432d-beae-6c75fc33e9df" />
@@ -644,7 +643,7 @@
                   </appliedStereotypesInternal>
                   <elementDefinition Id="9e3791e2-f4f2-4240-b96e-89163cf7d48e" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="6c94abc4-463d-439b-afdb-f525a3b0df16" LastKnownName="int" />
+                    <referencedTypeMoniker Id="d00d7d58-4b24-4fbc-b29b-ac73e87b9ef1" LastKnownName="int" />
                   </type_NamedElement>
                 </property>
               </ownedAttributesInternal>
@@ -711,6 +710,11 @@
         </packagedElements>
       </package>
     </logicalClassDesignerModelHasPackages>
+    <packageHasNamedElement>
+      <referencedType Id="d00d7d58-4b24-4fbc-b29b-ac73e87b9ef1" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
+        <elementDefinition Id="cb584912-d9f8-4f9f-a2ff-e732141dc613" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="7cf9c75e-cdb1-45bd-8fca-6ef3adf6bd45" name="BarricaeModel">
     <elementDefinition Id="14ab5f2c-6047-4450-a19f-8ad767cb2370" />

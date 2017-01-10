@@ -55,10 +55,5 @@ public class Player
             Pawns[3] = new Pawn { Icon = "4 ", Id = 3, Owner = this};
         }
     }
-
-    public void Move(Pawn pawn)
-    {
-        Pawns[pawn.Id] = pawn;
-    }
 }
 
