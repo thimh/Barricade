@@ -85,8 +85,12 @@ namespace Controller
             var startLocationX = _selectedPawn.LocationX;
             var startLocationY = _selectedPawn.LocationY;
 
-            if(Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX] !=null)
+            Field currentField = Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX];
+
+            if (Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX] !=null)
                 Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].Pawn = null;
+
+            Field previousField = null;
 
             for (var i = 0; i < roll; i++)
             {
@@ -100,17 +104,17 @@ namespace Controller
                     _selectedPawn.LocationY = Game.currentPlayer.StartField.LocationY;
                     _selectedPawn.LocationX = Game.currentPlayer.StartField.LocationX;
                     
-                    Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].TempIcon = true;
+                    currentField.TempIcon = true;
                     continue;
                 }
                 if (_selectedPawn.LocationY == 11 && _selectedPawn.LocationX == 11)
                 {
                     _selectedPawn.LocationY = 10;
-                    Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].TempIcon = true;
+                    currentField.TempIcon = true;
                     continue;
                 }
 
-                    Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].TempIcon = false;
+                    currentField.TempIcon = false;
 
                 Field nextField;
                 Field nexLocation;
@@ -121,7 +125,7 @@ namespace Controller
                         nextField = Game.Fields[_selectedPawn.LocationY - 1, _selectedPawn.LocationX];
                         nexLocation = Game.Fields[_selectedPawn.LocationY - 2, _selectedPawn.LocationX];
 
-                        if (!CanMakeMove(nextField, nexLocation, roll - i))
+                        if (!CanMakeMove(nextField, nexLocation, roll - i, previousField))
                         {
                             i--;
                             break;
@@ -135,7 +139,7 @@ namespace Controller
                         nextField = Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX - 1];
                         nexLocation = Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX - 2];
 
-                        if (!CanMakeMove(nextField, nexLocation, roll - i))
+                        if (!CanMakeMove(nextField, nexLocation, roll - i, previousField))
                         {
                             i--;
                             break;
@@ -149,7 +153,7 @@ namespace Controller
                         nextField = Game.Fields[_selectedPawn.LocationY + 1, _selectedPawn.LocationX];
                         nexLocation = Game.Fields[_selectedPawn.LocationY + 2, _selectedPawn.LocationX];
 
-                        if (!CanMakeMove(nextField, nexLocation, roll - i))
+                        if (!CanMakeMove(nextField, nexLocation, roll - i, previousField))
                         {
                             i--;
                             break;
@@ -164,7 +168,7 @@ namespace Controller
                         nexLocation = Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX + 2];
 
 
-                        if (!CanMakeMove(nextField, nexLocation, roll - i))
+                        if (!CanMakeMove(nextField, nexLocation, roll - i, previousField))
                         {
                             i--;
                             break;
@@ -184,6 +188,7 @@ namespace Controller
                         _outputView.WrongDirection();
                         break;
                 }
+                previousField = currentField;
             }
             var newField = Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX];
 
@@ -210,8 +215,11 @@ namespace Controller
             return true;
 	    }
 
-	    private bool CanMakeMove(Field nextField, Field nextLocation, int movesleft)
+	    private bool CanMakeMove(Field nextField, Field nextLocation, int movesleft, Field previousField)
 	    {
+	        if (previousField != null)
+	            if (nextField == previousField) return false;
+
             if (nextField == null || nextField.GetType() != typeof(PathField)) return false;
 	        if (nextLocation.GetType() == typeof(RestField) && nextLocation.Pawn == null && movesleft > 1) return true;
 	        if (nextLocation.Barricade == null) return true;
