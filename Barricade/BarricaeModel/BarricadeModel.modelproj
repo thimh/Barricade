@@ -29,12 +29,33 @@
       <SubType>Content</SubType>
       <DependentUpon>BarricadeAKD.classdiagram</DependentUpon>
     </Content>
+    <Content Include="Controller_GameTurn_SD.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Controller_GameTurn_SD.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Controller_GameTurn_SD.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Controller_MoveBarricade_SD.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Controller_MoveBarricade_SD.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Controller_MoveBarricade_SD.sequencediagram</DependentUpon>
+    </Content>
     <Content Include="FieldInherritanceCD.classdiagram">
       <SubType>Content</SubType>
     </Content>
     <Content Include="FieldInherritanceCD.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>FieldInherritanceCD.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="Game_BuildFields_SD.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Game_BuildFields_SD.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Game_BuildFields_SD.sequencediagram</DependentUpon>
     </Content>
     <Content Include="ModelDefinition\Package1_1109.uml">
       <SubType>Content</SubType>
