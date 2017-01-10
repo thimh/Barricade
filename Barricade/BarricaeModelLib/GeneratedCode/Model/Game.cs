@@ -18,7 +18,6 @@ namespace Model
 	public class Game
 	{
 	    public Player currentPlayer { get; set; }
-        public virtual List<Field> Field { get; set; }
         
 	    public List<Player> Players { get; set; }
 
