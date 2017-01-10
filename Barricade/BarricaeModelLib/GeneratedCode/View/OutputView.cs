@@ -66,6 +66,11 @@ namespace View
 	    {
 	        Console.Clear();
 	    }
+
+	    public void ShowDirection()
+	    {
+	        Console.WriteLine("Move barricade with w,a,s,d");
+	    }
 	}
 }
 

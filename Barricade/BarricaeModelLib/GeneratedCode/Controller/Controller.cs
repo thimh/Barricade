@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using System;
+using Model;
 using System.Linq;
 using BarricaeModelLib.GeneratedCode.Model;
 using View;
@@ -189,9 +190,50 @@ namespace Controller
 	        if (nextLocation.Barricade == null) return true;
 	        if (movesleft != 1) return false;
             
-	        Game.Fields[_inputView.AskBarricadeLocationY(), _inputView.AskBarricadeLocationX()].Barricade = nextLocation.Barricade;
+            MoveBarricade(nextLocation.Barricade, nextLocation);
 	        nextLocation.Barricade = null;
 	        return true;
 	    }
+
+        public void MoveBarricade(Barricade barricade, Field currentField)
+        {
+            _outputView.ShowDirection();
+            while (true)
+            {
+                switch (Console.ReadKey().Key)
+                {
+                    case ConsoleKey.W:
+                        currentField = Game.Fields[currentField.LocationY - 2, currentField.LocationX];
+                        currentField.Barricade = barricade;
+                        _outputView.ClearConsole();
+                        _outputView.ShowBoard(Game.Fields);
+                        break;
+
+                    case ConsoleKey.S:
+                        currentField = Game.Fields[currentField.LocationY + 2, currentField.LocationX];
+                        currentField.Barricade = barricade;
+                        _outputView.ClearConsole();
+                        _outputView.ShowBoard(Game.Fields);
+                        break;
+
+                    case ConsoleKey.A:
+                        currentField = Game.Fields[currentField.LocationY, currentField.LocationX - 2];
+                        currentField.Barricade = barricade;
+                        _outputView.ClearConsole();
+                        _outputView.ShowBoard(Game.Fields);
+                        break;
+
+                    case ConsoleKey.D:
+                        currentField = Game.Fields[currentField.LocationY, currentField.LocationX + 2];
+                        currentField.Barricade = barricade;
+                        _outputView.ClearConsole();
+                        _outputView.ShowBoard(Game.Fields);
+                        break;
+
+                    case ConsoleKey.Enter:
+                        return;
+                }
+            }
+        }
     }
 }
