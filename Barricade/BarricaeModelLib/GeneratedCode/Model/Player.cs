@@ -26,31 +26,31 @@ public class Player
         Pawns = new Pawn[4];
         if (Color == Color.Blue)
         {
-            Pawns[0] = new Pawn { Icon = "B1", Id = 0};
-            Pawns[1] = new Pawn { Icon = "B2", Id = 1};
-            Pawns[2] = new Pawn { Icon = "B3", Id = 2};
-            Pawns[3] = new Pawn { Icon = "B4", Id = 3};
+            Pawns[0] = new Pawn { Icon = "1 ", Id = 0, Owner = this};
+            Pawns[1] = new Pawn { Icon = "2 ", Id = 1, Owner = this};
+            Pawns[2] = new Pawn { Icon = "3 ", Id = 2, Owner = this};
+            Pawns[3] = new Pawn { Icon = "4 ", Id = 3, Owner = this};
         }
         if (Color == Color.Yellow)
         {
-            Pawns[0] = new Pawn { Icon = "Y1", Id = 0};
-            Pawns[1] = new Pawn { Icon = "Y2", Id = 1};
-            Pawns[2] = new Pawn { Icon = "Y3", Id = 2};
-            Pawns[3] = new Pawn { Icon = "Y4", Id = 3};
+            Pawns[0] = new Pawn { Icon = "1 ", Id = 0, Owner = this};
+            Pawns[1] = new Pawn { Icon = "2 ", Id = 1, Owner = this};
+            Pawns[2] = new Pawn { Icon = "3 ", Id = 2, Owner = this};
+            Pawns[3] = new Pawn { Icon = "4 ", Id = 3, Owner = this};
         }
         if (Color == Color.Red)
         {
-            Pawns[0] = new Pawn { Icon = "R1", Id = 0};
-            Pawns[1] = new Pawn { Icon = "R2", Id = 1};
-            Pawns[2] = new Pawn { Icon = "R3", Id = 2};
-            Pawns[3] = new Pawn { Icon = "R4", Id = 3};
+            Pawns[0] = new Pawn { Icon = "1 ", Id = 0, Owner = this};
+            Pawns[1] = new Pawn { Icon = "2 ", Id = 1, Owner = this};
+            Pawns[2] = new Pawn { Icon = "3 ", Id = 2, Owner = this};
+            Pawns[3] = new Pawn { Icon = "4 ", Id = 3, Owner = this};
         }
         if (Color == Color.Green)
         {
-            Pawns[0] = new Pawn { Icon = "G1", Id = 0};
-            Pawns[1] = new Pawn { Icon = "G2", Id = 1};
-            Pawns[2] = new Pawn { Icon = "G3", Id = 2};
-            Pawns[3] = new Pawn { Icon = "G4", Id = 3};
+            Pawns[0] = new Pawn { Icon = "1 ", Id = 0, Owner = this};
+            Pawns[1] = new Pawn { Icon = "2 ", Id = 1, Owner = this};
+            Pawns[2] = new Pawn { Icon = "3 ", Id = 2, Owner = this};
+            Pawns[3] = new Pawn { Icon = "4 ", Id = 3, Owner = this};
         }
     }
 

@@ -30,13 +30,11 @@ namespace Controller
         public void SetupGame()
         {
             Game = new Game();
-            var color = new Color[4] { Color.Blue, Color.Green, Color.Red, Color.Yellow };
+            var color = new Color[4] { Color.Red, Color.Green, Color.Yellow, Color.Blue };
             var playerAmmount = _inputView.AskPlayerAmmount();
 
             for (var i = 0; i < playerAmmount; i++)
-            {
                 Game.Players.Add(new Player { Name = _inputView.AskPlayerName(), Color = color[i], ID = i});
-            }
 
             Game.BuildFields();
 
@@ -49,9 +47,7 @@ namespace Controller
         public void GameRunning()
         {
             while (true)
-            {
                 GameTurn();
-            }
         }
 
         /// <summary>
@@ -61,10 +57,8 @@ namespace Controller
         {
             _outputView.ClearConsole();
             
-            // roll the dice
             var roll = _dice.Throw();
-
-            // move pawn
+            
             while (true)
             {
                 _outputView.ShowPlayer(Game.currentPlayer);
@@ -91,6 +85,9 @@ namespace Controller
             var startLocationX = _selectedPawn.LocationX;
             var startLocationY = _selectedPawn.LocationY;
 
+            if(Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX] !=null)
+                Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].Pawn = null;
+
             for (var i = 0; i < roll; i++)
             {
                 _outputView.ClearConsole();
@@ -109,7 +106,6 @@ namespace Controller
                 }
 
                 Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].TempIcon = false;
-                Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].Pawn = null;
 
                 Field nextField;
                 Field nexLocation;
@@ -123,6 +119,7 @@ namespace Controller
                         if (!CanMakeMove(nextField, nexLocation, roll - i))
                         {
                             i--;
+                            break;
                         }
 
                         nexLocation.TempIcon = true;
@@ -183,10 +180,28 @@ namespace Controller
                         break;
                 }
             }
+            var newField = Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX];
+
+            if (newField.Pawn != null)
+            {
+                var pawn = Game.Players.First(x => x.Color == newField.Pawn.Owner.Color)
+                    .Pawns.First(x => x.Id == newField.Pawn.Id);
+                if (newField.LocationY > 7)
+                {
+                    pawn.LocationY = 0;
+                    pawn.LocationX = 0;
+                }
+                else
+                {
+                    pawn.LocationY = 11;
+                    pawn.LocationX = 10;
+                }
+                
+            }
 
             Game.currentPlayer.Move(_selectedPawn);
-            Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].Pawn = _selectedPawn;
-            Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].TempIcon = false;
+            newField.Pawn = _selectedPawn;
+            newField.TempIcon = false;
             return true;
 	    }
 

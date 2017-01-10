@@ -19,5 +19,7 @@ public class Pawn
     public int Id { get; set; }
 
     public string Icon { get; set; }
+
+    public Player Owner { get; set; }
 }
 
