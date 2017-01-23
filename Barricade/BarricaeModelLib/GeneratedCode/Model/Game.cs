@@ -94,6 +94,11 @@ namespace BarricaeModelLib.GeneratedCode.Model
 		    if (nextPlayer >= Players.Count) nextPlayer = 0;
 		    CurrentPlayer = Players.Find(x => x.ID == nextPlayer);
 		}
+
+	    public void movePawn(int id)
+	    {
+	        
+	    }
 	}
 }
 

@@ -18,6 +18,7 @@ namespace BarricaeModelLib.GeneratedCode.Model
             Pawns[1] = new Pawn { Icon = "2 ", Id = 1, Owner = this};
             Pawns[2] = new Pawn { Icon = "3 ", Id = 2, Owner = this};
             Pawns[3] = new Pawn { Icon = "4 ", Id = 3, Owner = this};
+            Winner = false;
         }
     }
 }
