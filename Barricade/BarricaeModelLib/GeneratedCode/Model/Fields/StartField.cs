@@ -2,7 +2,7 @@
 {
     public class StartField : Field
     {
-
+        public override bool canHaveBarricade => false;
     }
 }
 
