@@ -7,12 +7,13 @@
 
 using System.Dynamic;
 using System.IO;
-using BarricaeModelLib.GeneratedCode.Model;
+using BarricaeModelLib.GeneratedCode.Model.Fields;
 using View;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using BarricaeModelLib.GeneratedCode.Model;
 
 namespace Model
 {
