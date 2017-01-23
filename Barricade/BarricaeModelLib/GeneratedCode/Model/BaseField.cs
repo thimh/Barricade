@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace BarricaeModelLib.GeneratedCode.Model
 {
-    public class PathField:Field
+    class BaseField
     {
-        public override string Icon => "| ";
     }
 }

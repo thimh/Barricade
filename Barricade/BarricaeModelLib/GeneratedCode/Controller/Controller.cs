@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using Model;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using BarricaeModelLib.GeneratedCode.Model;
+using BarricaeModelLib.GeneratedCode.Model.Fields;
 using View;
 
 namespace Controller
@@ -223,7 +222,6 @@ namespace Controller
                     pawn.LocationY = 11;
                     pawn.LocationX = 11;
                 }
-                
             }
 
             newField.Pawn = _selectedPawn;

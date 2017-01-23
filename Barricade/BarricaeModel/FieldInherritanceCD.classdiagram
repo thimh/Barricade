@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="6473bab1-d6ac-4698-9354-bb3b8232a486" name="FieldInherritanceCD" linkedPackageId="95e7491b-e219-40fe-85da-3b1ec47f203c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="6473bab1-d6ac-4698-9354-bb3b8232a486" name="FieldInherritanceCD" linkedPackageId="95e7491b-e219-40fe-85da-3b1ec47f203c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <appliedStereotypesInternal>
     <stereotypeInstance Id="2cafe059-44a7-45e0-9648-4d02489589a9" name="namespace" profile="CSharpProfile">
       <elementDefinition Id="9fb6e4e9-de36-409d-8109-c6306e351aee" />
@@ -153,12 +153,6 @@
               <referencedTypeMoniker Id="f9d606e8-88f1-4e02-91ae-40f27016d16c" LastKnownName="Pawn" />
             </type_NamedElement>
           </property>
-          <property Id="dec70b4a-4a21-4738-8974-b70b62334e37" name="Type" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
-            <elementDefinition Id="6a6f051d-18fe-4879-a0de-2be14e4a6d8a" />
-            <type_NamedElement>
-              <referencedTypeMoniker Id="8b7cf164-ebc9-490e-88be-c4c2b352a94e" LastKnownName="FieldType" />
-            </type_NamedElement>
-          </property>
           <property Id="aac7275b-e042-4503-8577-d2ad42359ba8" name="Barricade" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
             <elementDefinition Id="b44361b0-9050-482e-8bcc-f864a118bf96" />
             <type_NamedElement>
@@ -276,11 +270,6 @@
         </ownedAttributesInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
-    <packageHasNamedElement>
-      <referencedType Id="8b7cf164-ebc9-490e-88be-c4c2b352a94e" name="FieldType" isAbstract="false" isLeaf="false" cachedFullName="FieldType">
-        <elementDefinition Id="3bfa4678-5c64-4fc2-9583-8f24c1d333b5" />
-      </referencedType>
-    </packageHasNamedElement>
     <packageHasNamedElement>
       <referencedType Id="9b993d2d-b62c-467f-b2f4-52de25bbded2" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
         <elementDefinition Id="cb584912-d9f8-4f9f-a2ff-e732141dc613" />
