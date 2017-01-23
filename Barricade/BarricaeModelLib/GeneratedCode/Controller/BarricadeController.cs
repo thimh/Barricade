@@ -80,7 +80,7 @@ namespace BarricaeModelLib.GeneratedCode.Controller
         public bool CanPlaceBarricade(Field currentField)
         {
             if (currentField.Pawn != null || currentField.Barricade != null) return false;
-            if (currentField.canHaveBarricade == false) return false;
+            if (currentField.CanHaveBarricade == false) return false;
             return currentField.LocationX != 14;
         }
     }
