@@ -1,5 +1,7 @@
-﻿public class Barricade
+﻿namespace BarricaeModelLib.GeneratedCode.Model
 {
-    public string Icon { get { return "O "; } }
+    public class Barricade
+    {
+        public string Icon => "O ";
+    }
 }
-
