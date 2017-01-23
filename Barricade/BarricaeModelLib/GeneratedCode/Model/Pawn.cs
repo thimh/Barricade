@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using BarricaeModelLib.GeneratedCode.Model;
 using BarricaeModelLib.GeneratedCode.Model.Fields;
 
 public class Pawn

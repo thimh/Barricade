@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using BarricaeModelLib.GeneratedCode.Model;
 using BarricaeModelLib.GeneratedCode.Model.Fields;
-using Model;
 using View;
 
 namespace Controller
@@ -46,7 +45,7 @@ namespace Controller
 
             Game.BuildFields();
 
-            Game.currentPlayer = Game.Players.FirstOrDefault(x => x.ID == 0);
+            Game.CurrentPlayer = Game.Players.FirstOrDefault(x => x.ID == 0);
         }
 
         /// <summary>
@@ -78,7 +77,7 @@ namespace Controller
 
             while (true)
             {
-                _outputView.ShowPlayer(Game.currentPlayer);
+                _outputView.ShowPlayer(Game.CurrentPlayer);
                 _outputView.ShowBoard(Game.Fields);
                 _outputView.ShowThrow(roll);
                 if (PawnMovement(roll))
@@ -97,7 +96,7 @@ namespace Controller
         public bool PawnMovement(int roll)
         {
             var id = _inputView.AskPawn() - 1;
-            _selectedPawn = Game.currentPlayer.Pawns[id];
+            _selectedPawn = Game.CurrentPlayer.Pawns[id];
             _selectedPawn.VisitFields = new List<Field> {Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX]};
 
             var startLocationX = _selectedPawn.LocationX;
@@ -109,14 +108,14 @@ namespace Controller
             for (var i = 0; i < roll; i++)
             {
                 _outputView.ClearConsole();
-                _outputView.ShowPlayer(Game.currentPlayer);
+                _outputView.ShowPlayer(Game.CurrentPlayer);
                 _outputView.ShowBoard(Game.Fields);
                 _outputView.ShowThrow(roll - i);
 
                 if ((_selectedPawn.LocationY == 0) && (_selectedPawn.LocationX == 0))
                 {
-                    _selectedPawn.LocationY = Game.currentPlayer.StartField.LocationY;
-                    _selectedPawn.LocationX = Game.currentPlayer.StartField.LocationX;
+                    _selectedPawn.LocationY = Game.CurrentPlayer.StartField.LocationY;
+                    _selectedPawn.LocationX = Game.CurrentPlayer.StartField.LocationX;
 
                     Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].TempIcon = true;
                     _selectedPawn.VisitFields.Add(Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX]);
@@ -232,7 +231,7 @@ namespace Controller
             newField.Pawn = _selectedPawn;
             newField.TempIcon = false;
             if (Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX].GetType() == typeof(FinishField))
-                Game.currentPlayer.Winner = true;
+                Game.CurrentPlayer.Winner = true;
             return true;
         }
 
@@ -240,7 +239,7 @@ namespace Controller
         {
             if (_selectedPawn.VisitFields.Contains(nextLocation)) return false;
             if ((nextLocation.Pawn != null) && (movesleft == 1))
-                if (nextLocation.Pawn.Owner == Game.currentPlayer) return false;
+                if (nextLocation.Pawn.Owner == Game.CurrentPlayer) return false;
             if ((nextPath == null) || (nextPath.GetType() != typeof(PathField))) return false;
             if ((nextLocation.GetType() == typeof(RestField)) && (nextLocation.Pawn == null) && (movesleft > 1))
                 return true;
