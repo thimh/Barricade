@@ -8,13 +8,12 @@ namespace BarricaeModelLib.GeneratedCode.Controller
     public class BarricadeController
     {
         private readonly OutputView _outputView;
-
-        public Game Game { get; set; }
+        private readonly Game _game;
 
         public BarricadeController(Game game)
         {
             _outputView = new OutputView();
-            Game = game;
+            _game = game;
         }
 
         public void MoveBarricade(Barricade barricade, Field currentField)
@@ -24,39 +23,39 @@ namespace BarricaeModelLib.GeneratedCode.Controller
             {
                 currentField.Barricade = null;
                 _outputView.ClearConsole();
-                _outputView.ShowBoard(Game.Fields);
+                _outputView.ShowBoard(_game.Fields);
                 currentField.TempIcon = false;
 
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.W:
-                        if (CanMoveBarricade(Game.Fields[currentField.LocationY - 1, currentField.LocationX]))
+                        if (CanMoveBarricade(_game.Fields[currentField.LocationY - 1, currentField.LocationX]))
                         {
-                            currentField = Game.Fields[currentField.LocationY - 2, currentField.LocationX];
+                            currentField = _game.Fields[currentField.LocationY - 2, currentField.LocationX];
                             currentField.Barricade = barricade;
                         }
                         break;
 
                     case ConsoleKey.S:
-                        if (CanMoveBarricade(Game.Fields[currentField.LocationY + 1, currentField.LocationX]))
+                        if (CanMoveBarricade(_game.Fields[currentField.LocationY + 1, currentField.LocationX]))
                         {
-                            currentField = Game.Fields[currentField.LocationY + 2, currentField.LocationX];
+                            currentField = _game.Fields[currentField.LocationY + 2, currentField.LocationX];
                             currentField.Barricade = barricade;
                         }
                         break;
 
                     case ConsoleKey.A:
-                        if (CanMoveBarricade(Game.Fields[currentField.LocationY, currentField.LocationX - 1]))
+                        if (CanMoveBarricade(_game.Fields[currentField.LocationY, currentField.LocationX - 1]))
                         {
-                            currentField = Game.Fields[currentField.LocationY, currentField.LocationX - 2];
+                            currentField = _game.Fields[currentField.LocationY, currentField.LocationX - 2];
                             currentField.Barricade = barricade;
                         }
                         break;
 
                     case ConsoleKey.D:
-                        if (CanMoveBarricade(Game.Fields[currentField.LocationY, currentField.LocationX + 1]))
+                        if (CanMoveBarricade(_game.Fields[currentField.LocationY, currentField.LocationX + 1]))
                         {
-                            currentField = Game.Fields[currentField.LocationY, currentField.LocationX + 2];
+                            currentField = _game.Fields[currentField.LocationY, currentField.LocationX + 2];
                             currentField.Barricade = barricade;
                         }
                         break;
@@ -75,13 +74,13 @@ namespace BarricaeModelLib.GeneratedCode.Controller
 
         public bool CanMoveBarricade(Field nextField)
         {
-            return nextField != null && nextField.GetType() == typeof(PathField);
+            return nextField.GetType() == typeof(PathField);
         }
 
         public bool CanPlaceBarricade(Field currentField)
         {
-            if (currentField.GetType() == typeof(RestField) || currentField.GetType() == typeof(ForestField) || currentField.GetType() == typeof(FinishField)) return false;
             if (currentField.Pawn != null || currentField.Barricade != null) return false;
+            if (currentField.canHaveBarricade == false) return false;
             return currentField.LocationX != 14;
         }
     }

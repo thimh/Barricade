@@ -79,6 +79,10 @@ namespace BarricaeModelLib.GeneratedCode.Model
                         default:
 	                        break;
 	                }
+	                if (linecount == lines.Length)
+	                {
+	                    if (field != null) field.CanHaveBarricade = false;
+	                }
 	                Fields[linecount, i] = field;
 	            }
 	            linecount++;

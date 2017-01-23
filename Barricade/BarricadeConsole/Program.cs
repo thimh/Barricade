@@ -6,7 +6,7 @@ namespace BarricadeConsole
     {
         static void Main(string[] args)
         {
-            new Controller();
+            new GameController();
             System.Console.ReadLine();
         }
     }

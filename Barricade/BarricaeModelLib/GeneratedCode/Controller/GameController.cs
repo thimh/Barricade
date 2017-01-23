@@ -4,7 +4,7 @@ using View;
 
 namespace BarricaeModelLib.GeneratedCode.Controller
 {
-	public class Controller
+	public class GameController
 	{
 	    private readonly InputView _inputView;
 	    private readonly OutputView _outputView;
@@ -13,7 +13,7 @@ namespace BarricaeModelLib.GeneratedCode.Controller
 
 	    public Game Game { get; set; }
 
-	    public Controller()
+	    public GameController()
 	    {
             _dice = new Dice();
             _inputView = new InputView();
@@ -37,8 +37,7 @@ namespace BarricaeModelLib.GeneratedCode.Controller
                 {
                     Name = _inputView.AskPlayerName(),
                     Color = color[i],
-                    ID = i,
-                    Winner = false
+                    ID = i
                 });
 
             Game.BuildFields();
