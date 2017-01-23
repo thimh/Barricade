@@ -74,13 +74,13 @@ namespace BarricaeModelLib.GeneratedCode.Controller
 
         public bool CanMoveBarricade(Field nextField)
         {
-            return nextField != null && nextField.GetType() == typeof(PathField);
+            return nextField.GetType() == typeof(PathField);
         }
 
         public bool CanPlaceBarricade(Field currentField)
         {
-            if (currentField.GetType() == typeof(RestField) || currentField.GetType() == typeof(ForestField) || currentField.GetType() == typeof(FinishField)) return false;
             if (currentField.Pawn != null || currentField.Barricade != null) return false;
+            if (currentField.canHaveBarricade == false) return false;
             return currentField.LocationX != 14;
         }
     }
