@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using BarricaeModelLib.GeneratedCode.Model;
+using BarricaeModelLib.GeneratedCode.Model.Fields;
 using Model;
 using View;
 
@@ -17,11 +18,12 @@ namespace BarricaeModelLib.GeneratedCode.Controller
 
         public PawnController(Game game)
         {
-            Game = game;
             _inputView = new InputView();
             _outputView = new OutputView();
+            Game = game;
             _barricadeController = new BarricadeController(Game);
         }
+
 
         /// <summary>
         /// Movement of the pawn logic
