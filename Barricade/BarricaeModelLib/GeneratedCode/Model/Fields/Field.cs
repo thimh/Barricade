@@ -3,10 +3,5 @@
     public class Field : BaseField
     {
         public override string Icon => "X ";
-
-        public Field()
-        {
-            TempIcon = false;
-        }
     }
 }

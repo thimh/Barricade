@@ -81,7 +81,7 @@ namespace BarricaeModelLib.GeneratedCode.Model
 	                }
 	                if (linecount == lines.Length)
 	                {
-	                    if (field != null) field.canHaveBarricade = false;
+	                    if (field != null) field.CanHaveBarricade = false;
 	                }
 	                Fields[linecount, i] = field;
 	            }
