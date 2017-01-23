@@ -1,7 +1,9 @@
-﻿using BarricaeModelLib.GeneratedCode.Model.Fields;
-
-public class RestField : Field
+﻿namespace BarricaeModelLib.GeneratedCode.Model.Fields
 {
-    public override string Icon => "R ";
+    public class RestField : Field
+    {
+        public override string Icon => "R ";
+        public override bool canHaveBarricade => false;
+    }
 }
 
