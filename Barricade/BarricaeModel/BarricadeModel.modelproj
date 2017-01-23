@@ -29,6 +29,9 @@
       <SubType>Content</SubType>
       <DependentUpon>BarricadeAKD.classdiagram</DependentUpon>
     </Content>
+    <Content Include="BuildFields_SD.png">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Controller_GameTurn_SD.sequencediagram">
       <SubType>Content</SubType>
     </Content>
@@ -49,6 +52,9 @@
     <Content Include="FieldInherritanceCD.classdiagram.layout">
       <SubType>Content</SubType>
       <DependentUpon>FieldInherritanceCD.classdiagram</DependentUpon>
+    </Content>
+    <Content Include="GameTurn_SD.png">
+      <SubType>Content</SubType>
     </Content>
     <Content Include="Game_BuildFields_SD.sequencediagram">
       <SubType>Content</SubType>
@@ -76,6 +82,9 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="ModelDefinition\Package_1305.uml">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="MoveBarricade_SD.png">
       <SubType>Content</SubType>
     </Content>
     <Folder Include="ModelDefinition\" />
