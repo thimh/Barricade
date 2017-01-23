@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeneratedCode\Controller\BarricadeController.cs" />
+    <Compile Include="GeneratedCode\Controller\PawnController.cs" />
     <Compile Include="GeneratedCode\Model\Barricade.cs" />
     <Compile Include="GeneratedCode\Model\Color.cs" />
     <Compile Include="GeneratedCode\Controller\Controller.cs" />
