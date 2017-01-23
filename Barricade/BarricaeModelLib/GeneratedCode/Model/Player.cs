@@ -26,11 +26,5 @@ public class Player
         Pawns[2] = new Pawn { Icon = "3 ", Id = 2, Owner = this};
         Pawns[3] = new Pawn { Icon = "4 ", Id = 3, Owner = this};
     }
-
-    public void setPawnLocation(int pawnId, int LocationX, int LocationY)
-    {
-        Pawns[pawnId].LocationY = LocationY;
-        Pawns[pawnId].LocationX = LocationX;
-    }
 }
 
