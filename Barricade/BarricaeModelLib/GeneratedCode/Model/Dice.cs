@@ -1,8 +1,8 @@
-﻿namespace Model
-{
-	using System;
+﻿using System;
 
-	class Dice
+namespace BarricaeModelLib.GeneratedCode.Model
+{
+    class Dice
 	{
 	    private readonly Random _r =new Random();
 

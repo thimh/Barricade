@@ -1,7 +1,8 @@
-﻿using BarricaeModelLib.GeneratedCode.Model.Fields;
-
-public class StartField : Field
+﻿namespace BarricaeModelLib.GeneratedCode.Model.Fields
 {
-    public Color Color { get; set; }
+    public class StartField : Field
+    {
+
+    }
 }
 
