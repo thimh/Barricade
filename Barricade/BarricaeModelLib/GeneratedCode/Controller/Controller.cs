@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using BarricaeModelLib.GeneratedCode.Model;
-using BarricaeModelLib.GeneratedCode.Model.Fields;
 using View;
 
-namespace Controller
+namespace BarricaeModelLib.GeneratedCode.Controller
 {
 	public class Controller
 	{

@@ -1,7 +1,6 @@
 ﻿using System;
 using BarricaeModelLib.GeneratedCode.Model;
 using BarricaeModelLib.GeneratedCode.Model.Fields;
-using Model;
 using View;
 
 namespace BarricaeModelLib.GeneratedCode.Controller
