@@ -14,7 +14,6 @@ namespace Controller
 	    private readonly OutputView _outputView;
 	    private readonly Dice _dice;
 	    private readonly PawnController _pawnController;
-	    private Pawn _selectedPawn;
 
 	    public Game Game { get; set; }
 
