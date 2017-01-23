@@ -45,7 +45,7 @@
     <Compile Include="GeneratedCode\Model\Barricade.cs" />
     <Compile Include="GeneratedCode\Model\Fields\BaseField.cs" />
     <Compile Include="GeneratedCode\Model\Color.cs" />
-    <Compile Include="GeneratedCode\Controller\Controller.cs" />
+    <Compile Include="GeneratedCode\Controller\GameController.cs" />
     <Compile Include="GeneratedCode\Model\Fields\Field.cs" />
     <Compile Include="GeneratedCode\Model\Fields\FinishField.cs" />
     <Compile Include="GeneratedCode\Model\Fields\ForestField.cs" />
