@@ -37,8 +37,7 @@ namespace BarricaeModelLib.GeneratedCode.Controller
                 {
                     Name = _inputView.AskPlayerName(),
                     Color = color[i],
-                    ID = i,
-                    Winner = false
+                    ID = i
                 });
 
             Game.BuildFields();
