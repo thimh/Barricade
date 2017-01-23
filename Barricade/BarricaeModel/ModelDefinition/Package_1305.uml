@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
   dslVersion="1.0.0.0"
   Id="455c04d5-4587-4697-83c7-1c33e1ca0824"
   name="Controller" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -7,7 +7,7 @@
     <packageHasNamedElement>
       <class
         Id="29eb96ed-ba50-4ea3-96a7-0f69f09fc447"
-        name="Controller"
+        name="GameController"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -291,6 +291,306 @@
           <operation
             Id="ffbeb65e-4442-4ab2-8c0b-f92df9f91ff2"
             name="PawnMovement"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="11c2593e-f4c9-44e4-ae69-8ccc76996bfe"
+        name="BarricadeController"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="c7a75f93-ea68-4fc3-8762-bda58dfefcd4"
+            isDerived="false"
+            sourceEndRoleName="BarricadeController"
+            targetEndRoleName="Game"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="8a56b085-4cd6-4d21-9c44-d97e3654aa3b"
+              LastKnownName="Game"
+              LastKnownLocation="Package2_1305.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f61b9dc0-e09d-49b0-ad1c-028fe84482d3"
+                  name="BarricadeController"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="982d89b9-b253-401c-9ea2-dfd4e2ee57e0"
+                  name="Game"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="78a3a463-11f3-41dd-bb7e-2f88794a7653"
+            isDerived="false"
+            sourceEndRoleName="BarricadeController"
+            targetEndRoleName="OutputView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="4dcd25fa-99e6-4ae8-a91c-7a007668874b"
+              LastKnownName="OutputView"
+              LastKnownLocation="Package1_1305.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="00bbb0fb-2659-4b9f-ae8c-31bf0f352117"
+                  name="BarricadeController"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="19c52454-af86-4bbb-a492-b07730e72027"
+                  name="OutputView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="f15db407-b7b5-40d6-a451-0783754cc206"
+            isDerived="false"
+            sourceEndRoleName="BarricadeController"
+            targetEndRoleName="InputView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="9a2d7d9a-3df1-4103-835c-aa706896444f"
+              LastKnownName="InputView"
+              LastKnownLocation="Package1_1305.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="0adff6a1-b0e1-4d11-a7c3-0dbee2aa9140"
+                  name="BarricadeController"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="61a65d8d-3578-4a5b-8f26-86feeff56c0c"
+                  name="InputView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="11eb3170-7057-4bed-8d33-5e2971665ae6"
+            name="MoveBarricade"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="fa141990-5403-4e3d-96d7-99451c198e7f"
+            name="CanMoveBarricade"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="e712dac9-904b-4749-8dc3-5e1cc9d3dce0"
+            name="CanPlaceBarricade"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="a7837bb8-6b7f-408c-ac20-96ca1121e9cb"
+        name="PawnController"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <targetEnds>
+          <association
+            Id="42c9c1b9-4943-4031-afe8-7239a740ce93"
+            isDerived="false"
+            sourceEndRoleName="PawnController"
+            targetEndRoleName="Game"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="8a56b085-4cd6-4d21-9c44-d97e3654aa3b"
+              LastKnownName="Game"
+              LastKnownLocation="Package2_1305.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3b584798-2d01-4035-a89d-7a0ba2957a45"
+                  name="PawnController"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="4c0e71fe-dbc2-4d0c-85c2-a051b8451c39"
+                  name="Game"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="55b64fc7-58db-4b51-85be-fce46bfbbfd3"
+            isDerived="false"
+            sourceEndRoleName="PawnController"
+            targetEndRoleName="InputView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="9a2d7d9a-3df1-4103-835c-aa706896444f"
+              LastKnownName="InputView"
+              LastKnownLocation="Package1_1305.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="ee57b285-7d20-4769-b450-17628ec6e974"
+                  name="PawnController"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="7f904810-b48a-4612-b4b6-81a0b70aeb87"
+                  name="InputView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="0fe961bc-4d2e-4af5-8518-5684b4ce26ae"
+            isDerived="false"
+            sourceEndRoleName="PawnController"
+            targetEndRoleName="OutputView"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="4dcd25fa-99e6-4ae8-a91c-7a007668874b"
+              LastKnownName="OutputView"
+              LastKnownLocation="Package1_1305.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="26da7f88-6625-4d97-aa9b-dddcd2ad91e2"
+                  name="PawnController"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="44734de1-d51a-4e5a-8fb6-0e8d2e7814a3"
+                  name="OutputView"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+        <ownedOperationsInternal>
+          <operation
+            Id="74de18ac-3dbc-4c06-920c-679111f90d99"
+            name="PawnMovement"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+          <operation
+            Id="02c5f360-048c-453d-a85b-05e0697e7a82"
+            name="CanMakeMove"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
