@@ -31,7 +31,7 @@ namespace Controller
         public void SetupGame()
         {
             Game = new Game();
-            var color = new Color[4] { Color.Red, Color.Green, Color.Yellow, Color.Blue };
+            var color = new [] { Color.Red, Color.Green, Color.Yellow, Color.Blue };
             var playerAmmount = _inputView.AskPlayerAmmount();
 
             for (var i = 0; i < playerAmmount; i++)
@@ -92,7 +92,7 @@ namespace Controller
 	    public bool PawnMovement(int roll)
         {
             var id = _inputView.AskPawn() - 1;
-            _selectedPawn = Game.currentPlayer.Pawns.FirstOrDefault(x => x.Id == id);
+            _selectedPawn = Game.currentPlayer.Pawns[id];
             _selectedPawn.VisitFields = new List<Field>{Game.Fields[_selectedPawn.LocationY, _selectedPawn.LocationX] };
 
             var startLocationX = _selectedPawn.LocationX;

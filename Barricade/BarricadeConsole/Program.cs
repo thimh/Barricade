@@ -1,12 +1,10 @@
-﻿using BarricaeModelLib.GeneratedCode.Controller;
-
-namespace BarricadeConsole
+﻿namespace BarricadeConsole
 {
     class Program
     {
         static void Main(string[] args)
         {
-            new BarricaeModelLib.GeneratedCode.Controller.Controller();
+            new Controller.Controller();
             System.Console.ReadLine();
         }
     }

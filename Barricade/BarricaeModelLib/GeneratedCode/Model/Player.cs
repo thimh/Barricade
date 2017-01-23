@@ -12,48 +12,25 @@ using System.Text;
 public class Player
 {
     public virtual Pawn[] Pawns { get; set; }
-
     public virtual Color Color { get; set; }
-
     public string Name { get; set; }
-
     public int ID { get; set; }
-
     public virtual StartField StartField { get; set; }
-
     public bool Winner { get; set; }
 
     public Player()
     {
         Pawns = new Pawn[4];
-        if (Color == Color.Blue)
-        {
-            Pawns[0] = new Pawn { Icon = "1 ", Id = 0, Owner = this};
-            Pawns[1] = new Pawn { Icon = "2 ", Id = 1, Owner = this};
-            Pawns[2] = new Pawn { Icon = "3 ", Id = 2, Owner = this};
-            Pawns[3] = new Pawn { Icon = "4 ", Id = 3, Owner = this};
-        }
-        if (Color == Color.Yellow)
-        {
-            Pawns[0] = new Pawn { Icon = "1 ", Id = 0, Owner = this};
-            Pawns[1] = new Pawn { Icon = "2 ", Id = 1, Owner = this};
-            Pawns[2] = new Pawn { Icon = "3 ", Id = 2, Owner = this};
-            Pawns[3] = new Pawn { Icon = "4 ", Id = 3, Owner = this};
-        }
-        if (Color == Color.Red)
-        {
-            Pawns[0] = new Pawn { Icon = "1 ", Id = 0, Owner = this};
-            Pawns[1] = new Pawn { Icon = "2 ", Id = 1, Owner = this};
-            Pawns[2] = new Pawn { Icon = "3 ", Id = 2, Owner = this};
-            Pawns[3] = new Pawn { Icon = "4 ", Id = 3, Owner = this};
-        }
-        if (Color == Color.Green)
-        {
-            Pawns[0] = new Pawn { Icon = "1 ", Id = 0, Owner = this};
-            Pawns[1] = new Pawn { Icon = "2 ", Id = 1, Owner = this};
-            Pawns[2] = new Pawn { Icon = "3 ", Id = 2, Owner = this};
-            Pawns[3] = new Pawn { Icon = "4 ", Id = 3, Owner = this};
-        }
+        Pawns[0] = new Pawn { Icon = "1 ", Id = 0, Owner = this};
+        Pawns[1] = new Pawn { Icon = "2 ", Id = 1, Owner = this};
+        Pawns[2] = new Pawn { Icon = "3 ", Id = 2, Owner = this};
+        Pawns[3] = new Pawn { Icon = "4 ", Id = 3, Owner = this};
+    }
+
+    public void setPawnLocation(int pawnId, int LocationX, int LocationY)
+    {
+        Pawns[pawnId].LocationY = LocationY;
+        Pawns[pawnId].LocationX = LocationX;
     }
 }
 

@@ -40,8 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GeneratedCode\Controller\BarricadeController.cs" />
-    <Compile Include="GeneratedCode\Controller\PawnController.cs" />
     <Compile Include="GeneratedCode\Model\Barricade.cs" />
     <Compile Include="GeneratedCode\Model\Fields\BaseField.cs" />
     <Compile Include="GeneratedCode\Model\Color.cs" />
@@ -59,9 +57,6 @@
     <Compile Include="GeneratedCode\View\InputView.cs" />
     <Compile Include="GeneratedCode\View\OutputView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="GeneratedCode\Board\Baricade.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
