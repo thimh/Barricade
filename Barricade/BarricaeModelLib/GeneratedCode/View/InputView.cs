@@ -29,11 +29,11 @@ namespace View
             return Convert.ToInt16(Console.ReadLine());
         }
 
-	    public string AskDirection()
+	    public ConsoleKeyInfo AskDirection()
 	    {
 	        Console.WriteLine("What direction do you want to move?");
             Console.WriteLine("W,A,S,D for direction, empty to reset.");
-            return Console.ReadLine();
+            return Console.ReadKey();
 	    }
     }
 }
