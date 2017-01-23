@@ -1,7 +1,9 @@
-﻿using BarricaeModelLib.GeneratedCode.Model.Fields;
-
-public class FinishField : Field
+﻿namespace BarricaeModelLib.GeneratedCode.Model.Fields
 {
-    public override string Icon => "F ";
+    public class FinishField : Field
+    {
+        public override string Icon => "F ";
+        public override bool CanHaveBarricade => false;
+    }
 }
 

@@ -2,8 +2,8 @@
 {
     public abstract class BaseField
     {
-        public virtual string Icon { get; }
-        public virtual bool canHaveBarricade { get; set; }
+        public abstract string Icon { get; }
+        public virtual bool CanHaveBarricade { get; set; }
         public virtual Pawn Pawn { get; set; }
         public virtual Barricade Barricade { get; set; }
         public virtual int LocationX { get; set; }
