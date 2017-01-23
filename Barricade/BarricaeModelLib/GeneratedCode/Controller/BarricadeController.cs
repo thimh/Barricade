@@ -1,5 +1,6 @@
 ﻿using System;
 using BarricaeModelLib.GeneratedCode.Model;
+using BarricaeModelLib.GeneratedCode.Model.Fields;
 using Model;
 using View;
 
@@ -16,7 +17,6 @@ namespace BarricaeModelLib.GeneratedCode.Controller
             _outputView = new OutputView();
             Game = game;
         }
-
 
         public void MoveBarricade(Barricade barricade, Field currentField)
         {
