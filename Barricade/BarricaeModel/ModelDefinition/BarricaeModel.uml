@@ -162,6 +162,16 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
+        <generalsInternal>
+          <generalization
+            Id="31eab1e8-35d4-4b24-b6a7-3bd9600f74cc"
+            isSubstitutable="false">
+            <classMoniker
+              Id="bee0ee0d-e1f3-4db7-b167-4d1fb34e3b30"
+              LastKnownName="BaseField"
+              LastKnownLocation="BarricaeModel.uml" />
+          </generalization>
+        </generalsInternal>
         <targetEnds>
           <association
             Id="715edffc-81be-48c9-a9d2-1cb4bbb883f7"
@@ -945,47 +955,6 @@
               LastKnownLocation="BarricaeModel.uml" />
           </generalization>
         </generalsInternal>
-        <targetEnds>
-          <association
-            Id="130d9fc7-6e33-48f6-88ab-643c3cf037b8"
-            isDerived="false"
-            sourceEndRoleName="StartField"
-            targetEndRoleName="Color"
-            isLeaf="false"
-            isAbstract="false">
-            <enumerationMoniker
-              Id="d6c7f032-7d00-4a12-9f27-b340e89d1b0a"
-              LastKnownName="Color"
-              LastKnownLocation="BarricaeModel.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="e4343a3c-c65b-44c8-b97c-442bf660e9db"
-                  name="StartField"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="266b4432-002a-49c8-acb5-f0f6345e97d8"
-                  name="Color"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1420,20 +1389,20 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="7e91522b-84d4-480a-aa5b-8112cb6cb111"
+            Id="9a824fbf-72cf-49da-a847-7b044924b581"
             isDerived="false"
             sourceEndRoleName="Game"
-            targetEndRoleName="Field"
+            targetEndRoleName="BaseField"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
-              Id="93712518-dae9-4b00-b807-e276e2a30609"
-              LastKnownName="Field"
+              Id="bee0ee0d-e1f3-4db7-b167-4d1fb34e3b30"
+              LastKnownName="BaseField"
               LastKnownLocation="BarricaeModel.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="8051ece8-6d75-4c91-9d73-5b2809da80b7"
+                  Id="c80c2159-a856-428c-a418-cb4af528ae70"
                   name="Game"
                   isLeaf="false"
                   isStatic="false"
@@ -1446,8 +1415,8 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="08fb9cb3-888f-4cb7-ad2a-e4bd6abacb7f"
-                  name="Field"
+                  Id="71453242-5141-400c-a75a-dfe5ce899617"
+                  name="BaseField"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1457,13 +1426,13 @@
                   isComposite="false">
                   <lowerValueInternal>
                     <literalString
-                      Id="0d61872d-29e5-4b8a-b0f5-e67b16651d01"
+                      Id="ba958095-b2d4-4cd9-b0eb-9d34a8d1b0d2"
                       name="Lower"
                       value="61" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
-                      Id="7daafaeb-0503-4735-a164-292e9bc59dd5"
+                      Id="d43ba9f9-83ee-416e-99d1-5e992ad97b0b"
                       name="Upper"
                       value="61" />
                   </upperValueInternal>
@@ -2709,6 +2678,14 @@
       <undefinedType
         Id="051bf628-065a-493c-ab52-4acfe70a480e"
         name="Bolean" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="bee0ee0d-e1f3-4db7-b167-4d1fb34e3b30"
+        name="BaseField"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
