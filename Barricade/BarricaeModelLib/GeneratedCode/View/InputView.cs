@@ -29,11 +29,11 @@ namespace BarricaeModelLib.GeneratedCode.View
             return Convert.ToInt16(Console.ReadLine());
         }
 
-	    public ConsoleKeyInfo AskDirection()
+	    public string AskDirection()
 	    {
 	        Console.WriteLine("What direction do you want to move?");
             Console.WriteLine("W,A,S,D for direction, empty to reset.");
-            return Console.ReadKey();
+            return Console.ReadLine();
 	    }
     }
 }
