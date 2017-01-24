@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using BarricaeModelLib.GeneratedCode.Model;
-using View;
+using BarricaeModelLib.GeneratedCode.View;
 
 namespace BarricaeModelLib.GeneratedCode.Controller
 {

@@ -2,7 +2,7 @@
 using System.Linq;
 using BarricaeModelLib.GeneratedCode.Model;
 using BarricaeModelLib.GeneratedCode.Model.Fields;
-using View;
+using BarricaeModelLib.GeneratedCode.View;
 
 namespace BarricaeModelLib.GeneratedCode.Controller
 {
