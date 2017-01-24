@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace View
+namespace BarricaeModelLib.GeneratedCode.View
 {
 	public class InputView
 	{
