@@ -385,45 +385,6 @@
               </associationHasOwnedEnds>
             </relationshipOwnedElementsInternal>
           </association>
-          <association
-            Id="f15db407-b7b5-40d6-a451-0783754cc206"
-            isDerived="false"
-            sourceEndRoleName="BarricadeController"
-            targetEndRoleName="InputView"
-            isLeaf="false"
-            isAbstract="false">
-            <classMoniker
-              Id="9a2d7d9a-3df1-4103-835c-aa706896444f"
-              LastKnownName="InputView"
-              LastKnownLocation="Package1_1305.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="0adff6a1-b0e1-4d11-a7c3-0dbee2aa9140"
-                  name="BarricadeController"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="61a65d8d-3578-4a5b-8f26-86feeff56c0c"
-                  name="InputView"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
         </targetEnds>
         <ownedOperationsInternal>
           <operation
