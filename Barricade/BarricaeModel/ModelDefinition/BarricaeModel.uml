@@ -945,47 +945,6 @@
               LastKnownLocation="BarricaeModel.uml" />
           </generalization>
         </generalsInternal>
-        <targetEnds>
-          <association
-            Id="130d9fc7-6e33-48f6-88ab-643c3cf037b8"
-            isDerived="false"
-            sourceEndRoleName="StartField"
-            targetEndRoleName="Color"
-            isLeaf="false"
-            isAbstract="false">
-            <enumerationMoniker
-              Id="d6c7f032-7d00-4a12-9f27-b340e89d1b0a"
-              LastKnownName="Color"
-              LastKnownLocation="BarricaeModel.uml" />
-            <relationshipOwnedElementsInternal>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="e4343a3c-c65b-44c8-b97c-442bf660e9db"
-                  name="StartField"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
-              </associationHasOwnedEnds>
-              <associationHasOwnedEnds>
-                <memberEnd
-                  Id="266b4432-002a-49c8-acb5-f0f6345e97d8"
-                  name="Color"
-                  isLeaf="false"
-                  isStatic="false"
-                  isReadOnly="false"
-                  isDerived="false"
-                  isDerivedUnion="false"
-                  aggregation="None"
-                  isComposite="false" />
-              </associationHasOwnedEnds>
-            </relationshipOwnedElementsInternal>
-          </association>
-        </targetEnds>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
@@ -1420,20 +1379,20 @@
             </relationshipOwnedElementsInternal>
           </association>
           <association
-            Id="7e91522b-84d4-480a-aa5b-8112cb6cb111"
+            Id="db18f84b-a2b4-4912-8ac2-0b1a508c8c1c"
             isDerived="false"
             sourceEndRoleName="Game"
-            targetEndRoleName="Field"
+            targetEndRoleName="BaseField"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
-              Id="93712518-dae9-4b00-b807-e276e2a30609"
-              LastKnownName="Field"
+              Id="1a513f7c-8da2-4a62-bb34-63026137f225"
+              LastKnownName="BaseField"
               LastKnownLocation="BarricaeModel.uml" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="8051ece8-6d75-4c91-9d73-5b2809da80b7"
+                  Id="6a60c0f0-4c26-4344-ad2c-ad93efe3853c"
                   name="Game"
                   isLeaf="false"
                   isStatic="false"
@@ -1446,8 +1405,8 @@
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
-                  Id="08fb9cb3-888f-4cb7-ad2a-e4bd6abacb7f"
-                  name="Field"
+                  Id="5b8a4434-d4c8-4802-9c50-b2659ef5d325"
+                  name="BaseField"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1457,13 +1416,13 @@
                   isComposite="false">
                   <lowerValueInternal>
                     <literalString
-                      Id="0d61872d-29e5-4b8a-b0f5-e67b16651d01"
+                      Id="9b0d4d2f-83d7-469a-9d71-f1d46ceced6d"
                       name="Lower"
                       value="61" />
                   </lowerValueInternal>
                   <upperValueInternal>
                     <literalString
-                      Id="7daafaeb-0503-4735-a164-292e9bc59dd5"
+                      Id="8cddb386-1e48-4bd0-8ace-2113f4f56407"
                       name="Upper"
                       value="61" />
                   </upperValueInternal>
@@ -2717,6 +2676,14 @@
       <undefinedType
         Id="c11083b2-b71d-4997-8182-92264aed01ed"
         name="integer" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="1a513f7c-8da2-4a62-bb34-63026137f225"
+        name="BaseField"
+        isAbstract="true"
+        isLeaf="false"
+        isActiveClass="false" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
